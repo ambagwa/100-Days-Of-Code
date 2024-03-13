@@ -16,7 +16,7 @@
 
 **Link to work**: I did not work on anything today, just learning and researching.
 
-## Day 01 : March 13, 2024
+## Day 02 : March 13, 2024
 
 **Today's progress**: Got to learn and experiment the different ways of formulating and implementing functions in Javascript
 

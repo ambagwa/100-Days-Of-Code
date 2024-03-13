@@ -15,3 +15,9 @@
 **Thoughts**: I think understanding the basics of git helps one manage his/her projects efficiently. Github is the best 'hub' for remote repositories. One must aim at mastering git: [https://www.udemy.com/course/git-expert-4-hours/learn/lecture/11682592#overview]
 
 **Link to work**: I did not work on anything today, just learning and researching.
+
+## Day 01 : March 13, 2024
+
+**Today's progress**: Got to learn and experiment the different ways of formulating and implementing functions in Javascript
+
+**Thoughts**: I think one can make use of the different ways functions can be created and formulatedd.

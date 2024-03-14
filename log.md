@@ -21,3 +21,11 @@
 **Today's progress**: Got to learn and experiment the different ways of formulating and implementing functions in Javascript
 
 **Thoughts**: I think one can make use of the different ways functions can be created and formulatedd.
+
+## Day 03 : March 14, 2024
+
+**Today's progress**: I got to learn more about arrow functin syntax and got to know of the four ways of implementing them. Also got to know that .getElementsByClassName() returrned a array-like object. I also learnt the different ways a spread operator(...) can be used including copying an array, concatenating arrays,passing array elementsa as arguments to a function, addding elements to an array, and copying objects. Also learnt about the map() method that iterates through an array and works on each array element according to the given function.
+
+**Thoughts**: Learning javascript by my own has been the best experiebnce ever.
+
+**Link to work**: N/A

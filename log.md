@@ -29,3 +29,11 @@
 **Thoughts**: Learning javascript by my own is been the best experiebnce ever.
 
 **Link to work**: N/A
+
+## Day 04 : March 16, 2024
+
+**Today's progress**: Learnt about some of the sorting algorithms, i.e. bubble sort, selection sort, and insertion sort and how to implement them using JS code. Also learnt about the Number() constructor, filter() and reduce(). 
+
+**Thoughts**: It is easier to work with data when you possess a higher understanding of DSA.
+
+**Link to work**: Today was learning and testig out code

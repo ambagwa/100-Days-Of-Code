@@ -37,3 +37,11 @@
 **Thoughts**: It is easier to work with data when you possess a higher understanding of DSA.
 
 **Link to work**: Today was learning and testig out code
+
+## Day 05 : March 17, 2024
+
+**Today's progress**: Learnt about Math.floor() and that it returns the largest integer < || === to a given number
+
+**Thoughts**: This needs proper understanding.
+
+**Link to work**: Learning was it for today. N/A

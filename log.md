@@ -45,3 +45,11 @@
 **Thoughts**: This needs proper understanding.
 
 **Link to work**: Learning was it for today. N/A
+
+## Day 06 : March 19, 2024
+
+**Today's progress**: I played around withsetAttribute() method, .className property, and .classList property which is more flexible among the three. I also got to know how to create HTML elements using JS.
+
+**Thoughts**: Lack of concentration while programming will make you suffer, though self-learning is amazing.
+
+**Link to work**: Still learning.

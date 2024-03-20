@@ -53,3 +53,11 @@
 **Thoughts**: Lack of concentration while programming will make you suffer, though self-learning is amazing.
 
 **Link to work**: Still learning.
+
+## Day 07 : March 20, 2024
+
+**Today's progress**: I spent today implementing currying which go hand-in-hand with closure. I also learnt how to work with regular expressions, regex.
+
+**Thoughts**: Regex is an art, and as an art, it takes time to master.
+
+**Link to work**: None 

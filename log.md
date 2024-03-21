@@ -61,3 +61,11 @@
 **Thoughts**: Regex is an art, and as an art, it takes time to master.
 
 **Link to work**: None 
+
+## Day 08 : March 21, 2024
+
+**Today's progress**: I learnt some of the many array methods
+
+**Thoughts**: Array methods make it easier to work with arrays
+
+**Link to work**: None 

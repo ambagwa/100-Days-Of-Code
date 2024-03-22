@@ -69,3 +69,11 @@
 **Thoughts**: Array methods make it easier to work with arrays
 
 **Link to work**: Learning JS basics
+
+## Day 09 : March 22, 2024
+
+**Today's progress** : I started to work on an application that should check and validate US telephone numbers.
+
+**Thoughts** : Its fun to play with regular expressions.
+
+**Link to work** : https://github.com/teenmaster/100-Days-Of-Code/tree/main/telephone-number-validator

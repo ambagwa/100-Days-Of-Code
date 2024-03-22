@@ -9,6 +9,10 @@
 ### 555-555-5555
 ### (555)555-5555
 
-### All these are valid US numbers. This application aims at validating the true numbers while filtering out the spam ones
+### All these are valid US numbers. This application aims at validating the true numbers while filtering out the spam ones like
+
+### I 555~555~5555
+
+### ! {555} 555_5555
 
 

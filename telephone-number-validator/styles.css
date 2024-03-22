@@ -1,0 +1,90 @@
+*,
+::before,
+::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html{
+  font-size: 16.5px;
+}
+:root{
+  --background: #e9c46a;
+  --button-color: #264653;
+  --header-color: #2a9d8f;
+  --div-color: #e76f51;
+  --input-color: #f4a261;
+  --text-color: #caf0f8;
+}
+body{
+  background-color: var(--background);
+}
+h1{
+  color: var(--header-color);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 5rem;
+}
+h1 span{
+  color: var(--div-color);
+}
+#input{
+  background-color: var(--input-color);
+  width: 70%;
+  margin: 0.5rem auto;
+  text-align: center;
+  border-radius: 5px;
+}
+label{
+  display: block;
+  font-size: 1.5rem;
+  padding-top: 1rem;
+}
+#user-input{
+  width: 80%;
+  text-align: center;
+  height: 10%;
+  margin: 1rem 0;
+  background-color: var(--div-color);
+  font-size: 1.5rem;
+  color: var(--text-color);
+  border: 1px solid var(--div-color);
+  border-radius: 5px;
+}
+#user-input::placeholder{
+  color: var(--text-color);
+}
+#user-input:focus{
+  border: none;
+  box-shadow: 0 0 10px var(--header-color);
+}
+#bbutons{
+  background-color: var(--div-color);
+  width: 30%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 5px;
+}
+#check-btn, 
+#clear-btn{
+  background-color: var(--button-color);
+  color: var(--text-color);
+  padding: 0.3rem;
+  cursor: pointer;
+}
+#clear-btn{
+  width: 4rem;
+}
+#check-btn:active,
+#clear-btn:active{
+  box-shadow: 0 0 10px var(--header-color);
+}
+#results-div{
+  width: 70%;
+  height: 200px;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 1rem;
+  border-radius: 5px;
+}

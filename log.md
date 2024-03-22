@@ -68,4 +68,4 @@
 
 **Thoughts**: Array methods make it easier to work with arrays
 
-**Link to work**: None 
+**Link to work**: Learning JS basics

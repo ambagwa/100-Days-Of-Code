@@ -77,3 +77,11 @@
 **Thoughts** : Its fun to play with regular expressions.
 
 **Link to work** : https://github.com/teenmaster/100-Days-Of-Code/tree/main/telephone-number-validator
+
+## Day 10 : March 23, 2024
+
+**Today's progress** : Continued working on the telephone-number-validator project.
+
+**Thoughts** : Regex is not as easy as I had thought😅
+
+**Link to work**: https://github.com/teenmaster/100-Days-Of-Code/tree/main/telephone-number-validator

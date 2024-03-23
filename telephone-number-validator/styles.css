@@ -79,7 +79,14 @@ label{
 #check-btn:active,
 #clear-btn:active{
   box-shadow: 0 0 10px var(--header-color);
-}/*
+}
+#reults-div{
+    font-size: 2rem;
+}
+#results-div{
+  font-size: 2rem;
+}
+/*
 #results-div{
   width: 70%;
   height: 200px;

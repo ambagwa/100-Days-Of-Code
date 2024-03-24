@@ -7,13 +7,16 @@
   <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <h1>US telephone number validator</h1>
-    <label for="user-input">Enter your phone number for validation:</label>
-    <input type="text" name="telephone-number" id="user-input">
+    <h1>US telephone number <span>validator</span></h1>
+    <div id="input">
+      <label for="user-input">Enter your phone number for validation:</label>
+      <input type="text" name="telephone-number" id="user-input" placeholder="Consider 1 555-555-5555">
+    </div>
     <div id="bbutons">
       <button id="check-btn">Validate</button>
       <button id="clear-btn">Clear</button>
     </div>
     <div id="results-div"></div>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -3,18 +3,49 @@ const checkBtn = document.getElementById("check-btn");
 const clearBtn = document.getElementById("clear-btn");
 const displayResult = document.getElementById('results-div');
 
-const firstNumber = /^\(\d{3}\) \d{3}-\d{4}$/;
+//const firstNumber = /1 555-555-5555/;
+const firstNumber = /^1 \d{3}-\d{3}-\d{4}$/;
+const secondNumber = /^1 \(\d{3}\) \d{3}-\d{4}$/;
+const thirdNumber = /^\d{10}$/;
+const fourthNumber = /^\(\d{3}\)-\d{3}-\d{3}$/; // New regex for the fourth number format
+const fifthNumber = /^\(\d{3}\)\d{3}-\d{4}$/;
+const sixthNumber = /1 \d{3} \d{3} \d{4}$/;
+const seventhNumber = /^\d{3}-\d{3}-\d{4}$/;
+const eigthNumber = /^1\(\d{3}\)\d{3}-\d{4}$/;
 
-const telephoneNumbers = [];
+const telephoneNumbers = [firstNumber, secondNumber, thirdNumber, fourthNumber, fifthNumber, sixthNumber, seventhNumber, eigthNumber];
 
-const isTrueNumber = (number) => telephoneNumbers.some((regex) => regex.test(number));
+const isTrueNumber = (number) => {
+  // Iterate through each regex and return true if any matches
+  for (const regex of telephoneNumbers) {
+    if (regex.test(number)) {
+      return true;
+    }
+  }
+  return false; // If no regex matches, return false
+};
+
+//const isTrueNumber = (number) => telephoneNumbers.some((regex) => regex.test
+//(number));
+
+const updateDisplay = (isValid) => {
+  displayResult.classList.remove("valid", "invalid");
+  if (isValid){
+    displayResult.classList.add("valid");
+    displayResult.textContent = `Valid US number: ${userInput.value}`;
+  } else {
+    displayResult.classList.add("invalid");
+    displayResult.textContent = `Invalid US number: ${userInput.value}`;
+  }
+};
 
 checkBtn.addEventListener("click", () => {
   if (userInput.value === "") {
     alert("Please provide a phone number");
     return;
   }
-  displayResult.textContent = isTrueNumber(userInput.value) ? `Valid US number: ${userNumber.value}` : `Invalid US number: ${userNumber.value}`;
+  const isValid = isTrueNumber(userInput.value);
+  updateDisplay(isValid);
   userInput.value = "";
 });
 

@@ -85,3 +85,11 @@
 **Thoughts** : Regex is not as easy as I had thought😅
 
 **Link to work**: https://github.com/teenmaster/100-Days-Of-Code/tree/main/telephone-number-validator
+
+## Day 11 : March 24, 2024
+
+**Today's progress** : Finished up my application.
+
+**Thoughts** : Felt nice having known Ive learnt something on my own
+
+**link to work** : https://github.com/teenmaster/100-Days-Of-Code/tree/main/telephone-number-validator

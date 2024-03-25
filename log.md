@@ -93,3 +93,11 @@
 **Thoughts** : Felt nice having known Ive learnt something on my own
 
 **link to work** : https://github.com/teenmaster/100-Days-Of-Code/tree/main/telephone-number-validator
+
+## Day 12 : March 25, 2024
+
+**Today's progress** : Revisited string literals and learnt how you could create html elements in JS
+
+**Thoughts** : This was fun
+
+**Link to work** : N/A

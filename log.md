@@ -101,3 +101,11 @@
 **Thoughts** : This was fun
 
 **Link to work** : N/A
+
+## Day 13 : March 26, 2024
+
+**Today's progress** : I started learning out classes in JS. Amd while on it, I learnt about the this keyword used for referencing depending on its placement.
+
+**Thoughts** : Having worked with java a bit, I understand why the concept of objects needed to be added to JS
+
+**Link to work** : Coming soon

@@ -109,3 +109,11 @@
 **Thoughts** : Having worked with java a bit, I understand why the concept of objects needed to be added to JS
 
 **Link to work** : Coming soon
+
+## Day 14 : March 27, 2024
+
+**Today's progress** : Started working on a new project. Reminded myself about git and its fundamentals
+
+**Thoughts** : Practice makes perfect
+
+**Link to work** : https://github.com/teenmaster/100-Days-Of-Code/tree/main/MyShoppingPage

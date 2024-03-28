@@ -52,7 +52,9 @@ body{
     text-align: center;
     border-radius: 15px;
     margin: 20px 10px;
-    
+    height: 450px;
+    display: flex;
+    flex-direction: column;
 }
 #shoes-card-container{
     display: flex;
@@ -62,13 +64,17 @@ body{
 }
 .shoe-price{
     font-size: 1rem;
-    margin-top: 5px;
+    margin-top: auto;
 }
-.shoe-image{
+.shoe-card img{
     width: 100%;
     height: auto;/*MAintains aspect ratio*/
     display: block;/*prevents space below the image*/
     margin-bottom: 10px;
+    border-radius: 15px;
+}
+.shoe-card h2{
+    flex : 1;
 }
 .add-to-cart-btn{
     margin: 30px auto 10px;
@@ -89,4 +95,16 @@ body{
 }
 .shoe-category{
     margin: 10px 0;
+}
+@media (min-width : 768px){
+    #shoes-card-container{
+        flex-direction: row;
+    }
+    .shoe-card{
+        flex: 1 0 21%;
+    }
+    #cart-container{
+        width: 300px;
+        height: auto;
+    }
 }

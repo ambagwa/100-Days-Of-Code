@@ -52,6 +52,7 @@ body{
     text-align: center;
     border-radius: 15px;
     margin: 20px 10px;
+    
 }
 #shoes-card-container{
     display: flex;
@@ -62,6 +63,12 @@ body{
 .shoe-price{
     font-size: 1rem;
     margin-top: 5px;
+}
+.shoe-image{
+    width: 100%;
+    height: auto;/*MAintains aspect ratio*/
+    display: block;/*prevents space below the image*/
+    margin-bottom: 10px;
 }
 .add-to-cart-btn{
     margin: 30px auto 10px;

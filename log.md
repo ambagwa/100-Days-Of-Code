@@ -117,3 +117,11 @@
 **Thoughts** : Practice makes perfect
 
 **Link to work** : https://github.com/teenmaster/100-Days-Of-Code/tree/main/MyShoppingPage
+
+## Day 15 : March 28, 2024
+
+**Today's progress** : Implemented a function for preloading imeages onto HTML
+
+**Thoughts** : Working on projects makes learning easier and memorable
+
+**Link to work** : https://github.com/teenmaster/100-Days-Of-Code/tree/main/MyShoppingPage

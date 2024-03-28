@@ -1,6 +1,14 @@
 const cartContainer = document.getElementById("cart-container");
 const cartButton = document.getElementById("cart-btn");
 const showHideCart = document.getElementById("show-hide-cart");
+const shoesCards = document.getElementById("shoes-card-container");
+const shoesContainer = document.getElementById("products-container")
+const clearCartButtn = document.getElementById("clear-cart-btn");
+const totalItems = document.getElementById("totsl-items");
+const subTotal = document.getElementById("subtotal");
+const vat = document.getElementById("vat");
+const total = document.getElementById("total");
+let isCartShowing = false;
 
 const products = [
     {
@@ -64,3 +72,23 @@ const products = [
         category: "Rubbers"
     }
 ];
+
+//Add the products to the html page
+products.forEach(
+    /*Destructure the properties of an object to be the parameter of the 
+    callback function
+     */
+    ({ name, id, price, category}) => {
+        //Display each product onto the html page
+        shoesCards.innerHTML += `
+            <div class="shoe-card">
+                <h2>${name}</h2>
+                <p class="shoe-price">$${price}</p>
+                <p class="shoe-category">Category: ${category}</p>
+                <button id="${id}" class="btn add-to-cart-btn">
+                    Add to cart
+                </button>
+            </div>
+        `;
+    }
+);

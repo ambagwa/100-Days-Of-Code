@@ -2,7 +2,7 @@ const cartContainer = document.getElementById("cart-container");
 const cartButton = document.getElementById("cart-btn");
 const showHideCart = document.getElementById("show-hide-cart");
 const shoesCards = document.getElementById("shoes-card-container");
-const shoesContainer = document.getElementById("products-container")
+const productsContainer = document.getElementById("products-container")
 const clearCartButtn = document.getElementById("clear-cart-btn");
 const totalItems = document.getElementById("totsl-items");
 const subTotal = document.getElementById("subtotal");
@@ -16,71 +16,71 @@ const products = [
         name: "AF 1",
         price: 15.99,
         category: "Nike",
-        image: "images/image1.jpg"
+        image: "images/image1.jpg",
     },
     {
         id: 2,
         name: "SB dunks",
         price: 25.99,
         category: "Nike",
-        image: "images/image2.jpg"
+        image: "images/image2.jpg",
     },
     {
         id: 3,
         name: "Yeezy",
         price: 35.99,
         category: "Adidas",
-        image: "images/image3.jpg"
+        image: "images/image3.jpg",
     },
     {
         id: 4,
         name: "Converse",
         price: 7.99,
         category: "Vans",
-        image: "images/image4.jpg"
+        image: "images/image4.jpg",
     },
     {
         id: 5,
         name: "Low riders",
         price: 37.99,
         category: "Puma",
-        image: "images/image5.jpg"
+        image: "images/image5.jpg",
     },
     {
         id: 6,
         name: "Ngoma",
         price: 9.29,
         category: "Bata",
-        image: "images/image6.jpg"
+        image: "images/image6.jpg",
     },
     {
         id: 7,
         name: "Tops",
         price: 19.91,
         category: "New Balance",
-        image: "images/image7.jpg"
+        image: "images/image7.jpg",
     },
     {
         id: 8,
         name: "J1s",
         price: 44.98,
         category: "Nike",
-        image: "images/image8.jpg"
+        image: "images/image8.jpg",
     },
     {
         id: 9,
         name: "Flip flops",
         price: 2.79,
         category: "Umoja",
-        image: "images/image9.jpg"
+        image: "images/image9.jpg",
     },
     {
         id: 10,
         name: "Okala",
         price: 4.99,
         category: "Rubbers",
-        image: "images/image10.jpg"
-    }
+        image: "images/image10.jpg",
+    },
 ];
 
 /*
@@ -151,3 +151,52 @@ products.forEach(
     }
 );
 */
+
+//create an object that will be used to store prperties and methods of the shopping cart
+class ShoppingCart{
+    //creat a constructore to instantiate properties of the object
+    constructor(){
+        this.items = [];//Store the products objects
+        this.total = 0;
+        this.vatRate = 16;
+    }
+
+    //Method for adding items to the cart
+    addItem(id, products){
+        //Find the product the user is adding to the cart
+        const product = products.find(item => item.id === id);
+        //get the name and price keys from the returned product thru destructuring
+        const {name, price} = product;
+        //push the product to the items array with name and price properties
+        this.items.push(product);
+
+        //Calculate the total number of times a new product has been added
+        const totalCountPerProduct = {};
+        //Iterate over each item in the array and update the totalCountPerProduct
+        //to keep track of the no of times an object has been added to the cart
+        this.items.forEach(shoe => {
+            totalCountPerProduct[shoe.id] = 
+                (totalCountPerProduct[shoe.id] || 0) + 1;
+        });
+        //update the display with the newly addded product 
+        const currentProductCount = totalCountPerProduct[product.id];
+        //Query this new product into HTML
+        const currentProductCountSpan = 
+            document.getElementById(`product-count-for-id${product,id}`);
+        //This method needs to change regardless of whether the product is in the
+        //cart or not
+        currentProductCount > 1 ? 
+            currentProductCountSpan.textContent = `${currentProductCount}x` : 
+            //Add new html to the products container
+            productsContainer.innerHTML =+ `
+                <div class="product" id="shoe${id}">
+                    <p>
+                        <span class="product-count" id="product-count-for-id${id}">
+                        </span>${name}
+                    </p>
+                    <p>${price}</p>
+                </div>
+            `;
+    }
+}
+

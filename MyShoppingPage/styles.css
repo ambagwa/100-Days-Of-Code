@@ -96,6 +96,16 @@ body{
 .shoe-category{
     margin: 10px 0;
 }
+.product{
+    margin: 25px 0;
+}
+.product-count{
+    display: inline-block;
+    margin-right: 10px;
+}
+.product-category{
+    margin: 10px 0;
+}
 @media (min-width : 768px){
     #shoes-card-container{
         flex-direction: row;

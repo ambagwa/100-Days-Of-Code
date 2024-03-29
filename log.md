@@ -125,3 +125,11 @@
 **Thoughts** : Working on projects makes learning easier and memorable
 
 **Link to work** : https://github.com/teenmaster/100-Days-Of-Code/tree/main/MyShoppingPage
+
+## Day 16 : March 29, 2024
+
+**Tody's progress** : Implemented one more method and added event listeners to the buttons
+
+**Thoughts** : Bugs are motivating 
+
+**Link to work** : https://github.com/teenmaster/100-Days-Of-Code/tree/main/MyShoppingPage

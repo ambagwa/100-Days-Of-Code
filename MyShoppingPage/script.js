@@ -4,7 +4,7 @@ const showHideCart = document.getElementById("show-hide-cart");
 const shoesCards = document.getElementById("shoes-card-container");
 const productsContainer = document.getElementById("products-container")
 const clearCartButtn = document.getElementById("clear-cart-btn");
-const totalItems = document.getElementById("totsl-items");
+const totalItems = document.getElementById("total-items");
 const subTotal = document.getElementById("subtotal");
 const vat = document.getElementById("vat");
 const total = document.getElementById("total");
@@ -182,13 +182,13 @@ class ShoppingCart{
         const currentProductCount = totalCountPerProduct[product.id];
         //Query this new product into HTML
         const currentProductCountSpan = 
-            document.getElementById(`product-count-for-id${product,id}`);
+            document.getElementById(`product-count-for-id${id}`);
         //This method needs to change regardless of whether the product is in the
         //cart or not
         currentProductCount > 1 ? 
             currentProductCountSpan.textContent = `${currentProductCount}x` : 
             //Add new html to the products container
-            productsContainer.innerHTML =+ `
+            productsContainer.innerHTML += `
                 <div class="product" id="shoe${id}">
                     <p>
                         <span class="product-count" id="product-count-for-id${id}">
@@ -198,5 +198,35 @@ class ShoppingCart{
                 </div>
             `;
     }
+
+    //Method to access the total number of products in the cart
+    getCounts(){
+        return this.items.length;
+    }
+
+    
 }
 
+//create a new ShoppingCart object
+const cart1 = new ShoppingCart();
+
+//Get all the add-to-cart-btn buttons that I added when I was creating each product
+//on the page
+const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
+//Iterate through each button after converting the buttons into an array
+[...addToCartBtns].forEach(btn => {
+    btn.addEventListener("click", event => {
+        cart1.addItem(Number(event.target.id), products);
+        //Update the total number of items 
+        totalItems.textContent = cart1.getCounts();
+        cart1.calculateTotal();
+    })
+});
+
+//Make the cart visible 
+cartButton.addEventListener("click", () => {
+    //make the isCartShowing button true
+    isCartShowing = !isCartShowing;
+    showHideCart.textContent = isCartShowing ? "Hide" : "Show";
+    cartContainer.style.display = isCartShowing ? "block" : "none";
+});

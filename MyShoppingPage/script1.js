@@ -1,11 +1,11 @@
 const cartContainer = document.getElementById("cart-container");
-const cartButton = document.getElementById("cart-btn");
-const showHideCart = document.getElementById("show-hide-cart");
-const shoesCards = document.getElementById("shoes-card-container");
 const productsContainer = document.getElementById("products-container");
+const shoesCards = document.getElementById("shoes-card-container");
+const cartButton = document.getElementById("cart-btn");
 const clearCartButtn = document.getElementById("clear-cart-btn");
 const totalItems = document.getElementById("total-items");
 const subTotal = document.getElementById("subtotal");
+const showHideCart = document.getElementById("show-hide-cart");
 const vat = document.getElementById("vat");
 const total = document.getElementById("total");
 let isCartShowing = false;
@@ -110,8 +110,9 @@ preloadImages(imageUrls).then(() => {
                 <h2>${name}</h2>
                 <p class="shoe-price">$${price}</p>
                 <p class="shoe-category">Category: ${category}</p>
-                <button id="${id}" class="btn add-to-cart-btn">
-                    Add to cart
+                <button 
+                    id="${id}" 
+                    class="btn add-to-cart-btn">Add to cart
                 </button>
             </div>
         `;
@@ -129,7 +130,7 @@ class ShoppingCart {
 
     addItem(id, products){
         const product = products.find(item => item.id === id);
-        const {name, price} = product;
+        const { name, price } = product;
         this.items.push(product);
 
         const totalCountPerProduct = {};

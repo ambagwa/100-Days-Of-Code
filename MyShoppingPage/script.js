@@ -3,7 +3,7 @@ const cartButton = document.getElementById("cart-btn");
 const showHideCart = document.getElementById("show-hide-cart");
 const shoesCards = document.getElementById("shoes-card-container");
 const productsContainer = document.getElementById("products-container")
-const clearCartButtn = document.getElementById("clear-cart-btn");
+const clearCartButton = document.getElementById("clear-cart-btn");
 const totalItems = document.getElementById("total-items");
 const subTotal = document.getElementById("subtotal");
 const vat = document.getElementById("vat");
@@ -87,7 +87,7 @@ const products = [
 For the images to load at the same time, I put them in objects so that they 
 can preload before adding them to DOM. This way the browser starts loading 
 them in the background before being added to the HTML page.
-*/
+
 //function to preload the images 
 const preloadImages = images => {
     return new Promise ((resolve, reject) => {
@@ -129,9 +129,8 @@ preloadImages(imageUrls).then(() => {
 }).catch(error => {
     console.error("Error preloading images: ", error);
 });
+*/
 
-
-/*
 products.forEach(
     //Destructure the properties of an object to be the parameter of the 
     //callback function
@@ -150,7 +149,6 @@ products.forEach(
         `;
     }
 );
-*/
 
 //create an object that will be used to store prperties and methods of the shopping cart
 class ShoppingCart{
@@ -170,10 +168,11 @@ class ShoppingCart{
         //push the product to the items array with name and price properties
         this.items.push(product);
 
-        //Calculate the total number of times a new product has been added
+        //Keeps track of how many times a product appears in the cart
         const totalCountPerProduct = {};
         //Iterate over each item in the array and update the totalCountPerProduct
         //to keep track of the no of times an object has been added to the cart
+        //Each item represents a product that has been added to the cart
         this.items.forEach(shoe => {
             totalCountPerProduct[shoe.id] = 
                 (totalCountPerProduct[shoe.id] || 0) + 1;
@@ -204,7 +203,41 @@ class ShoppingCart{
         return this.items.length;
     }
 
-    
+    //clear the cart
+    clearCart(){
+        if (!this.items.length){
+            alert("Your cart is already empty");
+            return;
+        }
+
+        const isCartCleared = confirm("Are you sure you want to clear the cart?");
+
+        if (isCartCleared){
+            this.items = [];
+            this.total = 0;
+            productsContainer.innerHTML = "";
+            totalItems.textContent = 0;
+            subTotal.textContent = 0;
+            vat.textContent = 0;
+            total.textContent = 0;
+        }
+    }
+
+    //calculate vat
+    calculateVat(){
+        return parseFloat(((this.vatRate / 100) * 100).toFixed(2));
+    }
+
+    //calculate the total amount
+    calculateTotal(){
+        const subTotal = this.items.reduce((total, item) => total + item.price, 0);
+        const tax = this.calculateVat(subTotal);
+        this.total = subTotal + tax;
+        subTotal.textContent = `${subTotal.toFixed(2)}`;
+        vat.textContent = `${tax.toFixed(2)}`;
+        total.textContent = `${this.total.toFixed(2)}`;
+        return this.total;
+    }
 }
 
 //create a new ShoppingCart object
@@ -214,14 +247,15 @@ const cart1 = new ShoppingCart();
 //on the page
 const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
 //Iterate through each button after converting the buttons into an array
-[...addToCartBtns].forEach(btn => {
-    btn.addEventListener("click", event => {
-        cart1.addItem(Number(event.target.id), products);
-        //Update the total number of items 
-        totalItems.textContent = cart1.getCounts();
-        cart1.calculateTotal();
-    })
-});
+[...addToCartBtns].forEach(
+    btn => {
+        btn.addEventListener("click", event => {
+            shoesCards.addItem(Number(event.target.id), products);
+            totalItems.textContent = cart1.getCounts();
+            cart1.calculateTotal();
+        });
+    }
+);
 
 //Make the cart visible 
 cartButton.addEventListener("click", () => {
@@ -230,3 +264,5 @@ cartButton.addEventListener("click", () => {
     showHideCart.textContent = isCartShowing ? "Hide" : "Show";
     cartContainer.style.display = isCartShowing ? "block" : "none";
 });
+
+clearCartButton.addEventListener("click", cart1.clearCart.bind(cart1));

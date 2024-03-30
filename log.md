@@ -133,3 +133,11 @@
 **Thoughts** : Bugs are motivating 
 
 **Link to work** : https://github.com/teenmaster/100-Days-Of-Code/tree/main/MyShoppingPage
+
+## Day 17 : March 30, 2024
+
+**Today's progress** : Added new methods to the class
+
+**Thoughts** : Bugs and more bugs
+
+**Link to work** : https://github.com/teenmaster/100-Days-Of-Code/tree/main/MyShoppingPage

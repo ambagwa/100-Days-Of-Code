@@ -224,16 +224,16 @@ class ShoppingCart{
     }
 
     //calculate vat
-    calculateVat(){
-        return parseFloat(((this.vatRate / 100) * 100).toFixed(2));
+    calculateVat(amount){
+        return parseFloat(((this.vatRate / 100) * amount).toFixed(2));
     }
 
     //calculate the total amount
     calculateTotal(){
-        const subTotal = this.items.reduce((total, item) => total + item.price, 0);
-        const tax = this.calculateVat(subTotal);
-        this.total = subTotal + tax;
-        subTotal.textContent = `${subTotal.toFixed(2)}`;
+        const subTotalAmount = this.items.reduce((total, item) => total + item.price, 0);
+        const tax = this.calculateVat(subTotalAmount);
+        this.total = subTotalAmount + tax;
+        subTotal.textContent = `${subTotalAmount.toFixed(2)}`;
         vat.textContent = `${tax.toFixed(2)}`;
         total.textContent = `${this.total.toFixed(2)}`;
         return this.total;
@@ -250,7 +250,7 @@ const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
 [...addToCartBtns].forEach(
     btn => {
         btn.addEventListener("click", event => {
-            shoesCards.addItem(Number(event.target.id), products);
+            cart1.addItem(Number(event.target.id), products);
             totalItems.textContent = cart1.getCounts();
             cart1.calculateTotal();
         });

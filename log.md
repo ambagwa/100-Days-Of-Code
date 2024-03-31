@@ -141,3 +141,11 @@
 **Thoughts** : Bugs and more bugs
 
 **Link to work** : https://github.com/teenmaster/100-Days-Of-Code/tree/main/MyShoppingPage
+
+## Day 18 : March 31: 2024
+
+**Today's progress** : Managed to fix a bug that has been bugging me for the last few days
+
+**Thoughts** : Cheers to the small wins
+
+**Link to work** : https://github.com/teenmaster/100-Days-Of-Code/tree/main/MyShoppingPage

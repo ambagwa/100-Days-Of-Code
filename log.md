@@ -149,3 +149,11 @@
 **Thoughts** : Cheers to the small wins
 
 **Link to work** : https://github.com/teenmaster/100-Days-Of-Code/tree/main/MyShoppingPage
+
+## Day 19 : April 1, 2024
+
+**Today's progress** : I went through the daraja API documentation
+
+**Thoughts** : I think documentations solve everything
+
+**Link to work** : Integration of mpesa into the project coming up

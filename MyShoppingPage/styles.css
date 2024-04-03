@@ -41,6 +41,20 @@ body{
     background-image: linear-gradient(var(--hover-one), var(--hover-two));
     color: #fff;
 }
+#buy-cart-btn{
+    margin : 1rem auto .5rem;
+    cursor: pointer;
+    width: 100px;
+    color: var(--text-color);
+    background-color: var(--button-background);
+    background-image: linear-gradient(var(--gradient-one), var(--gradient-two));
+    border-color: var(--button-background);
+    border-width: 3px;
+}
+#buy-cart-btn:hover{
+    background-image: linear-gradient(var(--hover-one), var(--hover-two));
+    color: #fff;
+}
 #cart-btn{
     position: absolute;
     top: 0;
@@ -102,6 +116,9 @@ body{
 }
 .product{
     margin: 25px 0;
+}
+.product p{
+    font-size: 1.5rem;
 }
 .product-count{
     display: inline-block;

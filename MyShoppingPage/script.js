@@ -266,3 +266,8 @@ cartButton.addEventListener("click", () => {
 });
 
 clearCartButton.addEventListener("click", cart1.clearCart.bind(cart1));
+
+const pay  = () => {
+    alert("Pay button was clicked");
+    
+}

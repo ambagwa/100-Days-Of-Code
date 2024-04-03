@@ -157,3 +157,12 @@
 **Thoughts** : I think documentations solve everything
 
 **Link to work** : Integration of mpesa into the project coming up
+
+## Day 20 : April 3, 2024
+
+**Today's progress** : Continued going through the daraja API 2.0
+
+**Thoughts** : Got to learn about TinyPesa in the process
+
+**Link to work** : Will implement this in the MyShoppingPage project
+

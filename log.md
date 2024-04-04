@@ -166,3 +166,10 @@
 
 **Link to work** : Will implement this in the MyShoppingPage project
 
+## Day 21 : April 4, 2024
+
+**Today's progress** : Ditched daraja for a bit. Went back the OO aspect of JS
+
+**Thoughts** : OO simplifies code and enhances reusability
+
+**Link to work** : Coming soon

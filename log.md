@@ -173,3 +173,12 @@
 **Thoughts** : OO simplifies code and enhances reusability
 
 **Link to work** : Coming soon
+
+
+## Day 22 : April 7, 2024
+
+**Today's progress** : Wandered further in the object-oriented side of JS
+
+**Thoughts** : Easier to understand having doe its basics in java
+
+**Link to work** : A project is coming soon

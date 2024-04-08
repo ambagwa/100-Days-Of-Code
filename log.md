@@ -175,10 +175,18 @@
 **Link to work** : Coming soon
 
 
-## Day 22 : April 7, 2024
+## Day 22 : April 7A, 2024
 
 **Today's progress** : Wandered further in the object-oriented side of JS
 
 **Thoughts** : Easier to understand having doe its basics in java
 
 **Link to work** : A project is coming soon
+
+## Day 23 : April 8, 2024
+
+**Today's progress** : Started working out on a new project.
+
+**Thoughts** : Mini-projects boost confidence levels.
+
+**Link to work** : 

@@ -189,4 +189,4 @@
 
 **Thoughts** : Mini-projects boost confidence levels.
 
-**Link to work** : 
+**Link to work** : https://github.com/ambagwa/100-Days-Of-Code/tree/main/match-3_puzzle_game

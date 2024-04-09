@@ -1,0 +1,61 @@
+*,
+::before,
+::after{
+   padding: o;
+   margin: 0;
+   box-sizing: border-box;
+}
+:root{
+   --background-color-1: #a3b18a;
+   --background-color-2: #ffafaf;
+   --text-color: #023047;
+   --div-background-color: #8ecae6;
+   --button-background: #00ffff;
+   --button-hover: #80ed99;
+}
+.full-screen{
+   background-image: radial-gradient(circle at center, 
+   var(--background-color-1), var(--background-color-2));
+   background-position: center;
+   background-color: #8ecae6;
+   width: 100vw;
+   height: 100vh;
+}
+.landing-screen{
+   background-color: var(--div-background-color);
+   width: 60%;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   border-radius: 10px;
+   padding: 15px;
+   text-align: center;
+   box-shadow: 0 0 10px var(--text-color);
+}
+.instructions{
+   font-size: 1.5rem;
+   line-height: 1.5;
+}
+h1{
+   font-size: 3rem;
+   text-align: center;
+}
+.title-span{
+   padding: 5px;
+   border-radius: 5px;
+   background-image: linear-gradient(to right, 
+      var(--background-color-1), var(--background-color-2));
+   background-color: red;
+   color: var(--text-color);
+}
+#start-game{
+   padding: 5px;
+   font-weight: bold;
+   background-color: var(--button-background);
+   border: 1px solid var(--button-background);
+}
+#start-game:hover{
+   background-color: var(--button-hover);
+   color: var(--text-color);
+}

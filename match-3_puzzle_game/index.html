@@ -3,12 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Puzzle game</title>
 </head>
-<body>
-    <h1>Match-3 Puzzle</h1>
+<body> 
+    <div class="full-screen">
+        <div class="landing-screen">
+            <h1 class="title">Match-3 <span class="title-span">Puzzle</span></h1>
+            <p class="instructions">
+                Math the gems on the board to match a pattern of same colors
+                to earn points.
+            </p>
+            <p class="instructions">Enjoy the game :</p>
+            <button id="start-game">Start GAME</button>
+        </div>
+    </div>
 
-    <div id="game-container"></div>
-    <div id="score">Score: 0</div>
+    <script src="script.js"></script>
 </body>
 </html>

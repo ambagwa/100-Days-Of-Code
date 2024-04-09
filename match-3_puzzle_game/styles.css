@@ -13,7 +13,7 @@
    --button-background: #00ffff;
    --button-hover: #80ed99;
 }
-.full-screen{
+body{
    background-image: radial-gradient(circle at center, 
    var(--background-color-1), var(--background-color-2));
    background-position: center;
@@ -21,7 +21,7 @@
    width: 100vw;
    height: 100vh;
 }
-.landing-screen{
+#start-screen{
    background-color: var(--div-background-color);
    width: 60%;
    position: fixed;
@@ -45,7 +45,9 @@ h1{
    padding: 5px;
    border-radius: 5px;
    background-image: linear-gradient(to right, 
-      var(--background-color-1), var(--background-color-2));
+      var(--background-color-1), 
+      var(--background-color-2), 
+      var(--button-hover));
    background-color: red;
    color: var(--text-color);
 }
@@ -54,8 +56,12 @@ h1{
    font-weight: bold;
    background-color: var(--button-background);
    border: 1px solid var(--button-background);
+   cursor: pointer;
 }
 #start-game:hover{
    background-color: var(--button-hover);
    color: var(--text-color);
+}
+#canvas{
+   display: none;
 }

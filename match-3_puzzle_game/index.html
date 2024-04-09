@@ -7,8 +7,8 @@
     <title>Puzzle game</title>
 </head>
 <body> 
-    <div class="full-screen">
-        <div class="landing-screen">
+    
+        <div id="start-screen">
             <h1 class="title">Match-3 <span class="title-span">Puzzle</span></h1>
             <p class="instructions">
                 Math the gems on the board to match a pattern of same colors
@@ -17,7 +17,10 @@
             <p class="instructions">Enjoy the game :</p>
             <button id="start-game">Start GAME</button>
         </div>
-    </div>
+    
+    <canvas id="canvas"></canvas>
+
+    <div id="results"></div>
 
     <script src="script.js"></script>
 </body>

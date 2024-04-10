@@ -8,10 +8,11 @@ const ctx = canvas.getContext("2d");
 //size of the game board
 const numRows = 5;
 const numCols = 5;
-
-
-//set the size of the canvas and the size of each cell
+//the size of each cell
 const cellSize = 50;
+
+
+//set the size of the canvas
 canvas.width = numCols * cellSize;
 canvas.height = numRows * cellSize; 
 
@@ -50,6 +51,11 @@ for (let i = 0; i < numRows; i++){
 //Showcasing the game board on canvas means iterating over each cell in the 
 //grid and draw the corresponding gem on the canvas.
 const drawGameBoard = () => {
+    //clear the caanvas before drawing
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    
+
     for (let i = 0; i < numRows; i++){
         for (let j = 0; j < numCols; j++){
             //get the gem at the current cell
@@ -69,6 +75,29 @@ const drawGameBoard = () => {
             }
         }
     }
+
+    //draw grid lines
+    ctx.strokeStyle = "black";//color of the grid lines
+    ctx.lineWidth = 1;//width of the grid lines
+
+    //Draw horizontal grid lines
+    for (let j = 0; j < numRows; j++){
+        const y = j * cellSize;
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
+        ctx.stroke();
+    }
+
+    //Draw vertical grid lines
+    for (let i = 0; i < numCols; i++){
+        const x = i * cellSize;
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height);
+        ctx.stroke();
+    }
+    
 };
 
 const startGame = () => {

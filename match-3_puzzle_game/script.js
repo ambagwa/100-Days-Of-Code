@@ -9,7 +9,7 @@ const ctx = canvas.getContext("2d");
 const numRows = 5;
 const numCols = 5;
 //the size of each cell
-const cellSize = 50;
+const cellSize = 100;
 
 
 //set the size of the canvas
@@ -97,7 +97,7 @@ const drawGameBoard = () => {
         ctx.lineTo(x, canvas.height);
         ctx.stroke();
     }
-    
+
 };
 
 const startGame = () => {

@@ -65,9 +65,4 @@ h1{
 }
 #canvas{
    display: none;
-   position: absolute;
-   left: 50%;
-   top: 50%;
-   transform: translate(-50%, -50%);
-   background-color: var(--canvas-color);
 }

@@ -64,14 +64,18 @@ const drawGameBoard = () => {
     const gameBoardHeight = gameBoard.numCols * gameBoard.cellSize;
     const gameBoardWidth = gameBoard.numRows * gameBoard.cellSize;
 
+    //Calculate the offset needed to center the game board within the canvas
+    const offsetX = (canvas.width - gameBoardWidth) / 2;
+    const offsetY = (canvas.height - gameBoardHeight) / 2;
+
     for (let i = 0; i < gameBoard.numRows; i++){
         for (let j = 0; j < gameBoard.numCols; j++){
             //get the gem at the current cell
             const gem = gameBoard.gameBoardGrid[i][j];
             //calculate the x co-ordinates of the cell on the canvas
-            const x = j * gameBoard.cellSize;
+            const x = j * gameBoard.cellSize + offsetX;
             //calculate the y co-ordinates of the cell on the canvas
-            const y = i * gameBoard.cellSize;
+            const y = i * gameBoard.cellSize + offsetY;
             if (gem){
                 ctx.fillStyle = gem.color;
                 ctx.fillRect(x, y, gameBoard.cellSize, gameBoard.cellSize);
@@ -90,19 +94,19 @@ const drawGameBoard = () => {
 
     //Draw horizontal grid lines
     for (let j = 0; j < gameBoard.numRows; j++){
-        const y = j * gameBoard.cellSize;
+        const y = j * gameBoard.cellSize + offsetY;
         ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(gameBoardWidth, y);
+        ctx.moveTo(offsetX, y);
+        ctx.lineTo(offsetX + gameBoardWidth, y);
         ctx.stroke();
     }
 
     //Draw vertical grid lines
     for (let i = 0; i < gameBoard.numCols; i++){
-        const x = i * gameBoard.cellSize;
+        const x = i * gameBoard.cellSize + offsetX;
         ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, gameBoardHeight);
+        ctx.moveTo(x, offsetY);
+        ctx.lineTo(x, offsetY + gameBoardHeight);
         ctx.stroke();
     }
 

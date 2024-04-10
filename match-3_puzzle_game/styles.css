@@ -12,6 +12,7 @@
    --div-background-color: #8ecae6;
    --button-background: #00ffff;
    --button-hover: #80ed99;
+   --canvas-color: #f0f0f0;
 }
 body{
    background-image: radial-gradient(circle at center, 
@@ -64,4 +65,9 @@ h1{
 }
 #canvas{
    display: none;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   background-color: var(--canvas-color);
 }

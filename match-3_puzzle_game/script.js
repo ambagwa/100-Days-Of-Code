@@ -2,6 +2,7 @@
 const startBtn = document.getElementById("start-game");
 const canvas = document.getElementById("canvas");
 const startScreen = document.getElementById("start-screen");
+const results = document.getElementById("results");
 const ctx = canvas.getContext("2d");
 
 //set the size of the canvas
@@ -24,6 +25,7 @@ class Board {
         this.numCols = numCols;
         this.cellSize = cellSize;
         this.gameBoardGrid = this.createGrid();
+        this.score = 0;
     }
 
     //Create a method for creating the grid
@@ -101,6 +103,13 @@ class Board {
         //Increment the score based on the number of removed gems
         const pointsPerGem = 10;
         return pointsPerGem;
+    }
+
+    //Method for updating the score of the player
+    updateScore(points){
+        this.score += points;
+
+        results.textContent = `Your score: ${this.score}`;
     }
 
     //Method for checking if there' a match horizontally or vertically of 

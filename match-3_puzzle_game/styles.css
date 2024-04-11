@@ -13,6 +13,7 @@
    --button-background: #00ffff;
    --button-hover: #80ed99;
    --canvas-color: #f0f0f0;
+   --results-color: #80ed99;
 }
 body{
    background-image: radial-gradient(circle at center, 
@@ -65,4 +66,21 @@ h1{
 }
 #canvas{
    display: none;
+}
+#results{
+   display: none;
+   font-size: 2rem;
+   background-image: linear-gradient(
+      to right,
+      var(--background-color-1),
+      var(--background-color-2)
+   );
+   border: 1px solid var(--background-color-2);
+   width: 400px;
+   font-weight: bold;
+   text-align: center;
+   padding: 10px 0;
+}
+#results-span{
+   color: var(--results-color);
 }

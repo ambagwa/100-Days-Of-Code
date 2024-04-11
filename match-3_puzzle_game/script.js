@@ -91,6 +91,18 @@ class Board {
         this.updateScore(totalPoints);
     }
 
+    //Method to remove a matched gem
+    removeGem(row, col){
+        //get the color of the matched gem
+        const matchedColor = this.gameBoardGrid[row][col].color;
+        //Remove this gem from the gameboard
+        this.gameBoardGrid[row][col] = null;
+
+        //Increment the score based on the number of removed gems
+        const pointsPerGem = 10;
+        return pointsPerGem;
+    }
+
     //Method for checking if there' a match horizontally or vertically of 
     //three or more gems
     isMatch(row, col){

@@ -46,9 +46,48 @@ class Board {
 
     //method to generate a random color for the game
     generateRandomColor(){
-    const colors = ["red", "orange", "yellow", "green", "blue"];
-    return colors[Math.floor(Math.random() * colors.length)];
-};
+        const colors = ["red", "orange", "yellow", "green", "blue"];
+        return colors[Math.floor(Math.random() * colors.length)];
+    };
+
+    //Method for checking if there' a match horizontally or vertically of 
+    //three or more gems
+    IsMatch(row, col){
+        const gemColor = this.gameBoardGrid[row][col].color;
+
+        //check for horizontal match
+        let horizontalMatch = 1;
+        //Iterate to the left rows od the selected gem
+        let c = col - 1;
+        while (c >= 0, this.gameBoardGrid[row][c].color === gemColor){
+            horizontalMatch++;
+            c--;
+        }
+        //Iterate to the right rows od the selected gem
+        c = col + 1;
+        while (c < this.numCols && this.gameBoardGrid[row][c].color === gemColor){
+            horizontalMatch++;
+            c++;
+        }
+
+        //check for vertical match
+        let verticalMatch = 1;
+        //Iterate to the gems above the selected one
+        let r = row - 1;
+        while (row > 0 && this.gameBoardGrid[r][col].color === gemColor){
+            verticalMatch++;
+            r--;
+        }
+        //Iterate to the gems bottom of the selected one
+        r = row + 1;
+        while (r < this.numRows && this.gameBoardGrid[r][col].color === gemColor){
+            verticalMatch++;
+            r++;
+        }
+
+        //return true if a match is found
+        return horizontalMatch >= 3 || verticalMatch >= 3;
+    }
 }
 
 const gameBoard = new Board(5, 5, 100);

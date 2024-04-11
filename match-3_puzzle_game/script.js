@@ -80,9 +80,15 @@ class Board {
         //iterate over the gameBoardGrid
         for(let i = 0; i < this.numRows; i++){
             for (let j = 0; j < this.numRows; j++){
-                
+                //check if there is a match at the current position
+                if (this.isMatch(i, j)){
+                    //increment the total points earned
+                    totalPoints += this.removeGem(i, j);
+                }
             }
         }
+
+        this.updateScore(totalPoints);
     }
 
     //Method for checking if there' a match horizontally or vertically of 

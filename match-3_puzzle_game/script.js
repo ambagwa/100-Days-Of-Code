@@ -50,9 +50,44 @@ class Board {
         return colors[Math.floor(Math.random() * colors.length)];
     };
 
+    //Method to swap two gems on the board
+    swapGems(row1, col1, row2, col2){
+        //row and column indices of the two rows to be swapped
+        if(
+            row1 < 0 || row1 >= this.numRows || col1 < 0 || col1 >= this.numCols ||
+            row2 < 0 || row2 >= this.numRows || col2 < 0 || col2 >= this.numCols
+        ){
+            console.error("Invalid game positions");
+            return;
+        }
+
+        //swap the gems at the specified positions using a temporary variable
+        const temporaryGem = this.gameBoardGrid[row1][col1];
+        this.gameBoardGrid[row1][col1] = this.gameBoardGrid[row2][col2];
+        this.gameBoardGrid[row2][col2] = temporaryGem;
+
+        //check for potential matches for the swapped gems
+        if (this.isMatch(row1, col1) || this.isMatch(row2, col2)){
+            this.handleMatches();
+        }
+    }
+
+    //Method  to handle matches of the swapGems method
+    handleMatches(){
+        //Store the total number of points earned
+        let totalPoints = 0;
+
+        //iterate over the gameBoardGrid
+        for(let i = 0; i < this.numRows; i++){
+            for (let j = 0; j < this.numRows; j++){
+                
+            }
+        }
+    }
+
     //Method for checking if there' a match horizontally or vertically of 
     //three or more gems
-    IsMatch(row, col){
+    isMatch(row, col){
         const gemColor = this.gameBoardGrid[row][col].color;
 
         //check for horizontal match

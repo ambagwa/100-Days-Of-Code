@@ -217,6 +217,7 @@ const startGame = () => {
     canvas.style.display = "block";
     startScreen.style.display = "none";
     drawGameBoard();
+    results.style.display = "block";
 };
 
 startBtn.addEventListener("click", startGame);

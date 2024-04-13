@@ -255,11 +255,19 @@ const drawGameBoard = () => {
                     if((rowDiff === 1 && colDiff === 0) || (rowDiff === 0 &&
                         colDiff === 1)){
                             //call swapGems method on this gem
-                            gameBoard.swapGems(lastClickedGem.row, 
-                                lastClickedGem.col, gemRow, gemCol);
+                            const matchOccurred = 
+                                gameBoard.swapGems(lastClickedGem.row, 
+                                    lastClickedGem.col, gemRow, gemCol);
                             //redraw the gameBoard after swapping
                             drawGameBoard();
                         }
+
+                        //check if a match occurred after swapping
+                        if (matchOccurred){
+                            gameBoard.handleMatches();
+                            drawGameBoard();
+                        }
+
                         //reset lastClickedGem for the next click
                         lastClickedGem = null;
                 }

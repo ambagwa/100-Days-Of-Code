@@ -60,7 +60,7 @@ class Board {
             row2 < 0 || row2 >= this.numRows || col2 < 0 || col2 >= this.numCols
         ){
             console.error("Invalid game positions");
-            return;
+            return false;//if swapping is unsuccessful
         }
 
         //swap the gems at the specified positions using a temporary variable
@@ -68,10 +68,12 @@ class Board {
         this.gameBoardGrid[row1][col1] = this.gameBoardGrid[row2][col2];
         this.gameBoardGrid[row2][col2] = temporaryGem;
 
-        //check for potential matches for the swapped gems
-        if (this.isMatch(row1, col1) || this.isMatch(row2, col2)){
-            this.handleMatches();
-        }
+        //check for potential matches for the swappe gems
+        const match1 = this.isMatch(row1, row2);
+        const match2 = this.isMatch(row2, col2);
+        //return true if a match has occured after swapping
+        return match1 || match2;
+    
     }
 
     //Method  to handle matches of the swapGems method
@@ -197,41 +199,6 @@ const drawGameBoard = () => {
             if (gem){
                 ctx.fillStyle = gem.color;
                 ctx.fillRect(x, y, gameBoard.cellSize, gameBoard.cellSize);
-
-                //Attach an event listener to each gem
-                canvas.addEventListener("click", event => {
-                    //Find the co-ordiates of the click relative to the canvas element
-                    const clickX = event.clientX - canvas.getBoundingClientRect().left;
-                    const clickY = event.clientY - canvas.getBoundingClientRect().top;
-
-                    //calculate the row and the column of the clicked gem based on the
-                    //click position
-                    const gemCol = Math.floor((clickX - offsetX) / gameBoard.cellSize);
-                    const gemRow = Math.floor((clickY - offsetY) - gameBoard.cellSize);
-
-                    //Check if the clicked position is within the gameBoard boundaries
-                    if (gemRow >= 0 && gemRow < gameBoard.numRows 
-                        && gemCol >= 0 && gemCol < gemCol < gameBoard.numCols){
-                            if (lastClickedGem === null){
-                                //if no gem has been clicked before, store the position of this gem
-                                lastClickedGem = { row: gemRow, col: gemCol};
-                            }else {
-                                //check for validity of the swap
-                                const rowDiff = Math.abs(gemRow - lastClickedGem.row);
-                                const colDiff = Math.abs(gemCol - lastClickedGem.col);
-                                if((rowDiff === 1 && colDiff === 0) || (rowDiff === 0 &&
-                                    colDiff === 1)){
-                                        //call swapGems method on this gem
-                                        gameBoard.swapGems(lastClickedGem.row, 
-                                            lastClickedGem.col, gemRow, gemCol);
-                                        //redraw the gameBoard after swapping
-                                        drawGameBoard();
-                                    }
-                                    //reset lastClickedGem for the next click
-                                    lastClickedGem = null;
-                            }
-                        }
-                });
             }
             else{
                 //draw an empty cell if there's no gem
@@ -262,6 +229,42 @@ const drawGameBoard = () => {
         ctx.lineTo(x, offsetY + gameBoardHeight);
         ctx.stroke();
     }
+
+    //Attach an event listener to each gem
+    canvas.addEventListener("click", event => {
+        //Find the co-ordiates of the click relative to the canvas element
+        const clickX = event.clientX - canvas.getBoundingClientRect().left;
+        const clickY = event.clientY - canvas.getBoundingClientRect().top;
+
+        //calculate the row and the column of the clicked gem based on the
+        //click position
+        const gemCol = Math.floor((clickX - offsetX) / gameBoard.cellSize);
+        const gemRow = Math.floor((clickY - offsetY) - gameBoard.cellSize);
+
+        //Check if the clicked position is within the gameBoard boundaries
+        if (gemRow >= 0 && gemRow < gameBoard.numRows 
+            && gemCol >= 0 && gemCol < gemCol < gameBoard.numCols){
+                if (lastClickedGem === null){
+                    //if no gem has been clicked before, store the position 
+                    //of this gem
+                    lastClickedGem = { row: gemRow, col: gemCol};
+                }else {
+                    //check for validity of the swap
+                    const rowDiff = Math.abs(gemRow - lastClickedGem.row);
+                    const colDiff = Math.abs(gemCol - lastClickedGem.col);
+                    if((rowDiff === 1 && colDiff === 0) || (rowDiff === 0 &&
+                        colDiff === 1)){
+                            //call swapGems method on this gem
+                            gameBoard.swapGems(lastClickedGem.row, 
+                                lastClickedGem.col, gemRow, gemCol);
+                            //redraw the gameBoard after swapping
+                            drawGameBoard();
+                        }
+                        //reset lastClickedGem for the next click
+                        lastClickedGem = null;
+                }
+            }
+    });
 
 };
 

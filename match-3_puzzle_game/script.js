@@ -216,10 +216,11 @@ const drawGameBoard = () => {
                                 //if no gem has been clicked before, store the position of this gem
                                 lastClickedGem = { row: gemRow, col: gemCol};
                             }else {
-                                //Check if the clicked gem is adjacent to the 
-                                //previously clicked gem
-                                if (Math.abs(gemRow - lastClickedGem.row) + 
-                                    Math.abs(gemCol - lastClickedGem.col) === 1){
+                                //check for validity of the swap
+                                const rowDiff = Math.abs(gemRow - lastClickedGem.row);
+                                const colDiff = Math.abs(gemCol - lastClickedGem.col);
+                                if((rowDiff === 1 && colDiff === 0) || (rowDiff === 0 &&
+                                    colDiff === 1)){
                                         //call swapGems method on this gem
                                         gameBoard.swapGems(lastClickedGem.row, 
                                             lastClickedGem.col, gemRow, gemCol);

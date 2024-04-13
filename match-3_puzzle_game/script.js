@@ -154,6 +154,18 @@ class Board {
 
 const gameBoard = new Board(5, 5, 100);
 
+//Create a class that will handle the input from the player, process matched
+//gems and manage the game loop as well
+class GameManager {
+    constructor(){
+        this.score = score;
+    }
+
+    handlePlayerInput(x1, x2, x3, x4){
+        
+    }
+}
+
 
 //Showcasing the game board on canvas means iterating over each cell in the 
 //grid and draw the corresponding gem on the canvas.

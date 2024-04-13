@@ -162,7 +162,7 @@ class GameManager {
     }
 
     handlePlayerInput(x1, x2, x3, x4){
-        
+
     }
 }
 
@@ -189,9 +189,48 @@ const drawGameBoard = () => {
             const x = j * gameBoard.cellSize + offsetX;
             //calculate the y co-ordinates of the cell on the canvas
             const y = i * gameBoard.cellSize + offsetY;
+
+            //variable to store the position of the last clicked gem
+            let lastClickedGem = null;
+
+            //If the gem is inside the board
             if (gem){
                 ctx.fillStyle = gem.color;
                 ctx.fillRect(x, y, gameBoard.cellSize, gameBoard.cellSize);
+
+                //Attach an event listener to each gem
+                canvas.addEventListener("click", event => {
+                    //Find the co-ordiates of the click relative to the canvas element
+                    const clickX = event.clickX - canvas.getBoundingClientRect().left;
+                    const clickY = event.clientY - canvas.getBoundingClientRect().top;
+
+                    //calculate the row and the column of the clicked gem based on the
+                    //click position
+                    const gemCol = Math.floor((clickX - offsetX) / gameBoard.cellSize);
+                    const gemRow = Math.floor((clickY - offsetY) - gameBoard.cellSize);
+
+                    //Check if the clicked position is within the gameBoard boundaries
+                    if (gemRow >= 0 && gemRow < gameBoard.numRows 
+                        && gemCol >= 0 && gemCol < gemCol < gameBoard.numCols){
+                            if (lastClickedGem === null){
+                                //if no gem has been clicked before, store the position of this gem
+                                lastClickedGem = { row: gemRow, col: gemCol};
+                            }else {
+                                //Check if the clicked gem is adjacent to the 
+                                //previously clicked gem
+                                if (Math.abs(gemRow - lastClickedGem.row) + 
+                                    Math.col(gemCol - laastClickedGem.col) === 1){
+                                        //call swapGems method on this gem
+                                        gameBoard.swapGems(lastClickedGem.row, 
+                                            lastClickedGem.col, gemRow, gemCol);
+                                        //redraw the gameBoard after swapping
+                                        drawGameBoard();
+                                    }
+                                    //reset lastClickedGem for the next click
+                                    lastClickedGem = null;
+                            }
+                        }
+                });
             }
             else{
                 //draw an empty cell if there's no gem

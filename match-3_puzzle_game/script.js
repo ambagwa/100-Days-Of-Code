@@ -166,6 +166,9 @@ class GameManager {
     }
 }
 
+//variable to store the position of the last clicked gem
+let lastClickedGem = null;
+
 
 //Showcasing the game board on canvas means iterating over each cell in the 
 //grid and draw the corresponding gem on the canvas.
@@ -190,9 +193,6 @@ const drawGameBoard = () => {
             //calculate the y co-ordinates of the cell on the canvas
             const y = i * gameBoard.cellSize + offsetY;
 
-            //variable to store the position of the last clicked gem
-            let lastClickedGem = null;
-
             //If the gem is inside the board
             if (gem){
                 ctx.fillStyle = gem.color;
@@ -201,7 +201,7 @@ const drawGameBoard = () => {
                 //Attach an event listener to each gem
                 canvas.addEventListener("click", event => {
                     //Find the co-ordiates of the click relative to the canvas element
-                    const clickX = event.clickX - canvas.getBoundingClientRect().left;
+                    const clickX = event.clientX - canvas.getBoundingClientRect().left;
                     const clickY = event.clientY - canvas.getBoundingClientRect().top;
 
                     //calculate the row and the column of the clicked gem based on the
@@ -219,7 +219,7 @@ const drawGameBoard = () => {
                                 //Check if the clicked gem is adjacent to the 
                                 //previously clicked gem
                                 if (Math.abs(gemRow - lastClickedGem.row) + 
-                                    Math.col(gemCol - laastClickedGem.col) === 1){
+                                    Math.abs(gemCol - lastClickedGem.col) === 1){
                                         //call swapGems method on this gem
                                         gameBoard.swapGems(lastClickedGem.row, 
                                             lastClickedGem.col, gemRow, gemCol);
@@ -257,7 +257,7 @@ const drawGameBoard = () => {
     for (let i = 0; i < gameBoard.numCols; i++){
         const x = i * gameBoard.cellSize + offsetX;
         ctx.beginPath();
-        ctx.moveTo(x, offsetY);
+        ctx.moveTo(x, offsetY); 
         ctx.lineTo(x, offsetY + gameBoardHeight);
         ctx.stroke();
     }

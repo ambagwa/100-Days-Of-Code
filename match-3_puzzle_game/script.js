@@ -297,20 +297,31 @@ const drawGameBoard = () => {
         for (let j = 0; j < gameBoard.numCols; j++){
             //get the gem at the current cell
             const gem = gameBoard.gameBoardGrid[i][j];
-            //calculate the x co-ordinates of the cell on the canvas
+            //calculate the x and y co-ordinates of the cell on the canvas
             const x = j * gameBoard.cellSize + offsetX;
-            //calculate the y co-ordinates of the cell on the canvas
             const y = i * gameBoard.cellSize + offsetY;
 
             //If the gem is inside the board
             if (gem){
+                //check if this gem is the last clicked gem
+                const isSelectedGem = lastClickedGem && 
+                    lastClickedGem.row === i && lastClickedGem.col === j;
+
+                //Draw a white border around the selected gem
+                if (isSelectedGem){
+                    ctx.strokeStyle = "white";
+                    ctx.lineWidth = 2;
+                    ctx.strokeRect(x, y, gameBoard.cellSize, gameBoard.cellSize);
+                }
+
+                //fill the gem with its color
                 ctx.fillStyle = gem.color;
                 ctx.fillRect(x, y, gameBoard.cellSize, gameBoard.cellSize);
             }
             else{
                 //draw an empty cell if there's no gem
                 ctx.fillStyle = 'white';
-                ctx.fillRect(x, y, gameBoard.cellSize, gameBoard.cellSize);
+                ctx.fillRect(x, y, gameBoard.cellSize, gameBoard.cellSize); 
             }
         }
     }
@@ -349,8 +360,8 @@ const drawGameBoard = () => {
         const gemRow = Math.floor((clickY - offsetY) - gameBoard.cellSize);
 
         //Check if the clicked position is within the gameBoard boundaries
-        if (gemRow >= 0 && gemRow < gameBoard.numRows 
-            && gemCol >= 0 && gemCol < gemCol < gameBoard.numCols){
+        if (gemRow >= 0 && gemRow < gameBoard.numRows && 
+            gemCol >= 0 && gemCol < gameBoard.numCols){
                 if (lastClickedGem === null){
                     //if no gem has been clicked before, store the position 
                     //of this gem

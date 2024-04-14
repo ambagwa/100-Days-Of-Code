@@ -144,19 +144,34 @@ class Board {
     //Method for checking if there' a match horizontally or vertically of 
     //three or more gems
     isMatch(row, col){
+        //check if the row and column indices are within the bounds of grid
+        if
+            (row < 0 || row >= this.numRows || col < 0 || col >= this.numCols){
+                //if the indices are out of bounds, return false as no 
+                //match is possible
+                return false;
+            }
+        
+        //check if the cell is empty
+        if(!this.gameBoardGrid[row][col]){
+            //return false as no match is possible
+            return false;
+        }
+
         const gemColor = this.gameBoardGrid[row][col].color;
 
         //check for horizontal match
         let horizontalMatch = 1;
         //Iterate to the left rows od the selected gem
         let c = col - 1;
-        while (c >= 0, this.gameBoardGrid[row][c].color === gemColor){
+        while (c >= 0 && this.gameBoardGrid[row][c].color === gemColor){
             horizontalMatch++;
             c--;
         }
         //Iterate to the right rows od the selected gem
         c = col + 1;
-        while (c < this.numCols && this.gameBoardGrid[row][c].color === gemColor){
+        while (c < this.numCols && this.gameBoardGrid[row][c]
+             && this.gameBoardGrid[row][c].color === gemColor){
             horizontalMatch++;
             c++;
         }
@@ -165,13 +180,14 @@ class Board {
         let verticalMatch = 1;
         //Iterate to the gems above the selected one
         let r = row - 1;
-        while (row > 0 && this.gameBoardGrid[r][col].color === gemColor){
+        while (r > 0 && this.gameBoardGrid[r][col].color === gemColor){
             verticalMatch++;
             r--;
         }
         //Iterate to the gems bottom of the selected one
         r = row + 1;
-        while (r < this.numRows && this.gameBoardGrid[r][col].color === gemColor){
+        while (r < this.numRows && this.gameBoardGrid[r][col] 
+            && this.gameBoardGrid[r][col].color === gemColor){
             verticalMatch++;
             r++;
         }

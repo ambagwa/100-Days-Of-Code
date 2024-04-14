@@ -78,21 +78,20 @@ class Board {
 
     //Method  to handle matches of the swapGems method
     handleMatches(){
-        //Store the total number of points earned
-        let totalPoints = 0;
-
-        //iterate over the gameBoardGrid
-        for(let i = 0; i < this.numRows; i++){
-            for (let j = 0; j < this.numRows; j++){
-                //check if there is a match at the current position
+        let matchedGems = [];
+        for (let i = 0; i < this.numRows; i++){
+            for (let j = 0; j < this.numCols; j++){
                 if (this.isMatch(i, j)){
-                    //increment the total points earned
-                    totalPoints += this.removeGem(i, j);
+                    //add matched gems to the array
+                    matchedGems.push({ row: i, col: j });
                 }
             }
         }
 
-        this.updateScore(totalPoints);
+        //call processMatch() of the GameManager
+        if(matchedGems.length > 0){
+            GameManager.processMatch(matchedGems);
+        }
     }
 
     //Method to remove a matched gem

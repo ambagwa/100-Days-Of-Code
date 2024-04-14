@@ -88,7 +88,13 @@ class Board {
             }
         }
 
-        //call processMatch() of the GameManager
+        //remove matched gems and make other gems fal
+        for (const gem of matchedGems){
+            this.removeGem(gem.row, gem.col);
+            this.makeGemsFall(gem.row, gem.col);
+        }
+
+        //call processMatch() of the GameManager if matches are found
         if(matchedGems.length > 0){
             GameManager.processMatch(matchedGems);
         }

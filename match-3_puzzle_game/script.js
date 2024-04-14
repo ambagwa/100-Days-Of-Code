@@ -160,11 +160,29 @@ const gameBoard = new Board(5, 5, 100);
 //gems and manage the game loop as well
 class GameManager {
     constructor(){
-        this.score = score;
+        this.score = 0;
     }
 
-    handlePlayerInput(x1, x2, x3, x4){
+    processMatch(matchedGems){
+        let totalPoints = 0;
+        const pointsPerGem = 10;
+        const comboMultiplier = 1.5;
 
+        //iterate through matched gems
+        for (const gem of matchedGems){
+            //remove gem from the gameBoard
+            gameBoard.gameBoardGrid[gem.row][gem.col] = null;
+            //increment points
+            totalPoints += pointsPerGem;
+        }
+
+        //Apply combo multiplier if there are multiple matches in a sequence
+        const combos = Math.floor(matchedGems.length / 3);//3 gems = 1 combo
+        totalPoints *= Math.pow(comboMultiplier, combos);
+
+        //update the score
+        this.score += totalPoints;
+        results.textContent = `Your score: ${this.score}`;
     }
 }
 

@@ -100,6 +100,18 @@ class Board {
         }
     }
 
+    //Method to make the gem above the removed one  to fall into its place
+    makeGemsFall(startRow, col){
+        for (let i = startRow - 1; i >= 0; i--){
+            //If there's a gem above move it down
+            if (this.gameBoardGrid[i][col]){
+                const gem = this.gameBoardGrid[i][col];
+                this.gameBoardGrid[i][col] = null;
+                this.gameBoardGrid[i + 1][col] = gem;
+            }
+        }
+    }
+
     //Method to remove a matched gem
     removeGem(row, col){
         //get the color of the matched gem

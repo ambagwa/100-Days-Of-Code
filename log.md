@@ -190,3 +190,11 @@
 **Thoughts** : Mini-projects boost confidence levels.
 
 **Link to work** : https://github.com/ambagwa/100-Days-Of-Code/tree/main/match-3_puzzle_game
+
+## Day 24 : April 14, 2024
+
+**Today's progress** : Continued working on my game
+
+**Thoughts**: Code tracking is tricky
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/match-3_puzzle_game

@@ -169,6 +169,26 @@ class Board {
         //return true if a match is found
         return horizontalMatch >= 3 || verticalMatch >= 3;
     }
+
+    //Method for checking if game is over
+    checkGameOver(){
+        for (let i = 0; i < this.numRows; i++){
+            for (let j = 0; j < this.numCols; j++){
+                //check if swapping with adjacent gem creates a match
+                if((i > 0 && this.swapGems(i, j, i - 1, j)) ||
+                    (i < this.numRows - 1 && this.swapGems(i, j, i + 1, j)) ||
+                    (j > 0 && this.swapGems(i, j, i, j - 1)) ||
+                    (j < this.numCols -1 && this.swapGems(i, j, i, j + 1))
+                ) {
+                    //If a valid swap is found, game is not over
+                    return false;
+                }
+            }
+        }
+
+        //if there are no valid swaps, return true to indicate game is over
+        return true;
+    }
 }
 
 const gameBoard = new Board(5, 5, 100);

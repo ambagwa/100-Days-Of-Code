@@ -98,6 +98,16 @@ class Board {
         if(matchedGems.length > 0){
             GameManager.processMatch(matchedGems);
         }
+
+        //check for game over after handling matches
+        if(this.checkGameOver()){
+            results.textContent = `Your score: ${this.score}`;
+            const gameOverMsg = document.createElement("p");
+            gameOverMsg.textContent = "Game Over!";
+            gameOverMsg.style.fontSize = "24px";
+            gameOverMsg.style.fontWeight = "bold";
+            results.appendChild(gameOverMsg);
+        }
     }
 
     //Method to make the gem above the removed one  to fall into its place

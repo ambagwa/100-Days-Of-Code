@@ -206,6 +206,8 @@ class GameManager {
 //variable to store the position of the last clicked gem
 let lastClickedGem = null;
 
+const gameManager = new GameManager();
+
 
 //Showcasing the game board on canvas means iterating over each cell in the 
 //grid and draw the corresponding gem on the canvas.

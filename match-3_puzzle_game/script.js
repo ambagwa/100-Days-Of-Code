@@ -208,6 +208,7 @@ const gameBoard = new Board(5, 5, 100);
 class GameManager {
     constructor(){
         this.score = 0;
+        this.isGameOver  = false;
     }
 
     processMatch(matchedGems){
@@ -230,6 +231,45 @@ class GameManager {
         //update the score
         this.score += totalPoints;
         results.textContent = `Your score: ${this.score}`;
+    }
+
+    updateGameLoop(){
+        const self = this;
+
+        //define a recursive function to handle the game loop
+        const gameLoop = () => {
+            //check if game is over
+            if(!self.isGameOver){
+
+                //process matches
+                gameBoard.handleMatches();
+
+                //update game board
+                drawGameBoard();
+
+                //check for game over conditions
+                if (self.checkGameOver()){
+                    self.isGameOver = true;
+                }
+
+                //if game is not over, request the next frame
+                if(!self.isGameOver){
+                    requestAnimationFrame(gameLoop);
+                }
+                else{
+                    //if game is over
+                    results.textContent = `Your score: ${self.score}`;
+                    const gameOverMsg = document.createElement("p");
+                    gameOverMsg.textContent = "Game Over!";
+                    gameOverMsg.style.fontSize = "24px";
+                    gameOverMsg.style.fontWeight = "bold";
+                    results.appendChild(gameOverMsg);
+                }
+            }
+        };
+
+        //start game loop
+        gameLoop();
     }
 }
 
@@ -348,6 +388,8 @@ const startGame = () => {
     startScreen.style.display = "none";
     drawGameBoard();
     results.style.display = "block";
+
+    gameManager.updateGameLoop();
 };
 
 startBtn.addEventListener("click", startGame);

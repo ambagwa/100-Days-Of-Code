@@ -65,9 +65,15 @@ class Board {
         }
 
         //swap the gems at the specified positions using a temporary variable
-        const temporaryGem = this.gameBoardGrid[row1][col1];
-        this.gameBoardGrid[row1][col1] = this.gameBoardGrid[row2][col2];
-        this.gameBoardGrid[row2][col2] = temporaryGem;
+        const gem1 = this.gameBoardGrid[row1][col1];
+        const gem2 = this.gameBoardGrid[row2][col2];
+        if(!gem1 || !gem2){
+            console.error("Invalid game positions");
+            return false;//If swapping is unsuccessful
+        }
+        //if it is, swap them
+        this.gameBoardGrid[row1][col1] = gem2;
+        this.gameBoardGrid[row2][col2] = gem1;
 
         //check for potential matches for the swappe gems
         const match1 = this.isMatch(row1, row2);

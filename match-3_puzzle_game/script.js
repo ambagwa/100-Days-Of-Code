@@ -395,18 +395,20 @@ const drawGameBoard = () => {
         //Check if the clicked position is within the gameBoard boundaries
         if (gemRow >= 0 && gemRow < gameBoard.numRows && 
             gemCol >= 0 && gemCol < gameBoard.numCols){
+                console.log("Valid click detected");
                 if (lastClickedGem === null){
                     //if no gem has been clicked before, store the position 
                     //of this gem
                     lastClickedGem = { row: gemRow, col: gemCol };
                 }else {
+                    let matchOccurred = false;
                     //check for validity of the swap
                     const rowDiff = Math.abs(gemRow - lastClickedGem.row);
                     const colDiff = Math.abs(gemCol - lastClickedGem.col);
                     if((rowDiff === 1 && colDiff === 0) || (rowDiff === 0 &&
                         colDiff === 1)){
                             //call swapGems method on this gem
-                            const matchOccurred = 
+                            matchOccurred = 
                                 gameBoard.swapGems(lastClickedGem.row, 
                                     lastClickedGem.col, gemRow, gemCol);
                             //redraw the gameBoard after swapping
@@ -417,6 +419,9 @@ const drawGameBoard = () => {
                             ctx.lineWidth = 2;
                             const x = gemCol * gameBoard.cellSize + offsetX;
                             const y = gemRow * gameBoard.cellSize + offsetY;
+                            //debug
+                            console.log("Stroke Style:", ctx.strokeStyle);
+                            console.log("Line Width:", ctx.lineWidth);
                             ctx.strokeRect(x, y, gameBoard.cellSize, 
                                 gameBoard.cellSize);
                         }

@@ -26,7 +26,7 @@ class Board {
         this.cellSize = cellSize;
         this.gameBoardGrid = this.createGrid();
         this.score = 0;
-        this.gameManager = gameManager;
+        this.gameManager = gameManager; 
     }
 
     //Create a method for creating the grid
@@ -390,7 +390,7 @@ const drawGameBoard = () => {
         //calculate the row and the column of the clicked gem based on the
         //click position
         const gemCol = Math.floor((clickX - offsetX) / gameBoard.cellSize);
-        const gemRow = Math.floor((clickY - offsetY) - gameBoard.cellSize);
+        const gemRow = Math.floor((clickY - offsetY) / gameBoard.cellSize);
 
         //Check if the clicked position is within the gameBoard boundaries
         if (gemRow >= 0 && gemRow < gameBoard.numRows && 
@@ -398,7 +398,7 @@ const drawGameBoard = () => {
                 if (lastClickedGem === null){
                     //if no gem has been clicked before, store the position 
                     //of this gem
-                    lastClickedGem = { row: gemRow, col: gemCol};
+                    lastClickedGem = { row: gemRow, col: gemCol };
                 }else {
                     //check for validity of the swap
                     const rowDiff = Math.abs(gemRow - lastClickedGem.row);
@@ -411,6 +411,14 @@ const drawGameBoard = () => {
                                     lastClickedGem.col, gemRow, gemCol);
                             //redraw the gameBoard after swapping
                             drawGameBoard();
+
+                            //draw a white border around the clicked gem
+                            ctx.strokeStyle = "white";
+                            ctx.lineWidth = 2;
+                            const x = gemCol * gameBoard.cellSize + offsetX;
+                            const y = gemRow * gameBoard.cellSize + offsetY;
+                            ctx.strokeRect(x, y, gameBoard.cellSize, 
+                                gameBoard.cellSize);
                         }
 
                         //check if a match occurred after swapping

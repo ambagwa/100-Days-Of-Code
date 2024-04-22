@@ -131,12 +131,17 @@ class Board {
 
     //Method to remove a matched gem
     removeGem(row, col){
-        //get the color of the matched gem
-        const matchedColor = this.gameBoardGrid[row][col].color;
-        //Remove this gem from the gameboard
+        //Get the gem object at the specified position
+        const gem = this.gameBoardGrid[row][col];
+        if(!gem){
+            console.error("No gem found at specified position");
+            return 0;//Return 0 if no gem is found
+        }
+
+        //Remove this gem from the gem board
         this.gameBoardGrid[row][col] = null;
 
-        //Increment the score based on the number of removed gems
+        //Increment the score based on the numbe of removed gems
         const pointsPerGem = 10;
         return pointsPerGem;
     }

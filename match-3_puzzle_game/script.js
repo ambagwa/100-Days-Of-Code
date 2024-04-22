@@ -165,13 +165,13 @@ class Board {
             }
         
         //check if the cell is empty or if there's no gem
-        if(!this.gameBoardGrid[row][col] || 
-            !this.gameBoardGrid[row][col].color){
+        const gem = this.gameBoardGrid[row][col];
+        if(gem || !gem.color){
             //return false as no match is possible
             return false;
         }
 
-        const gemColor = this.gameBoardGrid[row][col].color;
+        const gemColor = gem.color;
 
         //check for horizontal match
         let horizontalMatch = 1;

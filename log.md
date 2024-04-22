@@ -198,3 +198,11 @@
 **Thoughts**: Code tracking is tricky
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/match-3_puzzle_game
+
+## Day 25 : April 22, 2024
+
+**Today's progress**: Polished my game
+
+**Thoughts**: Debugging, heeeh
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/match-3_puzzle_game

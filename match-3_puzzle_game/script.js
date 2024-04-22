@@ -121,10 +121,10 @@ class Board {
     makeGemsFall(startRow, col){
         for (let i = startRow - 1; i >= 0; i--){
             //If there's a gem above move it down
-            if (this.gameBoardGrid[i][col]){
-                const gem = this.gameBoardGrid[i][col];
+            const gemAbove = this.gameBoardGrid[i][col];
+            if (gemAbove){
                 this.gameBoardGrid[i][col] = null;
-                this.gameBoardGrid[i + 1][col] = gem;
+                this.gameBoardGrid[i + 1][col] = gemAbove;
             }
         }
     }

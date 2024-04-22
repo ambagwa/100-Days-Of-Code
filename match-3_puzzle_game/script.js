@@ -279,7 +279,7 @@ class GameManager {
                 drawGameBoard();
 
                 //check for game over conditions
-                if (self.checkGameOver()){
+                if (gameBoard.checkGameOver()){
                     self.isGameOver = true;
                 }
 

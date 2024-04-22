@@ -20,19 +20,20 @@ class Gem {
 
 
 class Board {
-    constructor (numRows, numCols, cellSize){
+    constructor (numRows, numCols, cellSize, gameManager){
         this.numRows = numRows;
         this.numCols = numCols;
         this.cellSize = cellSize;
         this.gameBoardGrid = this.createGrid();
         this.score = 0;
+        this.gameManager = gameManager;
     }
 
     //Create a method for creating the grid
     createGrid(){
         //Represent the gameboard in a 2D array. Each element in the array 
         //represents a row and each nested array represents the cells in 
-        //that row. Each cell contains info aabout a gem, ie color & pstn
+        //that row. Each cell contains a gem's color & pstn
         const gameBoardGrid = [];
         //initialize the grid that will be used as the game board
         for (let i = 0; i < this.numRows; i++){
@@ -96,7 +97,7 @@ class Board {
 
         //call processMatch() of the GameManager if matches are found
         if(matchedGems.length > 0){
-            GameManager.processMatch(matchedGems);
+            gameManager.processMatch(matchedGems);
         }
 
         //check for game over after handling matches
@@ -152,8 +153,9 @@ class Board {
                 return false;
             }
         
-        //check if the cell is empty
-        if(!this.gameBoardGrid[row][col]){
+        //check if the cell is empty or if there's no gem
+        if(!this.gameBoardGrid[row][col] || 
+            !this.gameBoardGrid[row][col].color){
             //return false as no match is possible
             return false;
         }
@@ -164,13 +166,15 @@ class Board {
         let horizontalMatch = 1;
         //Iterate to the left rows od the selected gem
         let c = col - 1;
-        while (c >= 0 && this.gameBoardGrid[row][c].color === gemColor){
+        while (c >= 0 && this.gameBoardGrid[row][c] &&
+             this.gameBoardGrid[row][c].color === gemColor){
             horizontalMatch++;
             c--;
         }
         //Iterate to the right rows od the selected gem
         c = col + 1;
-        while (c < this.numCols && this.gameBoardGrid[row][c]
+        while (c < this.numCols && this.gameBoardGrid[row][c] &&
+             this.gameBoardGrid[row][c]
              && this.gameBoardGrid[row][c].color === gemColor){
             horizontalMatch++;
             c++;
@@ -180,13 +184,15 @@ class Board {
         let verticalMatch = 1;
         //Iterate to the gems above the selected one
         let r = row - 1;
-        while (r > 0 && this.gameBoardGrid[r][col].color === gemColor){
+        while (r > 0 && this.gameBoardGrid[r][col] && 
+                this.gameBoardGrid[r][col].color === gemColor){
             verticalMatch++;
             r--;
         }
         //Iterate to the gems bottom of the selected one
         r = row + 1;
-        while (r < this.numRows && this.gameBoardGrid[r][col] 
+        while (r < this.numRows && this.gameBoardGrid[r][col] &&
+             this.gameBoardGrid[r][col] 
             && this.gameBoardGrid[r][col].color === gemColor){
             verticalMatch++;
             r++;
@@ -216,8 +222,6 @@ class Board {
         return true;
     }
 }
-
-const gameBoard = new Board(5, 5, 100);
 
 //Create a class that will handle the input from the player, process matched
 //gems and manage the game loop as well
@@ -293,6 +297,8 @@ class GameManager {
 let lastClickedGem = null;
 
 const gameManager = new GameManager();
+
+const gameBoard = new Board(5, 5, 100, gameManager);
 
 
 //Showcasing the game board on canvas means iterating over each cell in the 

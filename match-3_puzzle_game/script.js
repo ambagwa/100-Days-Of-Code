@@ -208,12 +208,14 @@ class Board {
         for (let i = 0; i < this.numRows; i++){
             for (let j = 0; j < this.numCols; j++){
                 //check if swapping with adjacent gem creates a match
-                if((i > 0 && this.swapGems(i, j, i - 1, j)) ||
+                if( 
+                    (i > 0 && this.swapGems(i, j, i - 1, j)) ||
                     (i < this.numRows - 1 && this.swapGems(i, j, i + 1, j)) ||
                     (j > 0 && this.swapGems(i, j, i, j - 1)) ||
                     (j < this.numCols -1 && this.swapGems(i, j, i, j + 1))
                 ) {
-                    //If a valid swap is found, game is not over
+                    //If a valid swap is found, game is not over by returning
+                    //false
                     return false;
                 }
             }
@@ -300,6 +302,18 @@ let lastClickedGem = null;
 const gameManager = new GameManager();
 
 const gameBoard = new Board(5, 5, 100, gameManager);
+
+//function for checking and displaying game over conditions
+const checkAndDisplayGameOver = () => {
+    if(gameBoard.checkGameOver()){
+        results.textContent = `Your score: ${gameBoard.score}`;
+        const gameOverMsg = document.createElement("p");
+        gameOverMsg.textContent = "Game Over!";
+        gameOverMsg.style.fontSize = "24px";
+        gameOverMsg.style.fontWeight = "bold";
+        results.appendChild(gameOverMsg); 
+    }
+};
 
 
 //Showcasing the game board on canvas means iterating over each cell in the 
@@ -440,17 +454,6 @@ const startGame = () => {
 
     drawGameBoard();
     gameManager.updateGameLoop();
-};
-
-const checkAndDisplayGameOver = () => {
-    if(gameBoard.checkGameOver()){
-        results.textContent = `Your score: ${gameBoard.score}`;
-        const gameOverMsg = document.createElement("p");
-        gameOverMsg.textContent = "Game Over!";
-        gameOverMsg.style.fontSize = "24px";
-        gameOverMsg.style.fontWeight = "bold";
-        results.appendChild(gameOverMsg);
-    }
 };
 
 startBtn.addEventListener("click", startGame);

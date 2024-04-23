@@ -443,9 +443,9 @@ const drawGameBoard = () => {
 const startGame = () => {
     canvas.style.display = "block";
     startScreen.style.display = "none";
-    drawGameBoard();
     results.style.display = "block";
 
+    drawGameBoard();
     gameManager.updateGameLoop();
 };
 

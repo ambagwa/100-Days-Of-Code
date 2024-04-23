@@ -236,3 +236,12 @@
 **Thoughts**: Debugging, heeeh
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/match-3_puzzle_game
+
+## Day 26 : April 23, 2024
+
+**Today's progress**: Made a few changes to the code
+
+**Thoughts**: Minor changes to your code are not usually minor
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/match-3_puzzle_game
+

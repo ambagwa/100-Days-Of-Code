@@ -424,6 +424,9 @@ const drawGameBoard = () => {
 
                         //reset lastClickedGem for the next click
                         lastClickedGem = null;
+
+                        //check for game over conditions after each move
+                        checkAndDisplayGameOver();
                 }
             }
     });

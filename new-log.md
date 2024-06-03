@@ -8,7 +8,7 @@
 
 **Link to work**: ___
 
-##Day 1: June 4, 2024
+## Day 1: June 4, 2024
 
 **Today's progress**: Learnt the difference between function calls and function references. I also  got to learn about the Fetch API which is used to make network requests to a server. I discovered how requests are handled, whether successful or unsuccessful.
 

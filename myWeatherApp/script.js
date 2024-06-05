@@ -1,58 +1,53 @@
 const cityContainer = document.getElementById("city-container");
-const loadBtn = document.getElementById("load-btn");
-const searchInput = document.getElementById("search");
-
-searchInput.addEventListener("focus", () => {
-    searchInput.parentNode.classList.add("input-focus");
-});
-
-searchInput.addEventListener("blur", () => {
-    searchInput.parentNode.classList.remove("input-focus");
-});
 
 let cityWeatherArr = [];
 
 const apiKey = "351caa0c31bafe7d4bed244640457528";
-const lat = -1.2867282548085324;
-const lon = 36.82059963452154;
-//const part = "current,minutely,hourly";
 
+const searchBtn = document.getElementById("search-btn");
 
-const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
+searchBtn.addEventListener("click", () => {
+  const lat = document.getElementById("latitude").value;
+  const lon = document.getElementById("longitude").value;
 
-fetch(apiUrl)
-    .then(res => {
-        if (!res.ok) {
-            throw new Error(res.statusText);
-        }
-        return res.json();//converts the response to workable data
+  const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
+
+  fetch(apiUrl)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(res.statusText);
+      }
+      return res.json(); //converts the response to workable data
     })
-    .then(data => {
-        //Extract the city name from the json
-        const cityName = data.city.name;
-        //Extract country code
-        const countryCode = data.city.country;
-        //Set the cityWeatherArr to the list of weather data
-        cityWeatherArr = data.list;
-        //populate the page with data
-        displayWeatherDetails(cityWeatherArr, cityName, countryCode);
+    .then((data) => {
+      //Extract the city name from the json
+      const cityName = data.city.name;
+      //Extract country code
+      const countryCode = data.city.country;
+      //Set the cityWeatherArr to the list of weather data
+      cityWeatherArr = data.list;
+      //populate the page with data
+      displayWeatherDetails(cityWeatherArr, cityName, countryCode);
     })
-    .catch(err => console.error(`There was an error: ${err}`));
-
-
+    .catch((err) => console.error(`There was an error: ${err}`));
+});
 
 //Populate the UI with weather data
 const displayWeatherDetails = (citiesWeatherList, cityName, countryCode) => {
-    if (citiesWeatherList && citiesWeatherList.length > 0) {
-        //Extract weather details
-        const { dt_txt, main: { temp }, weather: [{ description, icon }],
-            wind: { speed }} = citiesWeatherList[0];
-        
-        //Variable for holding both cityName and countryCode
-        const cityInfo = `${cityName}, ${countryCode}`;
+  if (citiesWeatherList && citiesWeatherList.length > 0) {
+    //Extract weather details
+    const {
+      dt_txt,
+      main: { temp },
+      weather: [{ description, icon }],
+      wind: { speed },
+    } = citiesWeatherList[0];
 
-        //Display the extracted weather data onto html
-        cityContainer.innerHTML += `
+    //Variable for holding both cityName and countryCode
+    const cityInfo = `${cityName}, ${countryCode}`;
+
+    //Display the extracted weather data onto html
+    cityContainer.innerHTML += `
             <div class="weather-card">
                 <h2 class="city-name"><strong>${cityInfo}</strong></h2>
                 <img class="weather-icon" 
@@ -66,5 +61,5 @@ const displayWeatherDetails = (citiesWeatherList, cityName, countryCode) => {
                 <p class="wind-speed"><strong>Wind speed:</strong> ${speed} m/s</p>
             </div>
         `;
-    };
+  }
 };

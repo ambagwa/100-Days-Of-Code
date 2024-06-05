@@ -21,21 +21,36 @@
 
 		<main>
 			<div class="search-container">
+				<label for="latitude">Latitude:</label>
 				<input 
-					type="search" 
-					id="search" 
-					placeholder="Search for a location..."
+					type="number" 
+					id="latitude" 
+					placeholder="-1.2867282548085324"
 				/>
-				<i class="fa-brands fa-searchengin search-icon"></i>
 			</div>
 
-			<div id="city-container"></div>
+			<div class="search-container">
+				<label for="longitude">Longitude:</label>
+				<input 
+					type="number" 
+					id="longitude" 
+					placeholder="36.82059963452154"
+				/>
+			</div>
 
-			<button class="btn" ud="load-btn">
-				Load More Cities
+			<button class="btn" id="search-btn">
+				Search
 			</button>
+
+			<div id="city-container"></div>
 		</main>
 
 		<script src="./script.js"></script>
 	</body>
 <html>
+
+<!--
+	-1.2867282548085324
+	36.82059963452154
+	-4.043083040482754, 39.6697568716941
+-->

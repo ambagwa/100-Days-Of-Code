@@ -18,35 +18,39 @@ const lon = 36.82059963452154;
 //const part = "current,minutely,hourly";
 
 
-const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
 
 fetch(apiUrl)
     .then(res => {
         if (!res.ok) {
             throw new Error(res.statusText);
         }
-        return res.json();
+        return res.json();//converts the response to workable data
     })
     .then(data => {
-        cityWeatherArr = [data];
+        //Extract the city name from the json
+        const cityName = data.city.name;
+        //Set the cityWeatherArr to the list of weather data
+        cityWeatherArr = data.list;
         //populate the page with data
-        displayWeatherDetails(cityWeatherArr);
+        displayWeatherDetails(cityWeatherArr, cityName);
     })
     .catch(err => console.error(`There was an error: ${err}`));
 
 
 
 //Populate the UI with weather data
-const displayWeatherDetails = cities => {
-    cities.forEach(({
-        weather: [{ description, icon}],
-        main: { temp },
-        wind: { speed },
-        name
-    }, index) => {//index shows the position of each weather card
+const displayWeatherDetails = (citiesWeatherList, cityName) => {
+    if (citiesWeatherList && citiesWeatherList.length > 0) {
+        //Extract weather details
+        const { dt_txt, main: { temp }, weather: [{ description, icon }],
+            wind: { speed }} = citiesWeatherList[0];
+
+        //Display the extracted weather data onto html
         cityContainer.innerHTML += `
-            <div id="${index}" class="weather-card">
-                <h2 class="city-name">${name}</h2>
+            <div class="weather-card">
+                <h2 class="city-name"><strong>${cityName}</strong></h2>
+                <p class="dt-txt description">${dt_txt}</p>
                 <img class="weather-icon" 
                     src="http://openweathermap.org/img/wn/${icon}.png" 
                     alt="${description}"
@@ -56,5 +60,5 @@ const displayWeatherDetails = cities => {
                 <p class="wind-speed">Wind speed: ${speed} m/s</p>
             </div>
         `;
-    });
+    };
 };

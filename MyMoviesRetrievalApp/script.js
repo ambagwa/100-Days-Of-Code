@@ -1,6 +1,7 @@
 const apiKey = "1c5a17c1";
-const title = "Antman";
+const title = "Prison+break";
 const apiUrl = `http://www.omdbapi.com/?s=${title}&apikey=${apiKey}`;
+//const apiUrlPoster = `http://img.omdbapi.com/?s=${title}&apikey=${apiKey}`;
 
 fetch(apiUrl)
   .then(resolve => {
@@ -18,4 +19,4 @@ fetch(apiUrl)
 
   //https://www.omdbapi.com/?s=batman&apikey=1c5a17c1
 
-  //const apiUrlPoster = ;
+  //http://img.omdbapi.com/?s=batman&apikey=$1c5a17c1

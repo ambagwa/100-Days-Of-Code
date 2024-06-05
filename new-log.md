@@ -22,4 +22,12 @@
 
 **Thoughts**: The way in which fetch works mahes it easy to detect any errors. It provides specific details about the errors making it easier to solve them.
 
-**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/myWeatherApp
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/myWeatherApi
+
+## Day 3 : June 6, 2024
+
+**Today's progress**: I finished working on my mini project, MyWeatherApp. Started working on another mini project for retrieving information about a movie based on the title of the movie. I am using the OMDb API.
+
+**Thoughts**: From the two APIs I have worked with, the api_key need to come as the last parameter of the api_url. If it is placed before other parameters, an error 401 is returned.
+
+**Link to work**:  https://github.com/ambagwa/100-Days-Of-Code/tree/main/myWeatherApi

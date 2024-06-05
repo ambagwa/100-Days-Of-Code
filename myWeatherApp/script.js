@@ -29,7 +29,13 @@ searchBtn.addEventListener("click", () => {
       //populate the page with data
       displayWeatherDetails(cityWeatherArr, cityName, countryCode);
     })
-    .catch((err) => console.error(`There was an error: ${err}`));
+    .catch((error) => {
+      cityContainer.innerHTML = `
+        <p style="font-weight: bold; color: red; font-size: 20px; margin-top: 10px">
+          There was an error: ${error.message}
+        </p>
+      `;
+    });
 });
 
 //Populate the UI with weather data

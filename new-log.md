@@ -30,4 +30,4 @@
 
 **Thoughts**: From the two APIs I have worked with, the api_key need to come as the last parameter of the api_url. If it is placed before other parameters, an error 401 is returned.
 
-**Link to work**:  https://github.com/ambagwa/100-Days-Of-Code/tree/main/myWeatherApi
+**Link to work**:  https://github.com/ambagwa/100-Days-Of-Code/tree/main/myWeatherApi && https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyMoviesRetrievalApp

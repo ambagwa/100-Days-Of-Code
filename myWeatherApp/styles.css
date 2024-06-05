@@ -71,7 +71,25 @@ input:focus {
 	color: #ffffff;
 	background-image: linear-gradient(var(--button-color-2), var(--button-color-1));
 	border: none;
+	margin-top: 20px;
 }
 .btn:active {
 	background-image: linear-gradient(var(--button-color-1), var(--button-color-2));
+}
+.weather-card {
+	border: 2px solid var(--weather-icons);
+	width: 300px;
+	border-radius: 10px;
+	box-shadow: inset 10px 10px 20px var(--button-color-2);
+	padding: 20px;
+	margin-top: 20px;
+}
+.city-name, .date-text, .dt_txt, .description, .temperature, .wind-speed {
+	margin: 2.5px;
+}
+.city-name {
+	font-size: 30px;
+}
+.date-text {
+	font-weight: bold;
 }

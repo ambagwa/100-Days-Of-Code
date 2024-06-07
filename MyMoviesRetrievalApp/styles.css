@@ -172,6 +172,9 @@ h3 span {
     align-items: center;
     justify-content: center;
   }
+  .movie-element {
+    width: 70%;
+  }
 }
 @media only screen and (max-width: 924px) {
   .title-section {
@@ -222,5 +225,8 @@ h3 span {
   .search-btn:active,
   .search-btn:focus {
     background-color: #ff7d00;
+  }
+  .movie-element {
+    width: 70%;
   }
 }

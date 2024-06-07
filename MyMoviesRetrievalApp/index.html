@@ -14,23 +14,41 @@
     />
   </head>
   <body>
+    <header>
+      <i class="fa-solid fa-film"></i>
+      <div class="top-bar">
+        <button class="toggle-button" onclick="toggleNav()">☰</button>
+      </div>
+      <div class="sidenav" id="nav">
+        <a href="#home" class="active">Home</a>
+        <a href="#services">Services</a>
+        <a href="#faq">FAQs</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </header>
 
-	<header>
-		<i class="fa-solid fa-film"></i>
-		<div class="top-bar">
-			<button class="toggle-button" onclick="toggleNav()">☰</button>
-		</div>
-		<div class="sidenav" id="nav">
-			<a href="#home" class="active">Home</a>
-			<a href="#services">Services</a>
-			<a href="#faq">FAQs</a>
-			<a href="#contact">Contact</a>
-		</div>
-	</header>
+    <section class="title-section">
+      <h1><span>Enga</span> Movies App</h1>
+      <h2>
+        Unlimited movies, series,<br />
+        and more <span>...</span>
+      </h2>
+      <h3>
+        Ready to explore?<br />
+        <span>Search here</span>
+      </h3>
+    </section>
 
-	<section class="title-section">
-		<h1><span>Enga</span> Movies App</h1>
-	</section>
+    <div class="search-input">
+      <label for="input" class="text">Input title:</label>
+      <input
+        type="text"
+        class="input"
+        name="input"
+        placeholder="Prison Break"
+      />
+	  <button id="search-btn" class="search-btn">Search</button>
+    </div>
 
     <script src="./script.js"></script>
   </body>

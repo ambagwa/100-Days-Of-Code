@@ -5,9 +5,6 @@
 }
 :root {
   --background-color-1: #e5e5e5;
-  --icon-color: #283618;
-}
-body {
 }
 header {
   background-image: url("https://images.pexels.com/photos/9807283/pexels-photo-9807283.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
@@ -45,6 +42,7 @@ i {
   cursor: pointer;
 }
 .sidenav {
+width: 0;
   border-radius: 10px 0 10px 10px;
   position: fixed;
   z-index: 1;
@@ -70,15 +68,67 @@ i {
   background-color: #575757;
 }
 .title-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+  padding: 25px;
+
 }
 h1 {
   font-size: 40px;
 }
 h1 span {
 	color: #22577a;
-	text-transform: capitalize;
+	text-transform: uppercase;
+}
+h2 {
+	font-size: 30px;
+	margin: 10px 0;
+}
+h2 span {
+	color: #ff7d00;
+}
+h3 {
+	font-size: 22px;
+	margin: 10px 0;
+}
+h3 span{
+	color: #ff7d00;
+}
+.search-input {
+	display: flex;
+	flex-direction: column;
+	width: fit-content;
+	position: static;
+	max-width: 240px;
+	margin-left: 25px;
+}
+.search-input label.text {
+	font-size: 1rem;
+	font-weight: 700;
+	position: relative;
+	top: 0.5rem;
+	margin: 0 0 0 7px;
+	padding: 0 5px;
+	background: #e8e8e8;
+	width: fit-content;
+}
+.search-input input[type=text].input {
+	padding: 11px;
+	font-size: 1rem;
+	border: 2px solid #ff7d00;
+	border-radius: 5px;
+	background: var(--background-color-1);
+}
+.search-input input[type=text].input:focus {
+	outline: none;
+}
+.search-btn{
+	margin: 5px 0;
+	padding: 5px;
+	background-color: #ffecd1;
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+}
+.search-btn:active,
+.search-btn:focus {
+	background-color: #ff7d00;
 }

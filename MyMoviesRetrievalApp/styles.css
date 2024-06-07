@@ -143,7 +143,24 @@ h3 span {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  border: 1px solid red;
+  gap: 20px;
+}
+.movie-element {
+  border-radius: 20px;
+  box-shadow: 0 0 10px #bb3e03;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  height: auto;
+}
+.poster {
+  max-width: 100%;
+  border-radius: 20px 20px 0 0;
+}
+.detail {
+  margin: 5px 0;
+  font-size: 20px;
 }
 
 @media only screen and (max-width: 652px) {

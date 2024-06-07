@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         //loop through each movie and display its iformation
         moviesArr.forEach((movie) => {
           const movieElement = document.createElement("div");
+          movieElement.classList.add("movie-element");
           movieElement.innerHTML = `
             <img class="poster" src="${movie.Poster}" alt="${movie.Title} Poster">
             <h2 class="title">${movie.Title}</h2>

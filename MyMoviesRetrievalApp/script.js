@@ -1,24 +1,46 @@
-const movieContainer = document.getElementById("movie-container");
+const moviesContainer = document.getElementById("movies-container");
+const searchBtn = document.getElementById("search-btn");
 
-const apiKey = "1c5a17c1";
-const titleQuery = "Prison+break";
-const titleSpecific = "Antman";
-const apiUrl = `http://www.omdbapi.com/?s=${titleQuery}&apikey=${apiKey}`;
-//const apiUrlPoster = `http://img.omdbapi.com/?s=${title}&apikey=${apiKey}`;
+searchBtn.addEventListener("click", () => {
+  const apiKey = "1c5a17c1";
+  //Get the value of the title and remove any whitespace
+  let titleQuery = document.getElementById("input").ariaValueMax.trim();
+  const titleSpecific = "Antman";
+  //const apiUrlPoster = `http://img.omdbapi.com/?s=${title}&apikey=${apiKey}`;
 
-fetch(apiUrl)
-  .then((resolve) => {
-    if (!resolve.ok) throw new Error("Poor network response");
+  if (titleQuery === "") {
+    alert("Please enter a movie/series title!");
+    return;
+  }
 
-    return resolve.json();
-  })
-  .then((data) => {
-    //check if the returned data is false, indicating an error from api
-    if (data.Response === "False") throw new Error(data.Error);
+  //Replace all whitespaces with a + sign
+  titleQuery = titleQuery.replace(/\s+/g, "+");
 
-    console.log(data);
-  })
-  .catch("There has been a problem with your fetch operation");
+  const apiUrl = `http://www.omdbapi.com/?s=${titleQuery}&apikey=${apiKey}`;
+  let moviesArr = [];
+
+  fetch(apiUrl)
+    .then((resolve) => {
+      if (!resolve.ok) throw new Error("Poor network response");
+
+      return resolve.json();
+    })
+    .then((data) => {
+      //check if the returned data is false, indicating an error from api
+      if (data.Response === "False") throw new Error(data.Error);
+
+      //populate the array with data from the json
+      moviesArr = [data];
+
+      //Clear the page
+      moviesContainer.innerHTML = "";
+
+      console.log(moviesArr);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
 
 //https://www.omdbapi.com/?s=batman&apikey=1c5a17c1
 

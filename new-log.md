@@ -31,3 +31,11 @@
 **Thoughts**: From the two APIs I have worked with, the api_key need to come as the last parameter of the api_url. If it is placed before other parameters, an error 401 is returned.
 
 **Link to work**:  https://github.com/ambagwa/100-Days-Of-Code/tree/main/myWeatherApi && https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyMoviesRetrievalApp
+
+## Day 4 : June 7, 2024
+
+**Today's progress**: Continued working on my project.
+
+**Thoughts**: HTML and CSS might look simple but needs practice and attention just like any other language while learning them.
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyMoviesRetrievalApp

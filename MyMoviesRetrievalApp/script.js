@@ -7,28 +7,29 @@ const apiUrl = `http://www.omdbapi.com/?s=${titleQuery}&apikey=${apiKey}`;
 //const apiUrlPoster = `http://img.omdbapi.com/?s=${title}&apikey=${apiKey}`;
 
 fetch(apiUrl)
-  .then(resolve => {
+  .then((resolve) => {
     if (!resolve.ok) throw new Error("Poor network response");
 
     return resolve.json();
   })
-  .then(data => {
+  .then((data) => {
     //check if the returned data is false, indicating an error from api
-    if ( data.Response === "False") throw new Error(data.Error);
+    if (data.Response === "False") throw new Error(data.Error);
 
     console.log(data);
   })
   .catch("There has been a problem with your fetch operation");
 
-  //https://www.omdbapi.com/?s=batman&apikey=1c5a17c1
+//https://www.omdbapi.com/?s=batman&apikey=1c5a17c1
 
-  //http://img.omdbapi.com/?s=batman&apikey=$1c5a17c1
+//http://img.omdbapi.com/?s=batman&apikey=$1c5a17c1
 
-  const toggleNav = () => {
-    const nav = document.getElementById("nav");
-    if (nav.style.width === "250px"){
-        nav.style.width = "0";
-    } else {
-        nav.style.width = "250px";
-    }
-  };
+//Function to toggle the side navigation bar at the top right of the page
+const toggleNav = () => {
+  const nav = document.getElementById("nav");
+  if (nav.style.width === "250px") {
+    nav.style.width = "0";
+  } else {
+    nav.style.width = "250px";
+  }
+};

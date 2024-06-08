@@ -47,3 +47,11 @@
 **Thoughts**: Working on mini projects enhances learning.
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyMoviesRetrievalApp
+
+## Day 6 : June 9, 2024
+
+**Today's progress**: Implemented localStorage where any fetched data is stored in localStorage. Even after reloading, the stored data is retrieved and displayed on the page before a user fetches another set of data
+
+**Thoughts**: localStorage improves user interaction. 
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyMoviesRetrievalApp

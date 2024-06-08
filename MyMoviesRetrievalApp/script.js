@@ -52,37 +52,39 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(moviesArr);
       })
       .catch((error) => {
-        console.log(error);
+        moviesContainer.innerHTML = `
+          <p style="font-size: 20px; font-weight: 700; color: red;">${error}</p>
+        `;
       });
 
-      const displayMovies = (movies) => {
-        movies.forEach(movie => {
-          const movieElement = document.createElement("div");
-          movieElement.classList.add("movie-element");
-          movieElement.innerHTML = `
+    const displayMovies = (movies) => {
+      movies.forEach((movie) => {
+        const movieElement = document.createElement("div");
+        movieElement.classList.add("movie-element");
+        movieElement.innerHTML = `
             <img class="poster" src="${movie.Poster}" alt="${movie.Title} Poster">
             <h2 class="title">${movie.Title}</h2>
             <p class="detail">Movie type: ${movie.Type}</p>
             <p class="detail">Year: ${movie.Year}</p>
             <p class="detail">movie ID: ${movie.imdbID}</p>
           `;
-          moviesContainer.appendChild(movieElement);
-        });
-      };
-
-      //functionality fo rthe more button
-      moreBtn.addEventListener("click", () => {
-        startingIndex += 6;
-        endingIndex += 6;
-    
-        //display the next results
-        displayMovies(moviesArr.slice(startingIndex, endingIndex));
-    
-        //hide the button if there are no more results
-        if (moviesArr.length <= endingIndex) {
-          moreBtn.style.display = "none";
-        }
+        moviesContainer.appendChild(movieElement);
       });
+    };
+
+    //functionality fo rthe more button
+    moreBtn.addEventListener("click", () => {
+      startingIndex += 6;
+      endingIndex += 6;
+
+      //display the next results
+      displayMovies(moviesArr.slice(startingIndex, endingIndex));
+
+      //hide the button if there are no more results
+      if (moviesArr.length <= endingIndex) {
+        moreBtn.style.display = "none";
+      }
+    });
   });
 
   //https://www.omdbapi.com/?s=batman&apikey=1c5a17c1

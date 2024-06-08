@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const moviesContainer = document.getElementById("movies-container");
   const searchBtn = document.getElementById("search-btn");
   const moreBtn = document.getElementById("next-button");
+  const loadingDiv = document.getElementById("newtons-cradle");
   let startingIndex = 0;
   let endingIndex = 6;
 
@@ -22,6 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const apiUrl = `http://www.omdbapi.com/?s=${titleQuery}&apikey=${apiKey}`;
     let moviesArr = [];
+
+    loadingDiv.style.display = "block";
 
     fetch(apiUrl)
       .then((resolve) => {
@@ -55,6 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
         moviesContainer.innerHTML = `
           <p style="font-size: 20px; font-weight: 700; color: red;">${error}</p>
         `;
+      })
+      .finally(() => {
+        loadingDiv.style.display = "none";
       });
 
     const displayMovies = (movies) => {

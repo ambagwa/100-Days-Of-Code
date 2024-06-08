@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const moviesContainer = document.getElementById("movies-container");
   const searchBtn = document.getElementById("search-btn");
+  const moreBtn = document.getElementById("next-button");
+  let startingIndex = 0;
+  let endingIndex = 6;
 
   searchBtn.addEventListener("click", () => {
     const apiKey = "1c5a17c1";
@@ -36,8 +39,24 @@ document.addEventListener("DOMContentLoaded", () => {
         //Clear the page
         moviesContainer.innerHTML = "";
 
-        //loop through each movie and display its iformation
-        moviesArr.forEach((movie) => {
+        //display the first six elements
+        displayMovies(moviesArr.slice(startingIndex, endingIndex));
+
+        //Show next button if there are more than 6 results
+        if (moviesArr.length > 6) {
+          moreBtn.style.display = "block";
+        } else {
+          moreBtn.style.display = "none";
+        }
+
+        console.log(moviesArr);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+      const displayMovies = (movies) => {
+        movies.forEach(movie => {
           const movieElement = document.createElement("div");
           movieElement.classList.add("movie-element");
           movieElement.innerHTML = `
@@ -49,11 +68,20 @@ document.addEventListener("DOMContentLoaded", () => {
           `;
           moviesContainer.appendChild(movieElement);
         });
+      };
 
-        console.log(moviesArr);
-      })
-      .catch((error) => {
-        console.log(error);
+      //functionality fo rthe more button
+      moreBtn.addEventListener("click", () => {
+        startingIndex += 6;
+        endingIndex += 6;
+    
+        //display the next results
+        displayMovies(moviesArr.slice(startingIndex, endingIndex));
+    
+        //hide the button if there are no more results
+        if (moviesArr.length <= endingIndex) {
+          moreBtn.style.display = "none";
+        }
       });
   });
 

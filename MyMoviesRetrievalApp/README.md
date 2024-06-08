@@ -10,7 +10,7 @@
 
 ### - Loading indicator. Shown when a user wants to search for a movie and gets hidden after results have been brought back
 
-### - Loading indicator. Shown when a user wants to search for a movie and gets hidden after results have been brought back
+### - localStorage. When the page loads, the script retrieves any stored movie data from localStorage and if any data is found, it is displayed. After fetching some data, the data is also stored on localStorage.
 
 ## Some tips:
 

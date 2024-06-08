@@ -4,7 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const moreBtn = document.getElementById("next-button");
   const loadingDiv = document.getElementById("newtons-cradle");
   let startingIndex = 0;
-  let endingIndex = 6;
+  let endingIndex = 6
+  let moviesArr = [];
+
+  loadingDiv.style.display = "none";
 
   searchBtn.addEventListener("click", () => {
     const apiKey = "1c5a17c1";
@@ -22,9 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
     titleQuery = titleQuery.replace(/\s+/g, "+");
 
     const apiUrl = `http://www.omdbapi.com/?s=${titleQuery}&apikey=${apiKey}`;
-    let moviesArr = [];
-
-    loadingDiv.style.display = "block";
+    
+    loadingDiv.style.display = "flex";
 
     fetch(apiUrl)
       .then((resolve) => {

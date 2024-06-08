@@ -82,7 +82,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       //hide the button if there are no more results
       if (moviesArr.length <= endingIndex) {
-        moreBtn.style.display = "none";
+        moreBtn.textContent = "Clear results";
+        moreBtn.addEventListener("click", () => {
+          moviesContainer.innerHTML = "";
+          document.getElementById("input").value = "";
+          moreBtn.style.display = "none";
+        });
       }
     });
   });

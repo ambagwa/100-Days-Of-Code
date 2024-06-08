@@ -39,3 +39,11 @@
 **Thoughts**: HTML and CSS might look simple but needs practice and attention just like any other language while learning them.
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyMoviesRetrievalApp
+
+## Day 5 : June 8, 2024
+
+**Today's progress**: Added more functionalities to my project, including, loading content onto html, pagination, and loading indicator.
+
+**Thoughts**: Working on mini projects enhances learning.
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyMoviesRetrievalApp

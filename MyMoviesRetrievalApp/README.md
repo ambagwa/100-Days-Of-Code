@@ -6,7 +6,11 @@
 
 ### - Pagination. If the returned movies are less than 6, the "More results" button is hidden. If the results are more than six, the button pops up and once clicked, the next six batch of results are shown. If there are no more results, the button gets hidden again
 
-### - Button functionality. When a user clicks on the search button, results are displayed on the page. If there are more than six results returned, another button pops up. This button is used to display more results. If the results are exhausted, the text of  the button changes to "Clear results". And when it is clicked, the results and the title will be cleared.
+### - Button functionality. When a user clicks on the search button, results are displayed on the page. If there are more than six results returned, another button pops up. This button is used to display more results. If the results are exhausted, the text of  the button changes to "Clear results". And when it is clicked, the results and the title will be cleared
+
+### - Loading indicator. Shown when a user wants to search for a movie and gets hidden after results have been brought back
+
+### - Loading indicator. Shown when a user wants to search for a movie and gets hidden after results have been brought back
 
 ## Some tips:
 

@@ -63,3 +63,11 @@
 **Thoughts**: Asynchronous programming improves efficiency and responsiveness.
 
 **Link to work**: Still learning
+
+## Day 8 : June 11, 2024
+
+**Today's progress**: Learnt about git rebasing to solve an issue I experienced while pushing my code to github.
+
+**Thoughts**: Rebasing makes it easier to resolve conflicts.
+
+**Link to work**: 

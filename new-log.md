@@ -55,3 +55,11 @@
 **Thoughts**: localStorage improves user interaction. 
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyMoviesRetrievalApp
+
+## Day 7 : June 10, 2024
+
+*Today's progress**: Learnt about a diferent way of implementing asynchronous programming. Continued to explore fetch API, Promises, Async/await, and try...catch statement.
+
+**Thoughts**: Asynchronous programming improves efficiency and responsiveness.
+
+**Link to work**: Still learning

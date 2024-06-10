@@ -58,7 +58,7 @@
 
 ## Day 7 : June 10, 2024
 
-*Today's progress**: Learnt about a diferent way of implementing asynchronous programming. Continued to explore fetch API, Promises, Async/await, and try...catch statement.
+**Today's progress**: Learnt about a different way of implementing asynchronous programming. Continued to explore fetch API, Promises, Async/await, and try...catch statement.
 
 **Thoughts**: Asynchronous programming improves efficiency and responsiveness.
 

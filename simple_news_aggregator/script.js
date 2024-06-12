@@ -12,6 +12,8 @@ searchButton.addEventListener("click", () => {
   let endingIndex = 6;
   const apiUrl = `https://newsapi.org/v2/everything?q=${searchInput}&apiKey=${apiKey}`;
 
+  newsContainer.innerHTML = "";
+  
   if (!searchInput) {
     alert("Please enter a search term.");
     return;

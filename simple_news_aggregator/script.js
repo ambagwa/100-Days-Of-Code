@@ -33,7 +33,7 @@ searchButton.addEventListener("click", () => {
 
       //Contents of articles: author, content, description, publishedat
       //source(name0), title, urltoImage, url
-      newsContainer.innerHTML += articles.map(item => {
+      newsContainer.innerHTML = articles.map(item => {
         const {
           author, 
           content, 
@@ -50,9 +50,10 @@ searchButton.addEventListener("click", () => {
             <h1 class="news-title">${title}</h1>
             <img src="${urlToImage}" alt="news=image" class="news-image">
             <p class="content">${content}</p>
-            <a target="_blank" href="${url}">Click here to see full news >>></a>
+            <a target="_blank" href="${url}" class="more-url">Click here to see full news ></a>
             <p class="author">${author}</p>
             <p class="date">${publishedAt}</p>
+            <div class="bottom-div"></div>
           </div>
         `;
       });

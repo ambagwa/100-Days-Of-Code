@@ -1,5 +1,6 @@
 const searchButton = document.getElementById("searchButton");
 const moreBtn = document.getElementById("more-btn");
+const loadingIndicator = document.getElementById("loading");
 
 moreBtn.style.display = "none";
 
@@ -13,7 +14,7 @@ searchButton.addEventListener("click", () => {
   const apiUrl = `https://newsapi.org/v2/everything?q=${searchInput}&apiKey=${apiKey}`;
 
   newsContainer.innerHTML = "";
-  
+
   if (!searchInput) {
     alert("Please enter a search term.");
     return;
@@ -21,8 +22,12 @@ searchButton.addEventListener("click", () => {
 
   const fetchData = async () => {
     try {
+      //Show loading indicator
+      loadingIndicator.style.display = "block";
       const resolve = await fetch(apiUrl);
       const data = await resolve.json();
+      //hide loading indicator
+      loadingIndicator.style.display = "none";
 
       dataArr = data.articles;
       //Display the data

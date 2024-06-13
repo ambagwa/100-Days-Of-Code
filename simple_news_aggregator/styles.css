@@ -93,7 +93,7 @@ span {
   background-color: #283618;
   margin-bottom: 10px;
 }
-.more-btn {
+.more-btn, .clear-btn {
   width: 200px;
   padding: 5px;
   border-radius: 10px 0 10px 0;
@@ -106,7 +106,10 @@ span {
 }
 .more-btn:focus,
 .more-btn:active,
-.more-btn:hover {
+.more-btn:hover,
+.clear-btn:focus,
+.clear-btn:active,
+.clear-btn:focus {
   background-image: linear-gradient(#606c38, #283618);
 }
 

@@ -77,8 +77,22 @@ searchButton.addEventListener("click", () => {
     }).join("");
     startingIndex += endingIndex;
 
-    if (startingIndex >= endingIndex) {
+    if (startingIndex > endingIndex) {
       moreBtn.style.display = "none";
+      let newButton = document.createElement("button");
+      newButton.className = "clear-btn";
+      newButton.id = "clear-btn";
+      newButton.textContent = "Clear Results";
+
+      //Append the button to the newsContainer
+      document.body.appendChild(newButton);
+
+      newButton.addEventListener("click", () => {
+        newsContainer.innerHTML = "";
+        dataArr = [];
+        startingIndex = 0;
+        newButton.style.display = "none";
+      });
     }
   };
 

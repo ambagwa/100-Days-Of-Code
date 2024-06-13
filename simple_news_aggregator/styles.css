@@ -93,7 +93,7 @@ span {
   background-color: #283618;
   margin-bottom: 10px;
 }
-.more-btn, .clear-btn {
+.more-btn, .clear-btn, .displayHistoryBtn {
   width: 200px;
   padding: 5px;
   border-radius: 10px 0 10px 0;

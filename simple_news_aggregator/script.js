@@ -1,6 +1,8 @@
 const searchButton = document.getElementById("searchButton");
 const moreBtn = document.getElementById("more-btn");
 const loadingIndicator = document.getElementById("loading");
+let searchHistory = [];
+let searchHistoryDiv = document.createElement("div");
 
 moreBtn.style.display = "none";
 
@@ -75,6 +77,7 @@ searchButton.addEventListener("click", () => {
           </div>
         `;
     }).join("");
+    
     startingIndex += endingIndex;
 
     if (startingIndex > endingIndex) {
@@ -92,8 +95,37 @@ searchButton.addEventListener("click", () => {
         dataArr = [];
         startingIndex = 0;
         newButton.style.display = "none";
+
+        let displayHistoryBtn = document.createElement("button");
+        displayHistoryBtn.className = "displayHistoryBtn";
+        displayHistoryBtn.textContent = "SearchHistory";
+
+        document.body.appendChild(displayHistoryBtn);
+
+        if ( searchInput && !searchHistory.includes(searchInput)) {
+          searchHistory.push(searchInput);
+          displayHistoryBtn.addEventListener("click", () => {
+            updateSearchHistory();
+            displayHistoryBtn.textContent = "Hide Search History";
+          });
+    
+          //Append searchHistoryDiv if not already appended
+          if (!document.body.contains(searchHistoryDiv)) {
+            document.body.appendChild(searchHistoryDiv);
+          }
+        }
       });
     }
+
+  };
+
+  const updateSearchHistory = () => {
+    searchHistoryDiv.innerHTML = `
+      <h3>Search History</h3>
+      <ul>
+        ${searchHistory.map(term => `<li>${term}</li>`).join("")}
+      </ul>
+    `;
   };
 
   moreBtn.addEventListener("click", () => {

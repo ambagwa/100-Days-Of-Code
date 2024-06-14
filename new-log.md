@@ -86,4 +86,4 @@
 
 **Thoughts**: Projects make theory more understandable
 
-**Link to work**: 
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/pokemon_app https://github.com/ambagwa/100-Days-Of-Code/tree/main/pokemon_app

@@ -1,21 +1,24 @@
-//const nameOrId = "pikachu";
-const apiUrl = `https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/pikachu`;
+const nameOrId = document.getElementById("search-input").value;
+const searchBtn = document.getElementById("search-button");
+const apiUrl = `https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${nameOrId}`;
 let dataArr = [];
 //console.log(apiUrl);
 
-const fetchData = async () => {
+searchBtn.addEventListener("click", () => {
+  const fetchData = async () => {
     try {
-        const resolve = await fetch(apiUrl);
-        const data = await resolve.json();
+      const resolve = await fetch(apiUrl);
+      const data = await resolve.json();
 
-        dataArr = data;
+      dataArr = data;
 
-        console.log(data);
-
+      console.log(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
     }
-    catch (error){
-        console.error("Error fetching data:", error);
-    }
-};
+  };
 
-fetchData();
+  fetchData();
+});
+
+const displayResults = () => {};

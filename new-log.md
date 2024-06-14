@@ -70,4 +70,20 @@
 
 **Thoughts**: Rebasing makes it easier to resolve conflicts.
 
+**Link to work**:
+
+## Day 11 : June 14, 2024
+
+**Today's progress"": Started working on a new mini project using asynchronous functions
+
+**Thoughts**: Projects make theory more understandable
+
+**Link to work**: 
+
+## Day 11 : June 14, 2024
+
+**Today's progress"": Started working on a new mini project using asynchronous functions
+
+**Thoughts**: Projects make theory more understandable
+
 **Link to work**: 

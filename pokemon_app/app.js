@@ -23,6 +23,27 @@ searchBtn.addEventListener("click", () => {
   };
 
   fetchData();
-});
 
-const displayResults = () => {};
+  const displayResults = (data) => {
+    //extract stats from the data object
+    const stats = {};
+    data.stats.forEach(stat => {
+        stats[stat.stat.name] = stat.base_stat;
+    });
+
+    //Access the properties inside the stats object
+    const hp = stats.hp;
+    const attack = stats.attack;
+    const defense = stats.defense;
+    const speed = stats.speed;
+    const specialAttack = stats["special-attack"];
+    const specialDefense = stats["special-defense"];
+
+    //Access other properties directly from the data object
+    const types= data.types.map(type => type.type.name).join(", ");
+    const height = data.height;
+    const weight = data.weight;
+    const id = data.id;
+    const name = data.name;
+  };
+});

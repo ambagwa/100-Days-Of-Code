@@ -5,6 +5,10 @@ let dataArr = [];
 //console.log(apiUrl);
 
 searchBtn.addEventListener("click", () => {
+    if (!nameOrId) {
+        alert("Enter pokemon name or Id");
+    }
+
   const fetchData = async () => {
     try {
       const resolve = await fetch(apiUrl);

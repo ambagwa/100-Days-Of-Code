@@ -73,3 +73,27 @@ main {
     font-size: 20px;
     margin: 2px 0;
 }
+img {
+    margin: 20px auto;
+}
+#pokemon_name {
+    text-transform: uppercase;
+    color: var(--color-4);
+    margin: 10px;
+    font-size: 30px;
+}
+table {
+    width: 70%;
+    margin: 5px auto;
+    border-collapse: collapse;
+}
+th, td {
+    border: 2px solid var(--color-2);
+    padding: 8px;
+    text-align: left;
+}
+th {
+    font-size: 25px;
+    background-color: var(--color-1);
+    color: var(--text-color);
+}

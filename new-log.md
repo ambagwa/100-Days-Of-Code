@@ -87,3 +87,11 @@
 **Thoughts**: Projects make theory more understandable
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/pokemon_app
+
+## Day 12 : June 15, 2024
+
+**Today's progress**: Continued working on my project. Fetched data in json, converted it into json format and displayed it onto the html page.
+
+**Thoughts**: Finally grasped how to access object properties and how to use the properties to display information onto a html page.
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/pokemon_app

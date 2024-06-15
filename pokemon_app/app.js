@@ -25,6 +25,9 @@ searchBtn.addEventListener("click", () => {
   fetchData();
 
   const displayResults = (data) => {
+    //Clear the DOM
+    resultsDiv.innerHTML = "";
+
     //extract stats from the data object
     const stats = {};
     data.stats.forEach((stat) => {
@@ -49,18 +52,18 @@ searchBtn.addEventListener("click", () => {
 
     //upload DOM with the fetched data
     resultsDiv.innerHTML += `
-        <img src="${sprite}" alt="pokemon image" id="sprite">
-        <div id="types">${types}</div>
-        <p id="pokemon_name">${name} </p>
-        <p id="pokemon_id">${id}</p>
-        <p id="weight">Pokemon weight: ${weight}</p>
-        <p id="height">pokemon height: ${height}</p>
-        <p id="hp">HP: ${hp}</p>
-        <p id="speed">Speed: ${speed}</p>
-        <p id="attack">Attack: ${attack}</p>
-        <p id="defense">Defense: ${defense}</p>
-        <p id="special_attack">Special attack: ${specialAttack}</p>
-        <p id="special_defense">Special defense: ${specialDefense}</p>
+        <img src="${sprite}" alt="${name} image" id="sprite"> 
+        <div id="types"><strong>Types:</strong> ${types}</div>
+        <p id="pokemon_name"><strong>Name:</strong> ${name} </p>
+        <p id="pokemon_id"><strong>ID:</strong> ${id}</p>
+        <p id="weight"><strong>Weight:</strong> ${weight}</p>
+        <p id="height"><strong>Height:</strong> ${height}</p>
+        <p id="hp"><strong>HP:</strong> ${hp}</p>
+        <p id="speed"><strong>Speed:</strong> ${speed}</p>
+        <p id="attack"><strong>Attack:</strong> ${attack}</p>
+        <p id="defense"><strong>Defense:</strong> ${defense}</p>
+        <p id="special_attack"><strong>Special attack:</strong> ${specialAttack}</p>
+        <p id="special_defense"><strong>Special defense:</strong> ${specialDefense}</p>
     `;
   };
 });

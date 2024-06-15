@@ -52,18 +52,44 @@ searchBtn.addEventListener("click", () => {
 
     //upload DOM with the fetched data
     resultsDiv.innerHTML += `
-        <img src="${sprite}" alt="${name} image" id="sprite"> 
+        <p id="pokemon_name"><strong>${name}</strong></p>
         <div id="types"><strong>Types:</strong> ${types}</div>
-        <p id="pokemon_name"><strong>Name:</strong> ${name} </p>
         <p id="pokemon_id"><strong>ID:</strong> ${id}</p>
         <p id="weight"><strong>Weight:</strong> ${weight}</p>
         <p id="height"><strong>Height:</strong> ${height}</p>
-        <p id="hp"><strong>HP:</strong> ${hp}</p>
-        <p id="speed"><strong>Speed:</strong> ${speed}</p>
-        <p id="attack"><strong>Attack:</strong> ${attack}</p>
-        <p id="defense"><strong>Defense:</strong> ${defense}</p>
-        <p id="special_attack"><strong>Special attack:</strong> ${specialAttack}</p>
-        <p id="special_defense"><strong>Special defense:</strong> ${specialDefense}</p>
+        <img src="${sprite}" alt="${name} image" id="sprite"> 
+        
+        <table>
+            <tr>
+                <th>Base</th>
+                <th>Stats</th>
+            </tr>
+            <tr>
+                <td id="hp"><strong>HP</strong> </td>
+                <td>${hp}</td>
+            </tr>
+            <tr>
+                <td id="speed"><strong>Speed</strong> </td>
+                <td>${speed}</td>
+            </tr>
+            <tr>
+                <td id=""><strong>Attack</strong> </td>
+                <td>${attack}</td>
+            </tr>
+            <tr>
+                <td id="defense"><strong>Defense</strong> </td>
+                <td>${defense}</td>
+            </tr>
+            <tr>
+                <td id="special_attack"><strong>Special attack</strong> </td>
+                <td>${specialAttack}</td>
+            </tr>
+            <tr>
+                <td id="special_defense"><strong>special defense</strong> </td>
+                <td>${specialDefense}</td>
+            </tr>
+        </table>
+
     `;
   };
 });

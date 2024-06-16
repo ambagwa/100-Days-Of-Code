@@ -95,3 +95,12 @@
 **Thoughts**: Finally grasped how to access object properties and how to use the properties to display information onto a html page.
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/pokemon_app
+
+## Day 13 : June 16, 2024
+
+**Today's progress**: I started working on a freeCodeCamp JS project to finalize my certification. The project utilizes fetch API and displaying the fetched data onto html.
+
+**Thoughts**: Projects are IT
+
+**Link to work**: ___
+

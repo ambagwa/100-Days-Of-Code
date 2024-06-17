@@ -104,3 +104,17 @@
 
 **Link to work**: ___
 
+## Day 14 : June 17, 2024
+
+**Today's progress**: Continued working on the project
+
+**Thoughts**: More understanding of the concepts
+
+**Link to work**: ___
+## Day 14 : June 17, 2024
+
+**Today's progress**: Continued working on the project
+
+**Thoughts**: More understanding of the concepts
+
+**Link to work**: ___

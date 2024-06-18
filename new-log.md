@@ -110,11 +110,11 @@
 
 **Thoughts**: More understanding of the concepts
 
-**Link to work**: ___
-## Day 14 : June 17, 2024
+**
+## Day 15 : June 18, 2024
 
-**Today's progress**: Continued working on the project
+**Today's progress**: Finished working on the freeCodeCamp project
 
-**Thoughts**: More understanding of the concepts
+**Thoughts** __
 
-**Link to work**: ___
+**Link to work**: __

@@ -118,3 +118,11 @@
 **Thoughts** __
 
 **Link to work**: __
+
+## Day 16 : June 21, 2024
+
+**Today's progress**: Revised regular functions or regex and some of its  flags. Also revised on the split() method that I used to create an array of charaacters from a string. I also checked on the reverse() method of arrays which reorders the elements of an array. Also checked on the join() method which combines all array elements into a single string.
+
+**Thoughts**: Array methods make it easier to work with and manipulate strings.
+
+**Link to work**: ___

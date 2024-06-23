@@ -118,3 +118,11 @@
 **Thoughts** __
 
 **Link to work**: __
+
+## Day 17 : June 23, 2024
+
+**Today's progress**: Learnt more about regular expressions. Solved a freeCodeCamp project for checking if a word or phrase is a palindrome, even if it contains spaces, special characters, or even uppercase letters. 
+
+**Thoughts**: Different flags of regex have more than one function. Consider "^", which can be used in more than one scenario.
+
+**Link to work**: __

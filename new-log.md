@@ -119,6 +119,7 @@
 
 **Link to work**: __
 
+<<<<<<< HEAD
 ## Day 17 : June 23, 2024
 
 **Today's progress**: Learnt more about regular expressions. Solved a freeCodeCamp project for checking if a word or phrase is a palindrome, even if it contains spaces, special characters, or even uppercase letters. 
@@ -126,3 +127,12 @@
 **Thoughts**: Different flags of regex have more than one function. Consider "^", which can be used in more than one scenario.
 
 **Link to work**: __
+=======
+## Day 16 : June 21, 2024
+
+**Today's progress**: Revised regular functions or regex and some of its  flags. Also revised on the split() method that I used to create an array of charaacters from a string. I also checked on the reverse() method of arrays which reorders the elements of an array. Also checked on the join() method which combines all array elements into a single string.
+
+**Thoughts**: Array methods make it easier to work with and manipulate strings.
+
+**Link to work**: ___
+>>>>>>> ddec26f10d2a95b2c530d71b5d094168964a3721

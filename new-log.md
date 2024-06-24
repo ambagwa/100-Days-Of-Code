@@ -127,10 +127,18 @@
 
 **Link to work**: ___
 
-##Day 17: June 23, 2024
+## Day 17: June 23, 2024
 
 **Today's progress**: Learnt more about regular expressions. Solved a freeCodeCamp project for checking if a word or phrase is a palindrome, even if it contains spaces, special characters, or even uppercase letters.
 
 **Thoughts**: Different flags of regex have more than one function. Consider "^", which can be used in more than one scenario.
 
 **Link to work**: https://www.freecodecamp.org/settings#cert-responsive-web-design
+
+## Day 18 : June 24, 2024
+
+**Today's progress**: I managed to clean up a project for converting a number to its roman equivalent. This reminded me of how for and while loops work. I also got to understand assignment operators better.
+
+**Thoughts**: Objects make it easier to manipulate data.
+
+**Link to work**: https://www.freecodecamp.org/settings#cert-javascript-algorithms-and-data-structures-v8

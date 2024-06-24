@@ -1,141 +1,146 @@
 *,
 *::before,
-*::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-:root{
-    --background-color: #4A4E69;
-    --text-color: #000;
-    --title-color: #F2E9E4;
-    --button-background: #00F5D4;
-    --gradient-one: #48cae4;
-    --gradient-two: #00b4d8;
-    --hover-one: #0096c7;
-    --hover-two: #0077b6;
-    --div-background: #aec3b0;
+:root {
+  --background-color: #4a4e69;
+  --text-color: #000;
+  --title-color: #f2e9e4;
+  --button-background: #00f5d4;
+  --gradient-one: #48cae4;
+  --gradient-two: #00b4d8;
+  --hover-one: #0096c7;
+  --hover-two: #0077b6;
+  --div-background: #aec3b0;
 }
-body{
-    background-color: var(--background-color);
-    font-size: 16px;
+body {
+  background-color: var(--background-color);
+  font-size: 16px;
 }
-.title{
-    color: var(--title-color);
-    text-shadow: 2px 2px 4px var(--text-color);
-    font-size: 3rem;
-    text-align: center;
-    margin: 1rem 0;
+.title {
+  color: var(--title-color);
+  text-shadow: 2px 2px 4px var(--text-color);
+  font-size: 3rem;
+  text-align: center;
+  margin: 1rem 0;
 }
-.btn{
-    display: block;
-    cursor: pointer;
-    width: 100px;
-    color: var(--text-color);
-    background-color: var(--button-background);
-    background-image: linear-gradient(var(--gradient-one), var(--gradient-two));
-    border-color: var(--button-background);
-    border-width: 3px;
+.btn {
+  display: block;
+  cursor: pointer;
+  width: 100px;
+  color: var(--text-color);
+  background-color: var(--button-background);
+  background-image: linear-gradient(var(--gradient-one), var(--gradient-two));
+  border-color: var(--button-background);
+  border-width: 3px;
 }
-.btn:hover{
-    background-image: linear-gradient(var(--hover-one), var(--hover-two));
-    color: #fff;
+.btn:hover {
+  background-image: linear-gradient(var(--hover-one), var(--hover-two));
+  color: #fff;
 }
-#buy-cart-btn{
-    margin : 1rem auto .5rem;
-    cursor: pointer;
-    width: 100px;
-    color: var(--text-color);
-    background-color: var(--button-background);
-    background-image: linear-gradient(var(--gradient-one), var(--gradient-two));
-    border-color: var(--button-background);
-    border-width: 3px;
+#buy-cart-btn {
+  margin: 1rem auto 0.5rem;
+  cursor: pointer;
+  width: 100px;
+  color: var(--text-color);
+  background-color: var(--button-background);
+  background-image: linear-gradient(var(--gradient-one), var(--gradient-two));
+  border-color: var(--button-background);
+  border-width: 3px;
 }
-#buy-cart-btn:hover{
-    background-image: linear-gradient(var(--hover-one), var(--hover-two));
-    color: #fff;
+#buy-cart-btn:hover {
+  background-image: linear-gradient(var(--hover-one), var(--hover-two));
+  color: #fff;
 }
-#cart-btn{
-    position: absolute;
-    top: 0;
-    right: 0;
+#cart-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
-.shoe-card{
-    background-color: var(--div-background);
-    padding: 15px;
-    text-align: center;
-    border-radius: 15px;
-    margin: 40px 10px;
-    /*New features to make sure the images fit well*/
-    display: flex;
-    flex-direction: column;
-    max-width: 200px;
-    height: 500px;
-    overflow: hidden;
-    align-items: stretch;
+.shoe-card {
+  background-color: var(--div-background);
+  padding: 15px;
+  text-align: center;
+  border-radius: 15px;
+  margin: 10px;
+  /*New features to make sure the images fit well*/
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  overflow: hidden;
 }
-.shoe-card img{
-    width: 100%;
-    height: auto;/*MAintains aspect ratio*/
-    object-fit: cover;/*maintains aspect ratio while filling container*/
-    margin-bottom: 10px;
-    border-radius: 15px;
+.shoe-card img {
+  width: 100%;
+  display: block;
+  height: auto; /*MAintains aspect ratio*/
+  object-fit: cover; /*maintains aspect ratio while filling container*/
+  margin-bottom: 10px;
+  border-radius: 15px;
 }
-.shoe-card h2{
-    flex : 1;
+.shoe-card h2 {
+  flex: 1;
 }
-#shoes-card-container{
+#shoes-card-container {
+  /*
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
+    */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 10px;
 }
-.shoe-price{
-    font-size: 1rem;
-    margin-top: auto;
+.shoe-price {
+  font-size: 1rem;
+  margin-top: auto;
 }
-.add-to-cart-btn{
-    margin: 30px auto 10px;
+.add-to-cart-btn {
+  margin: 30px auto 10px;
 }
-#cart-container{
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: var(--div-background);
-    width: 200px;
-    height: 400px;
-    border: 4px solid var(--title-color);
-    border-radius: 15px;
-    text-align: center;
-    font-size: 1rem;
-    overflow-y: scroll;
+#cart-container {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: var(--div-background);
+  width: 200px;
+  height: 400px;
+  border: 4px solid var(--title-color);
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1rem;
+  overflow-y: scroll;
 }
-.shoe-category{
-    margin: 10px 0;
+.shoe-category {
+  margin: 10px 0;
 }
-.product{
-    margin: 25px 0;
+.product {
+  margin: 25px 0;
 }
-.product p{
-    font-size: 1.5rem;
+.product p {
+  font-size: 1.5rem;
 }
-.product-count{
-    display: inline-block;
-    margin-right: 10px;
+.product-count {
+  display: inline-block;
+  margin-right: 10px;
 }
-.product-category{
-    margin: 10px 0;
+.product-category {
+  margin: 10px 0;
 }
-@media (min-width : 768px){
-    #shoes-card-container{
-        flex-direction: row;
-    }
-    .shoe-card{
-        flex: 1 0 21%;
-    }
-    #cart-container{
-        width: 300px;
-        height: auto;
-    }
+@media (min-width: 768px) {
+  #shoes-card-container {
+    flex-direction: row;
+  }
+  .shoe-card {
+    flex: 1 0 21%;
+  }
+  #cart-container {
+    width: 300px;
+    height: auto;
+  }
 }

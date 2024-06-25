@@ -83,76 +83,62 @@ const products = [
     },
 ];
 
-/*
-For the images to load at the same time, I put them in objects so that they 
-can preload before adding them to DOM. This way the browser starts loading 
-them in the background before being added to the HTML page.
-
-//function to preload the images 
-const preloadImages = images => {
-    return new Promise ((resolve, reject) => {
-        let count = 0;
-        images.forEach(image => {
-            const img = new Image();
-            img.onload = () => {
-                count++;
-                if (count === images.length){
-                    resolve();
-                }
-            };
-            img.onerror = error => reject(error);
-            img.src = image;
-        });
-    });
+//Function to preload images
+const preloadImages = imageUrls => {
+    return Promise.all(
+        imageUrls.map(url => {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.src = url;
+                img.onload = resolve;
+                img.onerror = reject;
+            });
+        })
+    );
 };
 
 //Hold the image urls in an array
 const imageUrls = products.map(product => product.image);
 
-//preload images before adding them to the HTML page
+//Preload images before adding them to the HTML page
 preloadImages(imageUrls).then(() => {
-    //All images are preloaded, add them to html
-    products.forEach(({name, id, price, category, image}) => {
-        //display each product on the html page
-        shoesCards.innerHTML += `
-            <div class="shoe-card">
-                <img src="${image}" alt=${name} class="shoe-image">
-                <h2>${name}</h2>
-                <p class="shoe-price">$${price}</p>
-                <p class="shoe-category">Category: ${category}</p>
-                <button id="${id}" class="btn add-to-cart-btn">
-                    Add to cart
-                </button>
-            </div>
-        `;
+    //All images preloaded, add them to the HTML
+    products.forEach(
+        //Destructure the properties of an object to be the parameter of the 
+        //callback function
+        ({ name, id, price, category, image}) => {
+            //Display each product onto the html page
+            shoesCards.innerHTML += `
+                <div class="shoe-card">
+                    <img src="${image}" alt={name} class="shoe-image">
+                    <h2>${name}</h2>
+                    <p class="shoe-price">$${price}</p>
+                    <p class="shoe-category">Category: ${category}</p>
+                    <button id="${id}" class="btn add-to-cart-btn">
+                        Add to cart
+                    </button>
+                </div>
+            `;
+        }
+    );
+    
+    //Add event listeners to the newly added buttons
+    const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
+    [...addToCartBtns].forEach(btn => {
+        btn.addEventListener("click", event => {
+            cart1.addItem(Number(event.target.id), products);
+            totalItems.textContent = cart1.getCounts();
+            cart1.calculateTotal();
+        });
     });
 }).catch(error => {
-    console.error("Error preloading images: ", error);
+    console.error("Error preloading messages: ", error);
 });
-*/
 
-products.forEach(
-    //Destructure the properties of an object to be the parameter of the 
-    //callback function
-    ({ name, id, price, category, image}) => {
-        //Display each product onto the html page
-        shoesCards.innerHTML += `
-            <div class="shoe-card">
-                <img src="${image}" alt={name} class="shoe-image">
-                <h2>${name}</h2>
-                <p class="shoe-price">$${price}</p>
-                <p class="shoe-category">Category: ${category}</p>
-                <button id="${id}" class="btn add-to-cart-btn">
-                    Add to cart
-                </button>
-            </div>
-        `;
-    }
-);
 
 //create an object that will be used to store prperties and methods of the shopping cart
 class ShoppingCart{
-    //creat a constructore to instantiate properties of the object
+    //creat a constructor to instantiate properties of the object
     constructor(){
         this.items = [];//Store the products objects
         this.total = 0;
@@ -243,6 +229,7 @@ class ShoppingCart{
 //create a new ShoppingCart object
 const cart1 = new ShoppingCart();
 
+/*
 //Get all the add-to-cart-btn buttons that I added when I was creating each product
 //on the page
 const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
@@ -256,6 +243,7 @@ const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
         });
     }
 );
+*/
 
 //Make the cart visible 
 cartButton.addEventListener("click", () => {

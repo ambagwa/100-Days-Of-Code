@@ -142,3 +142,11 @@
 **Thoughts**: Objects make it easier to manipulate data.
 
 **Link to work**: https://www.freecodecamp.org/settings#cert-javascript-algorithms-and-data-structures-v8
+
+## Day 19 : June 25, 2024
+
+**Today's progress**: Learnt about the promise object which  represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+**Thoughts**: Promises are cleaner and are used as an alternative to traditional call back functions
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyShoppingPage

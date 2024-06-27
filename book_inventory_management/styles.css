@@ -1,97 +1,126 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 :root {
-    --background-color: #f0eae4;
-    --font-color: #BD5931;
-    --div-color: #A8A646;
-    --text-color: #ffffff;
+  --background-color: #f0eae4;
+  --font-color: #bd5931;
+  --div-color: #a8a646;
+  --text-color: #ffffff;
 }
 body {
-    background-color: var(--background-color);
-    margin: 10px;
-    font-family: 'Open Sans', sans-serif;
+  background-color: var(--background-color);
+  margin: 10px;
+  font-family: "Open Sans", sans-serif;
 }
-header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .fa-address-book {
-    color: var(--font-color);
-    margin: auto 0;
-    font-weight: bold;
-    font-size: 25px;
+  color: var(--font-color);
+  margin: auto 0;
+  font-weight: bold;
+  font-size: 25px;
 }
 .title {
-    text-decoration: underline;
-    text-decoration-color: var(--font-color);
-    text-decoration-thickness: 3.5px;
+  text-decoration: underline;
+  text-decoration-color: var(--font-color);
+  text-decoration-thickness: 3.5px;
 }
-.book-text {    
-    margin: 15px 0;
-    position: relative;
-    color: var(--text-color);
-    text-align: center;
-    padding: 20px;
+.book-text {
+  margin: 15px 0;
+  position: relative;
+  color: var(--text-color);
+  text-align: center;
+  padding: 20px;
 }
 .book-text::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(images/pexels-pixabay-159711.jpg);
-    background-size: cover;
-    background-position: center;
-    filter: blur(10px);
-    z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(images/pexels-pixabay-159711.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  z-index: -1;
 }
 .book-text h1 {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 .book-text p {
-    font-size: 20px;
-    margin-top: 10px;
+  font-size: 20px;
+  margin-top: 10px;
 }
 .search-div {
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
 }
 .search-div p {
-    font-size: 18px;
-    margin: 5px;
-    text-align: center;
+  font-size: 18px;
+  margin: 5px;
+  text-align: center;
 }
 #input {
-    width: 300px;
-    margin: 5px auto;
-    border: 2px solid var(--background-color);
-    padding: 5px;
-    border-radius: 3px;
+  width: 300px;
+  margin: 5px auto;
+  border: 2px solid var(--background-color);
+  padding: 5px;
+  border-radius: 3px;
 }
 #input:focus {
-    border-color: var(--font-color);
-    outline: none;
+  border-color: var(--font-color);
+  outline: none;
 }
 #submit-btn {
-    width: 100px;
-    margin: 5px auto;
-    padding: 4px 0;
-    font-size: 16px;
-    border-radius: 3px;
-    color: var(--text-color);
-    border: 1px solid var(--background-color);
-    background-image: linear-gradient(var(--font-color), var(--div-color));
+  width: 100px;
+  margin: 5px auto;
+  padding: 4px 0;
+  font-size: 16px;
+  border-radius: 3px;
+  color: var(--text-color);
+  border: 1px solid var(--background-color);
+  background-image: linear-gradient(var(--font-color), var(--div-color));
 }
 #submit-btn:hover {
+  background-image: linear-gradient(var(--div-color), var(--font-color));
+}
+#submit-btn:active {
+  background-image: radial-gradient(var(--div-color), var(--font-color));
+}
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+th, td {
+    border: 2px solid var(--font-color);
+    padding: 8px;
+    text-align: left;
+}
+tr:hover {
+    background-color: lightgrey;
+}
+th {
+    background-color: var(--div-color);
+}
+.add-to-storage {
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-image: linear-gradient(var(--font-color), var(--div-color));
+    color: var(--text-color);
+    border: none;
+}
+.add-to-storage:hover{
     background-image: linear-gradient(var(--div-color), var(--font-color));
 }
-#submit-btn:active{
+.add-to-storage:active{
     background-image: radial-gradient(var(--div-color), var(--font-color));
 }

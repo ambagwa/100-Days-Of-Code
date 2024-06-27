@@ -151,10 +151,18 @@
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyShoppingPage
 
-## Day 20 : Junr 26, 2024
+## Day 20 : June 26, 2024
 
 **Today's progress**: I completed the Javascript Algorithms and Data Structures certification and started working on a new project. I also got to learn of how to include an icon on the title bar of a website.
 
 **Thoughts**: Its the small wins the are fuelling me.
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/book_inventory_management
+
+## Day 21 : June 27, 2024
+
+**Today's progress**: I checked whether the user's search input is part of my predefined inventory and if yes, the details of the book are returned. I also implemented how to access the book objects.
+
+**Thoughts**: Accessing objects is easy
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/book_inventory_management

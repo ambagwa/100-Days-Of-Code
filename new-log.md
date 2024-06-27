@@ -150,3 +150,11 @@
 **Thoughts**: Promises are cleaner and are used as an alternative to traditional call back functions
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyShoppingPage
+
+## Day 20 : Junr 26, 2024
+
+**Today's progress**: I completed the Javascript Algorithms and Data Structures certification and started working on a new project. I also got to learn of how to include an icon on the title bar of a website.
+
+**Thoughts**: Its the small wins the are fuelling me.
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/book_inventory_management

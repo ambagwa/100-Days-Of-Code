@@ -38,13 +38,35 @@ submitBtn.addEventListener("click", () => {
   const bookDetails = ifBookIsAvailable(bookToSearch);
 
   if (bookDetails) {
-    resultsDiv.innerHTML += `
-        <p>Name: ${bookDetails.name}</p>
-        <p>Author: ${bookDetails.author}</p>
-        <p>ISBN: ${bookDetails.ISBN}</p>
-        <p>Price: ${bookDetails.price}</p>
-        <p>Year: ${bookDetails.year}</p>
-        <p>Stock Number: ${bookDetails["stock number"]}</p>
+    resultsDiv.innerHTML = `
+        <table>
+            <thead>
+                <tr>
+                <th>Name</th>
+                <th>Author</th>
+                <th>ISBN</th>
+                <th>Price</th>
+                <th>Year</th>
+                <th>Stock Number</th>
+                <th>Button</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>${bookDetails.name}</td>
+                    <td>${bookDetails.author}</td>
+                    <td>${bookDetails.ISBN}</td>
+                    <td>${bookDetails.price}</td>
+                    <td>${bookDetails.year}</td>
+                    <td>${bookDetails["stock number"]}</td>
+                    <td>
+                        <button class="add-to-storage" id="add-to-storage">
+                            Add to Storage
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     `;
   }
 });

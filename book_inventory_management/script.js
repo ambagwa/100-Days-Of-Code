@@ -37,7 +37,7 @@ submitBtn.addEventListener("click", () => {
   }
 
   //check if book already exists
-  const bookExists = checkIfBookExists(bookToSearch);
+  const bookExists = checkIfBookExistsInLocalStorage(bookToSearch);
 
   if (bookExists) {
     alert("The book already exists in STorage");
@@ -80,13 +80,17 @@ submitBtn.addEventListener("click", () => {
       //Add to storage button functionality
       const addToStorageBtn = document.getElementById("add-to-storage");
       addToStorageBtn.addEventListener("click", () => {
-        //Store book details in localStorage
-        localStorage.setItem(
-          `${bookDetails.name}`,
-          JSON.stringify(bookDetails)
-        );
-        alert("Book added to inventory");
+        const storageKey = createBookKey(bookDetails.name, bookDetails.author);
+        const existingBook = localStorage.getItem(storageKey);
+        if (!existingBook) {
+          localStorage.setItem(storageKey, JSON.stringify(bookDetails));
+          alert("Book added to storage!");
+        } else {
+          alert("This book already exists in storage!");
+        }
       });
+    } else {
+        alert("Book not found");
     }
   }
 });
@@ -100,12 +104,20 @@ const ifBookIsAvailable = (input) => {
 };
 
 const checkIfBookExistsInLocalStorage = (bookTitle) => {
-  const storageKey = bookTitle;
-  const storedBook = localStorage.getItem(storageKey);
-  return storedBook !== null;
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    const book = JSON.parse(localStorage.getItem(key));
+    if (
+        book.name.toLowerCase() === input.toLowerCase() ||
+        book.author.toLowerCase() === input.toLowerCase()
+    ) {
+        return true;
+    }
+  }
+  return false;
 };
 
 //Function to create a unique key for storing book details on both title and author
 const createBookKey = (bookTitle, bookAuthor) => {
-    return `${bookTitle}-${bookAuthor}`;
+  return `${bookTitle}-${bookAuthor}`;
 };

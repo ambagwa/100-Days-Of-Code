@@ -166,3 +166,11 @@
 **Thoughts**: Accessing objects is easy
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/book_inventory_management
+
+## Day 22 : June 28, 2024
+
+**Today's progress**: I added new books to localStorage. Also checked if a book exists in localStorage before adding it.
+
+**Thoughts**: localStorage is perfect for saving small bits of data.
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/book_inventory_management

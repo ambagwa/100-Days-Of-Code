@@ -33,6 +33,7 @@ submitBtn.addEventListener("click", () => {
 
   if (!bookToSearch) {
     alert("Please enter a title or an author's name");
+    return;
   }
 
   const bookDetails = ifBookIsAvailable(bookToSearch);
@@ -68,6 +69,14 @@ submitBtn.addEventListener("click", () => {
             </tbody>
         </table>
     `;
+
+    //Add to storage button functionality
+    const addToStorageBtn = document.getElementById("add-to-storage");
+    addToStorageBtn.addEventListener("click", () => {
+      //Store book details in localStorage
+      localStorage.setItem(`${bookDetails.name}`, JSON.stringify(bookDetails));
+      alert("Book added to inventory");
+    });
   }
 });
 
@@ -78,3 +87,4 @@ const ifBookIsAvailable = (input) => {
       book.author.toLowerCase() === input.toLowerCase()
   );
 };
+

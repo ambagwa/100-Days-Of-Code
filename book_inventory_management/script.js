@@ -36,10 +36,17 @@ submitBtn.addEventListener("click", () => {
     return;
   }
 
-  const bookDetails = ifBookIsAvailable(bookToSearch);
+  //check if book already exists
+  const bookExists = checkIfBookExists(bookToSearch);
 
-  if (bookDetails) {
-    resultsDiv.innerHTML = `
+  if (bookExists) {
+    alert("The book already exists in STorage");
+  } else {
+    //load book details into html
+    const bookDetails = ifBookIsAvailable(bookToSearch);
+
+    if (bookDetails) {
+      resultsDiv.innerHTML = `
         <table>
             <thead>
                 <tr>
@@ -70,13 +77,17 @@ submitBtn.addEventListener("click", () => {
         </table>
     `;
 
-    //Add to storage button functionality
-    const addToStorageBtn = document.getElementById("add-to-storage");
-    addToStorageBtn.addEventListener("click", () => {
-      //Store book details in localStorage
-      localStorage.setItem(`${bookDetails.name}`, JSON.stringify(bookDetails));
-      alert("Book added to inventory");
-    });
+      //Add to storage button functionality
+      const addToStorageBtn = document.getElementById("add-to-storage");
+      addToStorageBtn.addEventListener("click", () => {
+        //Store book details in localStorage
+        localStorage.setItem(
+          `${bookDetails.name}`,
+          JSON.stringify(bookDetails)
+        );
+        alert("Book added to inventory");
+      });
+    }
   }
 });
 
@@ -88,3 +99,13 @@ const ifBookIsAvailable = (input) => {
   );
 };
 
+const checkIfBookExistsInLocalStorage = (bookTitle) => {
+  const storageKey = bookTitle;
+  const storedBook = localStorage.getItem(storageKey);
+  return storedBook !== null;
+};
+
+//Function to create a unique key for storing book details on both title and author
+const createBookKey = (bookTitle, bookAuthor) => {
+    return `${bookTitle}-${bookAuthor}`;
+};

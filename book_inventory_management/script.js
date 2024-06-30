@@ -154,30 +154,41 @@ const collectBookDetails = () => {
     </form>
     `;
 
-    const textInputs  = document.querySelectorAll('input[type="text"]');
-    textInputs.forEach(input => {
-      input.style.padding = "5px";
-    });
+  const textInputs = document.querySelectorAll('input[type="text"]');
+  textInputs.forEach((input) => {
+    input.style.padding = "5px";
+  });
 
-    const numberInputs  = document.querySelectorAll('input[type="number"]');
-    numberInputs.forEach(input => {
-      input.style.padding = "5px";
-    });
+  const numberInputs = document.querySelectorAll('input[type="number"]');
+  numberInputs.forEach((input) => {
+    input.style.padding = "5px";
+  });
 
-    const bookForm = document.getElementById("book-form");
-    const addToBooksObjectBtn = document.getElementById("add-btn");
-    addToBooksObjectBtn.addEventListener("click", event => {
-      event.preventDefault();
+  const bookForm = document.getElementById("book-form");
+  const addToBooksObjectBtn = document.getElementById("add-btn");
+  addToBooksObjectBtn.addEventListener("click", (event) => {
+    event.preventDefault();
 
-      //Collect form data
-      const formData = new FormData(bookForm);
+    //Collect form data
+    const formData = new FormData(bookForm);
 
-      //assign form data to the existing object
-      formData.forEach((value, key) => {
-        books[key] = value;
-      });
+    //Get the last stock number
+    let lastStockNumber = parseInt(
+      books[books.length - 1]["stock number"], 10
+    );
 
-      /*
+    //Create a new book object
+    const newBook = {
+      name: formData.get("name"),
+      author: formData.get("author"),
+      ISBN: formData.get("ISBN"),
+      price: formData.get("price"),
+      year: formData.get("year"),
+      "stock number": lastStockNumber + 1,
+    };
+
+    books.push(newBook);
+    /*
       const bookName = document.getElementById("bookName").value;
       const authorName = document.getElementById("author").value;
       const isbnNumber = document.getElementById("isbn").value;
@@ -185,7 +196,6 @@ const collectBookDetails = () => {
       const bookYear = document.getElementById("year").value;
       */
 
-      console.log(books);
-    });
+    console.log(books);
+  });
 };
-

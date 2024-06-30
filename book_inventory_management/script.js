@@ -173,9 +173,7 @@ const collectBookDetails = () => {
     const formData = new FormData(bookForm);
 
     //Get the last stock number
-    let lastStockNumber = parseInt(
-      books[books.length - 1]["stock number"], 10
-    );
+    let lastStockNumber = parseInt(books[books.length - 1]["stock number"], 10);
 
     //Create a new book object
     const newBook = {
@@ -188,14 +186,20 @@ const collectBookDetails = () => {
     };
 
     books.push(newBook);
-    /*
-      const bookName = document.getElementById("bookName").value;
-      const authorName = document.getElementById("author").value;
-      const isbnNumber = document.getElementById("isbn").value;
-      const bookPrice = document.getElementById("price").value;
-      const bookYear = document.getElementById("year").value;
-      */
 
-    console.log(books);
+    alert("Book added to library");
+
+    addToBooksObjectBtn.innerText = "Add to Storage";
+
+    addToBooksObjectBtn.addEventListener("click", () => {
+      const storageKey = createBookKey(newBook.name, newBook.author);
+      localStorage.setItem(storageKey, JSON.stringify(newBook));
+      alert("Book added to storage!");
+
+      //Clear form inputs
+      const inputs = bookForm.querySelectorAll('input[type="text"]');
+      inputs.forEach(input => input.value = "");
+      document.getElementById("ISBN");
+    });
   });
 };

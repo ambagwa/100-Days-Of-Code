@@ -182,3 +182,11 @@
 **Thoughts**: Functions makes it easier to reuse code. 
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/book_inventory_management
+
+## Day 24 : July 1, 2024
+
+**Today's progress**: Added more functionalities to the project: Checked a book against localStorage too. 
+
+**Thoughts**: Solving bugs is relaxing
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/book_inventory_management

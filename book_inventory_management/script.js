@@ -98,11 +98,29 @@ submitBtn.addEventListener("click", () => {
 });
 
 const ifBookIsAvailable = (input) => {
-  return books.find(
-    (book) =>
+  //check if book exists both in library or localStorage
+  const ifBookFromList = books.find(
+    book => 
       book.name.toLowerCase() === input.toLowerCase() ||
       book.author.toLowerCase() === input.toLowerCase()
   );
+  if ( ifBookFromList ) {
+    return ifBookFromList;
+  }
+
+  //check in localStorage
+  for ( let i = 0; i < localStorage.length; i++ ) {
+    const key = localStorage.key(i);
+    const book = JSON.parse(localStorage.getItem(key));
+    if (
+      book.name.toLowerCase() === input.toLowerCase() ||
+      book.author.toLowerCase() === input.toLowerCase()
+    ) {
+      return book;
+    }
+  }
+
+  return null;
 };
 
 const checkIfBookExistsInLocalStorage = (bookTitle) => {

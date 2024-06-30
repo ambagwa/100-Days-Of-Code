@@ -126,20 +126,20 @@ const createBookKey = (bookTitle, bookAuthor) => {
 
 const collectBookDetails = () => {
   resultsDiv.innerHTML = `
-    <form style="width: 600px; margin: auto;">
+    <form style="width: 600px; margin: auto;" id="book-form">
         <fieldset style="padding: 10px;">
             <legend>Please provide your book details</legend>
             <div style="margin-bottom: 5px;">
-                <label for="bookname" style="width: 100px; display: inline-block;">Book name:</label>
-                <input type="text" id="bookName" name="bookname" style="width: 400px;">
+                <label for="name" style="width: 100px; display: inline-block;">Book name:</label>
+                <input type="text" id="bookName" name="name" style="width: 400px;">
             </div>
             <div style="margin-bottom: 5px;">
                 <label for="author" style="width: 100px; display: inline-block;">Author:</label>
                 <input type="text" id="author" name="author" style="width: 400px;">
             </div>
             <div style="margin-bottom: 5px;">
-                <label for="isbn" style="width: 100px; display: inline-block;">ISBN:</label>
-                <input type="number" id="isbn" name="isbn" style="width: 400px;">
+                <label for="ISBN" style="width: 100px; display: inline-block;">ISBN:</label>
+                <input type="number" id="isbn" name="ISBN" style="width: 400px;">
             </div>
             <div style="margin-bottom: 5px;">
                 <label for="price" style="width: 100px; display: inline-block;">Price:</label>
@@ -157,6 +157,35 @@ const collectBookDetails = () => {
     const textInputs  = document.querySelectorAll('input[type="text"]');
     textInputs.forEach(input => {
       input.style.padding = "5px";
+    });
+
+    const numberInputs  = document.querySelectorAll('input[type="number"]');
+    numberInputs.forEach(input => {
+      input.style.padding = "5px";
+    });
+
+    const bookForm = document.getElementById("book-form");
+    const addToBooksObjectBtn = document.getElementById("add-btn");
+    addToBooksObjectBtn.addEventListener("click", event => {
+      event.preventDefault();
+
+      //Collect form data
+      const formData = new FormData(bookForm);
+
+      //assign form data to the existing object
+      formData.forEach((value, key) => {
+        books[key] = value;
+      });
+
+      /*
+      const bookName = document.getElementById("bookName").value;
+      const authorName = document.getElementById("author").value;
+      const isbnNumber = document.getElementById("isbn").value;
+      const bookPrice = document.getElementById("price").value;
+      const bookYear = document.getElementById("year").value;
+      */
+
+      console.log(books);
     });
 };
 

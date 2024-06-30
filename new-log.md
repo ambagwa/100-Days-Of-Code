@@ -174,3 +174,11 @@
 **Thoughts**: localStorage is perfect for saving small bits of data.
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/book_inventory_management
+
+## Day 23 : June 30, 2024
+
+**Today's progress**: Created a new function that I used to add a book that is not already in the books object. A user is given a platform that the user provides the book details and adds them to the books object. 
+
+**Thoughts**: Functions makes it easier to reuse code. 
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/book_inventory_management

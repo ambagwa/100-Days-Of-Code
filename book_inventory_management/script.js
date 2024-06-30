@@ -36,17 +36,11 @@ submitBtn.addEventListener("click", () => {
     return;
   }
 
-  //check if book already exists
-  const bookExists = checkIfBookExistsInLocalStorage(bookToSearch);
+  //load book details into html
+  const bookDetails = ifBookIsAvailable(bookToSearch);
 
-  if (bookExists) {
-    alert("The book already exists in STorage");
-  } else {
-    //load book details into html
-    const bookDetails = ifBookIsAvailable(bookToSearch);
-
-    if (bookDetails) {
-      resultsDiv.innerHTML = `
+  if (bookDetails) {
+    resultsDiv.innerHTML = `
         <table>
             <thead>
                 <tr>
@@ -77,9 +71,15 @@ submitBtn.addEventListener("click", () => {
         </table>
     `;
 
-      //Add to storage button functionality
-      const addToStorageBtn = document.getElementById("add-to-storage");
-      addToStorageBtn.addEventListener("click", () => {
+    //Add to storage button functionality
+    const addToStorageBtn = document.getElementById("add-to-storage");
+    addToStorageBtn.addEventListener("click", () => {
+      //check if book already exists
+      const bookExists = checkIfBookExistsInLocalStorage(bookToSearch);
+
+      if (bookExists) {
+        alert("The book already exists in Storage");
+      } else {
         const storageKey = createBookKey(bookDetails.name, bookDetails.author);
         const existingBook = localStorage.getItem(storageKey);
         if (!existingBook) {
@@ -88,10 +88,12 @@ submitBtn.addEventListener("click", () => {
         } else {
           alert("This book already exists in storage!");
         }
-      });
-    } else {
-        alert("Book not found");
-    }
+      }
+    });
+  } else {
+    resultsDiv.innerHTML = "";
+    alert("Book not found");
+    collectBookDetails();
   }
 });
 
@@ -108,10 +110,10 @@ const checkIfBookExistsInLocalStorage = (bookTitle) => {
     const key = localStorage.key(i);
     const book = JSON.parse(localStorage.getItem(key));
     if (
-        book.name.toLowerCase() === input.toLowerCase() ||
-        book.author.toLowerCase() === input.toLowerCase()
+      book.name.toLowerCase() === bookTitle.toLowerCase() ||
+      book.author.toLowerCase() === bookTitle.toLowerCase()
     ) {
-        return true;
+      return true;
     }
   }
   return false;
@@ -121,3 +123,40 @@ const checkIfBookExistsInLocalStorage = (bookTitle) => {
 const createBookKey = (bookTitle, bookAuthor) => {
   return `${bookTitle}-${bookAuthor}`;
 };
+
+const collectBookDetails = () => {
+  resultsDiv.innerHTML = `
+    <form style="width: 600px; margin: auto;">
+        <fieldset style="padding: 10px;">
+            <legend>Please provide your book details</legend>
+            <div style="margin-bottom: 5px;">
+                <label for="bookname" style="width: 100px; display: inline-block;">Book name:</label>
+                <input type="text" id="bookName" name="bookname" style="width: 400px;">
+            </div>
+            <div style="margin-bottom: 5px;">
+                <label for="author" style="width: 100px; display: inline-block;">Author:</label>
+                <input type="text" id="author" name="author" style="width: 400px;">
+            </div>
+            <div style="margin-bottom: 5px;">
+                <label for="isbn" style="width: 100px; display: inline-block;">ISBN:</label>
+                <input type="number" id="isbn" name="isbn" style="width: 400px;">
+            </div>
+            <div style="margin-bottom: 5px;">
+                <label for="price" style="width: 100px; display: inline-block;">Price:</label>
+                <input type="text" id="price" name="price" style="width: 400px;">
+            </div>
+            <div style="margin-bottom: 5px;">
+                <label for="year" style="width: 100px; display: inline-block;">Year:</label>
+                <input type="text" id="year" name="year" style="width: 400px;">
+            </div>
+            <button id="add-btn" type="button" style="margin-top: 10px;">Add to Inventory</button>
+        </fieldset>
+    </form>
+    `;
+
+    const textInputs  = document.querySelectorAll('input[type="text"]');
+    textInputs.forEach(input => {
+      input.style.padding = "5px";
+    });
+};
+

@@ -102,7 +102,7 @@ submitBtn.addEventListener("click", () => {
   //displayInventoryButton functionality
   const displayInventoryBtn = document.getElementById("display-storage-btn");
   displayInventoryBtn.addEventListener("click", () => {
-    alert("LOVE");
+    console.log(getLocalStorage());
   });
 });
 
@@ -231,4 +231,20 @@ const collectBookDetails = () => {
   });
 };
 
-//const
+const getLocalStorage = () => {
+  const allData = {};
+
+  for ( let i = 0; i < localStorage.length; i++ ) {
+    const key = localStorage.key(i);
+    const value = localStorage.getItem(key);
+
+    //parse the JSON value back to the object if necessary
+    try {
+      allData[key] = JSON.parse(value);
+    } catch (error) {
+      //stote the value as a string in case the value is not in JSON format
+      allData[key] = value;
+    }
+  }
+  return allData;
+};

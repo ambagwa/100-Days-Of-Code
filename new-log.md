@@ -185,7 +185,7 @@
 
 ## Day 24 : July 1, 2024
 
-**Today's progress**: Added more functionalities to the project: Checked a book against localStorage too. 
+**Today's progress**: Added more functionalities to the project: Checked a book against localStorage too. Also started working on how I will display all the books in localStorage through a button.
 
 **Thoughts**: Solving bugs is relaxing
 

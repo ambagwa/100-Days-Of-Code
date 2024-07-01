@@ -41,6 +41,7 @@ submitBtn.addEventListener("click", () => {
 
   if (bookDetails) {
     resultsDiv.innerHTML = `
+      <div class="html-construct">
         <table>
             <thead>
                 <tr>
@@ -69,6 +70,8 @@ submitBtn.addEventListener("click", () => {
                 </tr>
             </tbody>
         </table>
+        <button id="display-storage-btn" class="display-storage-btn" type="button" style="margin-top: 15px;">Display Inventory </button>
+      </div>
     `;
 
     //Add to storage button functionality
@@ -95,21 +98,27 @@ submitBtn.addEventListener("click", () => {
     alert("Book not found");
     collectBookDetails();
   }
+
+  //displayInventoryButton functionality
+  const displayInventoryBtn = document.getElementById("display-storage-btn");
+  displayInventoryBtn.addEventListener("click", () => {
+    alert("LOVE");
+  });
 });
 
 const ifBookIsAvailable = (input) => {
   //check if book exists both in library or localStorage
   const ifBookFromList = books.find(
-    book => 
+    (book) =>
       book.name.toLowerCase() === input.toLowerCase() ||
       book.author.toLowerCase() === input.toLowerCase()
   );
-  if ( ifBookFromList ) {
+  if (ifBookFromList) {
     return ifBookFromList;
   }
 
   //check in localStorage
-  for ( let i = 0; i < localStorage.length; i++ ) {
+  for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
     const book = JSON.parse(localStorage.getItem(key));
     if (
@@ -216,8 +225,10 @@ const collectBookDetails = () => {
 
       //Clear form inputs
       const inputs = bookForm.querySelectorAll('input[type="text"]');
-      inputs.forEach(input => input.value = "");
+      inputs.forEach((input) => (input.value = ""));
       document.getElementById("ISBN");
     });
   });
 };
+
+//const

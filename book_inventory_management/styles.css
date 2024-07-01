@@ -95,7 +95,10 @@ header {
 #submit-btn:active {
   background-image: radial-gradient(var(--div-color), var(--font-color));
 }
-table {
+.html-construct {
+  text-align: center;
+}
+table{
     margin: 0 auto;
     border-collapse: collapse;
 }
@@ -110,7 +113,7 @@ tr:hover {
 th {
     background-color: var(--div-color);
 }
-.add-to-storage, #add-btn {
+.add-to-storage, #add-btn, #display-storage-btn{
     padding: 5px;
     font-weight: bold;
     border-radius: 5px;
@@ -118,13 +121,13 @@ th {
     color: var(--text-color);
     border: none;
 }
-.add-to-storage:hover, #add-btn:hover{
+.add-to-storage:hover, #add-btn:hover, #display-storage-btn:hover{
     background-image: linear-gradient(var(--div-color), var(--font-color));
 }
-.add-to-storage:active, #add-btn:active{
+.add-to-storage:active, #add-btn:active, #display-storage-btn:active{
     background-image: radial-gradient(var(--div-color), var(--font-color));
 }
 #input:focus {
     border-color: var(--font-color);
     outline: none;
-  }
+}

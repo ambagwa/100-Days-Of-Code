@@ -102,7 +102,10 @@ submitBtn.addEventListener("click", () => {
   //displayInventoryButton functionality
   const displayInventoryBtn = document.getElementById("display-storage-btn");
   displayInventoryBtn.addEventListener("click", () => {
-    console.log(getLocalStorage());
+    resultsDiv.innerHTML = "";
+    const allStoredData = getLocalStorage();
+    console.log(allStoredData);
+    displayLocalStorage(allStoredData);
   });
 });
 
@@ -234,7 +237,7 @@ const collectBookDetails = () => {
 const getLocalStorage = () => {
   const allData = {};
 
-  for ( let i = 0; i < localStorage.length; i++ ) {
+  for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
     const value = localStorage.getItem(key);
 
@@ -247,4 +250,51 @@ const getLocalStorage = () => {
     }
   }
   return allData;
+};
+
+const displayLocalStorage = (dataObject) => {
+  let tableHTML = `
+    <div class="html-construct">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Price</th>
+            <th>Year</th>
+            <th>Stock Number</th>
+            <th>Button</th>
+          </tr>
+        <thead>
+        <tbody>
+  `;
+
+  for (const key in dataObject) {
+    const bookData = dataObject[key];
+
+    tableHTML += `
+      <tr>
+        <td>${bookData.name}</td>
+        <td>${bookData.author}</td>
+        <td>${bookData.ISBN}</td>
+        <td>${bookData.price}</td>
+        <td>${bookData.year}</td>
+        <td>${bookData["stock number"] || "N/A"}</td>
+        <td>
+          <button class="add-to-storage" id="add-to-storage">
+             Delete book
+          </button>
+        </td>
+      </tr>
+    `;
+  }
+
+  tableHTML += `
+          </tbody>
+        </table>
+      </div>
+  `;
+
+  resultsDiv.innerHTML = tableHTML;
 };

@@ -253,6 +253,10 @@ const getLocalStorage = () => {
 };
 
 const displayLocalStorage = (dataObject) => {
+  //Sort the books in a descending value
+  const sortedBooks = 
+    Object.values(dataObject).sort((a, b) => b.year - a.year);
+
   let tableHTML = `
     <div class="html-construct">
       <table>
@@ -270,19 +274,17 @@ const displayLocalStorage = (dataObject) => {
         <tbody>
   `;
 
-  for (const key in dataObject) {
-    const bookData = dataObject[key];
-
+  for (const book of sortedBooks) {
     tableHTML += `
       <tr>
-        <td>${bookData.name}</td>
-        <td>${bookData.author}</td>
-        <td>${bookData.ISBN}</td>
-        <td>${bookData.price}</td>
-        <td>${bookData.year}</td>
-        <td>${bookData["stock number"] || "N/A"}</td>
+        <td>${book.name}</td>
+        <td>${book.author}</td>
+        <td>${book.ISBN}</td>
+        <td>${book.price}</td>
+        <td>${book.year}</td>
+        <td>${book["stock number"] || "N/A"}</td>
         <td>
-          <button class="add-to-storage" id="add-to-storage">
+          <button class="delete-book" id="delete-book-${bookData.ISBN}">
              Delete book
           </button>
         </td>

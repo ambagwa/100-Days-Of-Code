@@ -284,7 +284,7 @@ const displayLocalStorage = (dataObject) => {
         <td>${book.year}</td>
         <td>${book["stock number"] || "N/A"}</td>
         <td>
-          <button class="delete-book" id="delete-book-${bookData.ISBN}">
+          <button class="delete-book" id="delete-book-${book.ISBN}">
              Delete book
           </button>
         </td>
@@ -299,4 +299,24 @@ const displayLocalStorage = (dataObject) => {
   `;
 
   resultsDiv.innerHTML = tableHTML;
+
+  document.querySelectorAll(".delete-book").forEach(button => {
+    button.addEventListener("click", () => {
+      const bookISBN = button.id.replace("delete-book-", "");
+      deleteBookFromLocalStorage(bookISBN);
+      alert("Book has been deleted from localStorage");
+      button.parentElement.parentElement.remove();
+    });
+  });
+};
+
+const deleteBookFromLocalStorage = ISBN => {
+  for ( let i = 0; i < localStorage.length; i++ ) {
+    const key = localStorage.key(i);
+    const book = JSON.parse(localStorage.getItem(key));
+    if ( book.ISBN.toString() === ISBN ) {
+      localStorage.removeItem(key);
+      break;
+    }
+  }
 };

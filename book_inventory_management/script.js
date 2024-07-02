@@ -104,7 +104,6 @@ submitBtn.addEventListener("click", () => {
   displayInventoryBtn.addEventListener("click", () => {
     resultsDiv.innerHTML = "";
     const allStoredData = getLocalStorage();
-    console.log(allStoredData);
     displayLocalStorage(allStoredData);
   });
 });
@@ -180,6 +179,7 @@ const collectBookDetails = () => {
                 <input type="text" id="year" name="year" style="width: 400px;">
             </div>
             <button id="add-btn" type="button" style="margin-top: 10px;">Add to Library</button>
+            <button id="display-storage-btn" class="display-storage-btn" type="button" style="margin-top: 15px;">Display Inventory </button>
         </fieldset>
     </form>
     `;
@@ -220,7 +220,7 @@ const collectBookDetails = () => {
 
     books.push(newBook);
 
-    if(!bookAddedToLibraryAlertShown) {
+    if (!bookAddedToLibraryAlertShown) {
       alert("Book added to library");
       bookAddedToLibraryAlertShown = true;
     }
@@ -230,18 +230,12 @@ const collectBookDetails = () => {
     addToBooksObjectBtn.addEventListener("click", () => {
       const storageKey = createBookKey(newBook.name, newBook.author);
       localStorage.setItem(storageKey, JSON.stringify(newBook));
-      alert("Book added to storage!");
+      alert("Book added to Inventory!");
 
       //Clear form inputs
       const inputs = bookForm.querySelectorAll('input[type="text"]');
       inputs.forEach((input) => (input.value = ""));
       bookForm.getElementById("ISBN").value = "";
-      addToBooksObjectBtn.innerText = "Display Inventory";
-
-      //Display updated localStorage
-      addToBooksObjectBtn.addEventListener("click", () => {
-
-      });
     });
   });
 };
@@ -266,8 +260,7 @@ const getLocalStorage = () => {
 
 const displayLocalStorage = (dataObject) => {
   //Sort the books in a descending value
-  const sortedBooks = 
-    Object.values(dataObject).sort((a, b) => b.year - a.year);
+  const sortedBooks = Object.values(dataObject).sort((a, b) => b.year - a.year);
 
   let tableHTML = `
     <div class="html-construct">
@@ -314,12 +307,14 @@ const displayLocalStorage = (dataObject) => {
 
   resultsDiv.innerHTML = tableHTML;
 
-  document.querySelectorAll(".delete-book").forEach(button => {
+  document.querySelectorAll(".delete-book").forEach((button) => {
     button.addEventListener("click", () => {
-      const bookISBN = button.id.replace("delete-book-", "");
-      deleteBookFromLocalStorage(bookISBN);
-      alert("Book has been deleted from localStorage");
-      button.parentElement.parentElement.remove();
+      if (confirm("Are you sure you want to delete this boo?")) {
+        const bookISBN = button.id.replace("delete-book-", "");
+        deleteBookFromLocalStorage(bookISBN);
+        alert("Book has been deleted from localStorage");
+        button.parentElement.parentElement.remove();
+      }
     });
   });
 
@@ -331,7 +326,7 @@ const displayLocalStorage = (dataObject) => {
 
   const deleteInventoryBtn = document.getElementById("delete-inventory");
   deleteInventoryBtn.addEventListener("click", () => {
-    if ( confirm("Are you sure you want to clear all data from inventory")) {
+    if (confirm("Are you sure you want to clear all data from inventory")) {
       localStorage.clear();
       resultsDiv.innerHTML = "";
       alert("All data cleared from localStorage!?");
@@ -339,11 +334,11 @@ const displayLocalStorage = (dataObject) => {
   });
 };
 
-const deleteBookFromLocalStorage = ISBN => {
-  for ( let i = 0; i < localStorage.length; i++ ) {
+const deleteBookFromLocalStorage = (ISBN) => {
+  for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
     const book = JSON.parse(localStorage.getItem(key));
-    if ( book.ISBN.toString() === ISBN ) {
+    if (book.ISBN.toString() === ISBN) {
       localStorage.removeItem(key);
       break;
     }

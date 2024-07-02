@@ -190,3 +190,11 @@
 **Thoughts**: Solving bugs is relaxing
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/book_inventory_management
+
+## Day 25 : July 2, 2024
+
+**Today's progress**: I implemented a new function that, through a button, "Display inventory", the user can see all the books in localStorage. All these books are displayed in a table. 
+
+**Thoughts**: Finally got ahold of arrays and objects.
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/book_inventory_management

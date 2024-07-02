@@ -295,6 +295,7 @@ const displayLocalStorage = (dataObject) => {
   tableHTML += `
           </tbody>
         </table>
+        <button class="hide-inventory" id="hide-inventory">Hide Inventory</button>
       </div>
   `;
 
@@ -307,6 +308,12 @@ const displayLocalStorage = (dataObject) => {
       alert("Book has been deleted from localStorage");
       button.parentElement.parentElement.remove();
     });
+  });
+
+  const hideInventoryBtn = document.getElementById("hide-inventory");
+  hideInventoryBtn.addEventListener("click", () => {
+    resultsDiv.innerHTML = "";
+    hideInventoryBtn.textContent = "";
   });
 };
 

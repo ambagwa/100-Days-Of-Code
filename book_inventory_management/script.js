@@ -296,6 +296,7 @@ const displayLocalStorage = (dataObject) => {
           </tbody>
         </table>
         <button class="hide-inventory" id="hide-inventory">Hide Inventory</button>
+        <button class="delete-inventory" id="delete-inventory">Delete entire inventory</button>
       </div>
   `;
 
@@ -314,6 +315,15 @@ const displayLocalStorage = (dataObject) => {
   hideInventoryBtn.addEventListener("click", () => {
     resultsDiv.innerHTML = "";
     hideInventoryBtn.textContent = "";
+  });
+
+  const deleteInventoryBtn = document.getElementById("delete-inventory");
+  deleteInventoryBtn.addEventListener("click", () => {
+    if ( confirm("Are you sure you want to clear all data from inventory")) {
+      localStorage.clear();
+      resultsDiv.innerHTML = "";
+      alert("All data cleared from localStorage!?");
+    }
   });
 };
 

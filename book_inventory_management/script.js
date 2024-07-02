@@ -179,7 +179,7 @@ const collectBookDetails = () => {
                 <label for="year" style="width: 100px; display: inline-block;">Year:</label>
                 <input type="text" id="year" name="year" style="width: 400px;">
             </div>
-            <button id="add-btn" type="button" style="margin-top: 10px;">Add to Inventory</button>
+            <button id="add-btn" type="button" style="margin-top: 10px;">Add to Library</button>
         </fieldset>
     </form>
     `;
@@ -193,6 +193,9 @@ const collectBookDetails = () => {
   numberInputs.forEach((input) => {
     input.style.padding = "5px";
   });
+
+  //flag to track alert
+  let bookAddedToLibraryAlertShown = false;
 
   const bookForm = document.getElementById("book-form");
   const addToBooksObjectBtn = document.getElementById("add-btn");
@@ -217,9 +220,12 @@ const collectBookDetails = () => {
 
     books.push(newBook);
 
-    alert("Book added to library");
+    if(!bookAddedToLibraryAlertShown) {
+      alert("Book added to library");
+      bookAddedToLibraryAlertShown = true;
+    }
 
-    addToBooksObjectBtn.innerText = "Add to Storage";
+    addToBooksObjectBtn.innerText = "Add to Inventory";
 
     addToBooksObjectBtn.addEventListener("click", () => {
       const storageKey = createBookKey(newBook.name, newBook.author);
@@ -229,7 +235,13 @@ const collectBookDetails = () => {
       //Clear form inputs
       const inputs = bookForm.querySelectorAll('input[type="text"]');
       inputs.forEach((input) => (input.value = ""));
-      document.getElementById("ISBN");
+      bookForm.getElementById("ISBN").value = "";
+      addToBooksObjectBtn.innerText = "Display Inventory";
+
+      //Display updated localStorage
+      addToBooksObjectBtn.addEventListener("click", () => {
+
+      });
     });
   });
 };

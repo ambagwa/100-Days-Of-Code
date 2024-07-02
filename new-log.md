@@ -193,7 +193,7 @@
 
 ## Day 25 : July 2, 2024
 
-**Today's progress**: I implemented a new function that, through a button, "Display inventory", the user can see all the books in localStorage. All these books are displayed in a table. 
+**Today's progress**: I implemented a new function that, through a button, "Display inventory", the user can see all the books in localStorage. All these books are displayed in a table. I also implemented a function that cleared a specific book from localStorage and removes them from the table.
 
 **Thoughts**: Finally got ahold of arrays and objects.
 

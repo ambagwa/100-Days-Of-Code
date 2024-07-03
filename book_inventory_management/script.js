@@ -160,23 +160,23 @@ const collectBookDetails = () => {
             <legend>Please provide your book details</legend>
             <div style="margin-bottom: 5px;">
                 <label for="bookName" style="width: 100px; display: inline-block;">Book name:</label>
-                <input type="text" id="bookName" name="name" required minlength="3" style="width: 400px;">
+                <input type="text" id="bookName" name="name" required minlength="3" style="width: 400px;" placeholder="The Maze">
             </div>
             <div style="margin-bottom: 5px;">
                 <label for="author" style="width: 100px; display: inline-block;">Author:</label>
-                <input type="text" id="author" name="author" required minlength="3" style="width: 400px;">
+                <input type="text" id="author" name="author" required minlength="3" style="width: 400px;" placeholder="Eugene Ambagwa">
             </div>
             <div style="margin-bottom: 5px;">
                 <label for="isbn" style="width: 100px; display: inline-block;">ISBN:</label>
-                <input type="number" id="isbn" name="ISBN" pattern="[0-9]{13}" style="width: 400px;">
+                <input type="number" id="isbn" name="ISBN" pattern="[0-9]{13}" style="width: 400px;" placeholder="0001">
             </div>
             <div style="margin-bottom: 5px;">
                 <label for="price" style="width: 100px; display: inline-block;">Price:</label>
-                <input type="text" id="price" name="price" required pattern="^\$\d+(\.\d{2})?$" style="width: 400px;">
+                <input type="text" id="price" name="price" required pattern="^\$\d+(\.\d{2})?$" style="width: 400px;" placeholder="$10">
             </div>
             <div style="margin-bottom: 5px;">
                 <label for="year" style="width: 100px; display: inline-block;">Year:</label>
-                <input type="text" id="year" name="year" min="1000" max="2020" style="width: 400px;">
+                <input type="text" id="year" name="year" min="1000" max="2020" style="width: 400px;" placeholder="> 1000 - < 2024">
             </div>
             <button id="add-btn" type="button" style="margin-top: 10px;">Add to Library</button>
             <button id="display-storage-btn" class="display-storage-btn" type="button" style="margin-top: 15px;">Display Inventory </button>
@@ -202,9 +202,9 @@ const collectBookDetails = () => {
   addToBooksObjectBtn.addEventListener("click", (event) => {
     event.preventDefault();
 
-    if ( !validateForm() ) {
+    if (!validateForm()) {
       alert("Please correct the book's details");
-      requestAnimationFrame;
+      return;
     }
 
     //Collect form data
@@ -255,28 +255,31 @@ const validateForm = () => {
   const priceInput = document.getElementById("price");
   const yearInput = document.getElementById("year");
 
-  if (bookNameInput.value.trim().length < 3 ) {
+  if (
+    bookNameInput.value.trim().length < 3 ||
+    bookNameInput.value.trim() === ""
+  ) {
     bookNameInput.style.border = "2px solid red";
     isValid = false;
   } else {
     bookNameInput.style.border = "";
   }
 
-  if (authorInput.value.trim().length < 3 ) {
+  if (authorInput.value.trim().length < 3 || authorInput.value.trim() === "") {
     authorInput.style.border = "2px solid red";
     isValid = false;
   } else {
     authorInput.style.border = "";
   }
 
-  if (!isbnInput.value.match(/^\d{13}$/) ) {
+  if (!isbnInput.value.match(/^\d{1,13}$/) || isbnInput.value === "") {
     isbnInput.style.border = "2px solid red";
     isValid = false;
   } else {
     isbnInput.style.border = "";
   }
 
-  if (!priceInput.value.match(/^\$\d+(\.\d{2})?$/) ) {
+  if (!priceInput.value.match(/^\$\d+(\.\d{2})?$/) || priceInput.value === "") {
     priceInput.style.border = "2px solid red";
     isValid = false;
   } else {
@@ -284,7 +287,7 @@ const validateForm = () => {
   }
 
   const year = parseInt(yearInput.value, 10);
-  if ( isNaN(year) || year < 1000 || year > 2024 ) {
+  if (isNaN(year) || year < 1000 || year > 2024 || year === "") {
     yearInput.style.border = "2px solid red";
     isValid = false;
   } else {
@@ -293,7 +296,6 @@ const validateForm = () => {
 
   return isValid;
 };
-
 
 const getLocalStorage = () => {
   const allData = {};

@@ -28,6 +28,20 @@ const books = [
   },
 ];
 
+//Add books to localStorage
+const addLibraryBooksToLocalStorage = () => {
+  for ( const book of books) {
+    const storageKey = createBookKey(book.name, book.author);
+    localStorage.setItem(storageKey, JSON.stringify(book));
+  }
+};
+
+window.onload = () => {
+  addLibraryBooksToLocalStorage();
+}
+
+localStorage.removeItem("libraryBooks");
+
 submitBtn.addEventListener("click", () => {
   const bookToSearch = document.getElementById("input").value.trim();
 
@@ -366,7 +380,7 @@ const displayLocalStorage = (dataObject) => {
 
   document.querySelectorAll(".delete-book").forEach((button) => {
     button.addEventListener("click", () => {
-      if (confirm("Are you sure you want to delete this boo?")) {
+      if (confirm("Are you sure you want to delete this book?")) {
         const bookISBN = button.id.replace("delete-book-", "");
         deleteBookFromLocalStorage(bookISBN);
         alert("Book has been deleted from localStorage");

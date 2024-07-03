@@ -15,3 +15,5 @@
 #### - A user can delete an entire book's details from the localStorage using a button
 
 #### - A user can also hide the books that are inside the inventory.
+
+#### - Books already in books array are displayed when a user clicks on submit button. When the book's details are displayed, a button is provided for the user to add the book to localStorage if it does not already exists inside it.

@@ -209,7 +209,7 @@
 
 ## Day 27 : July 4, 2024
 
-**Today's progress**: I auto-inremented stock number when a user added a new book to the inventory. I also modified the collectBookDetails()
+**Today's progress**: I auto-inremented stock number when a user added a new book to the inventory. I also modified the collectBookDetails(). I also managed to tick all teh requirements I had while designing this project. 
 
 **Thoughts**: console.log() comes in handy when debugging
 

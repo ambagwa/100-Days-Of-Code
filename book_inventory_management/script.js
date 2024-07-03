@@ -1,5 +1,5 @@
 const submitBtn = document.getElementById("submit-btn");
-const resultsDiv = document.getElementById("results-div"); 
+const resultsDiv = document.getElementById("results-div");
 
 const books = [
   {
@@ -30,7 +30,7 @@ const books = [
 
 //Add books to localStorage
 const addLibraryBooksToLocalStorage = () => {
-  for ( const book of books) {
+  for (const book of books) {
     const storageKey = createBookKey(book.name, book.author);
     localStorage.setItem(storageKey, JSON.stringify(book));
   }
@@ -38,10 +38,12 @@ const addLibraryBooksToLocalStorage = () => {
 
 window.onload = () => {
   addLibraryBooksToLocalStorage();
-}
+};
 
 submitBtn.addEventListener("click", () => {
   const bookToSearch = document.getElementById("input").value.trim();
+
+  console.log(books);
 
   if (!bookToSearch) {
     alert("Please enter a title or an author's name");
@@ -219,6 +221,8 @@ const collectBookDetails = () => {
       return;
     }
 
+    console.log(books);
+
     //Collect form data
     const formData = new FormData(bookForm);
 
@@ -240,24 +244,17 @@ const collectBookDetails = () => {
 
     books.push(newBook);
 
-    if (!bookAddedToLibraryAlertShown) {
-      alert("Book added to library");
-      bookAddedToLibraryAlertShown = true;
-    }
-
     console.log(books);
 
-    addToBooksObjectBtn.innerText = "Add to Inventory";
+    alert("Book added to library");
 
-    addToBooksObjectBtn.addEventListener("click", () => {
-      const storageKey = createBookKey(newBook.name, newBook.author);
-      localStorage.setItem(storageKey, JSON.stringify(newBook));
-      alert("Book added to Inventory!");
+    const storageKey = createBookKey(newBook.name, newBook.author);
+    localStorage.setItem(storageKey, JSON.stringify(newBook));
+    alert("Book added to Inventory!");
 
-      //Clear form inputs
-      const inputs = bookForm.querySelectorAll('input[type="text"]');
-      inputs.forEach((input) => (input.value = ""));
-    });
+    //Clear form inputs
+    const inputs = bookForm.querySelectorAll('input[type="text"]');
+    inputs.forEach((input) => (input.value = ""));
   });
 };
 
@@ -423,4 +420,3 @@ const deleteBookFromLocalStorage = (ISBN) => {
     books.splice(bookIndex, 1);
   }
 };
-

@@ -206,3 +206,11 @@
 **Thoughts**: Debugging. Fuekss
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/book_inventory_management
+
+## Day 27 : July 4, 2024
+
+**Today's progress**: I auto-inremented stock number when a user added a new book to the inventory. I also modified the collectBookDetails()
+
+**Thoughts**: console.log() comes in handy when debugging
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/book_inventory_management

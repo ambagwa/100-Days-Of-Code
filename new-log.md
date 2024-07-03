@@ -198,3 +198,11 @@
 **Thoughts**: Finally got ahold of arrays and objects.
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/book_inventory_management
+
+## Day  26 : July 3, 2024
+
+**Today's progress**: I worked on a few errors I had. Implemented a new function for validating the form inputs. Also deleted a book from books object
+
+**Thoughts**: Debugging. Fuekss
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/book_inventory_management

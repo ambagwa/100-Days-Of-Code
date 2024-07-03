@@ -159,24 +159,24 @@ const collectBookDetails = () => {
         <fieldset style="padding: 10px;">
             <legend>Please provide your book details</legend>
             <div style="margin-bottom: 5px;">
-                <label for="name" style="width: 100px; display: inline-block;">Book name:</label>
-                <input type="text" id="bookName" name="name" style="width: 400px;">
+                <label for="bookName" style="width: 100px; display: inline-block;">Book name:</label>
+                <input type="text" id="bookName" name="name" required minlength="3" style="width: 400px;">
             </div>
             <div style="margin-bottom: 5px;">
                 <label for="author" style="width: 100px; display: inline-block;">Author:</label>
-                <input type="text" id="author" name="author" style="width: 400px;">
+                <input type="text" id="author" name="author" required minlength="3" style="width: 400px;">
             </div>
             <div style="margin-bottom: 5px;">
-                <label for="ISBN" style="width: 100px; display: inline-block;">ISBN:</label>
-                <input type="number" id="isbn" name="ISBN" style="width: 400px;">
+                <label for="isbn" style="width: 100px; display: inline-block;">ISBN:</label>
+                <input type="number" id="isbn" name="ISBN" pattern="[0-9]{13}" style="width: 400px;">
             </div>
             <div style="margin-bottom: 5px;">
                 <label for="price" style="width: 100px; display: inline-block;">Price:</label>
-                <input type="text" id="price" name="price" style="width: 400px;">
+                <input type="text" id="price" name="price" required pattern="^\$\d+(\.\d{2})?$" style="width: 400px;">
             </div>
             <div style="margin-bottom: 5px;">
                 <label for="year" style="width: 100px; display: inline-block;">Year:</label>
-                <input type="text" id="year" name="year" style="width: 400px;">
+                <input type="text" id="year" name="year" min="1000" max="2020" style="width: 400px;">
             </div>
             <button id="add-btn" type="button" style="margin-top: 10px;">Add to Library</button>
             <button id="display-storage-btn" class="display-storage-btn" type="button" style="margin-top: 15px;">Display Inventory </button>
@@ -201,6 +201,11 @@ const collectBookDetails = () => {
   const addToBooksObjectBtn = document.getElementById("add-btn");
   addToBooksObjectBtn.addEventListener("click", (event) => {
     event.preventDefault();
+
+    if ( !validateForm() ) {
+      alert("Please correct the book's details");
+      requestAnimationFrame;
+    }
 
     //Collect form data
     const formData = new FormData(bookForm);
@@ -239,6 +244,56 @@ const collectBookDetails = () => {
     });
   });
 };
+
+//Validate form inputs
+const validateForm = () => {
+  let isValid = true;
+
+  const bookNameInput = document.getElementById("bookName");
+  const authorInput = document.getElementById("author");
+  const isbnInput = document.getElementById("isbn");
+  const priceInput = document.getElementById("price");
+  const yearInput = document.getElementById("year");
+
+  if (bookNameInput.value.trim().length < 3 ) {
+    bookNameInput.style.border = "2px solid red";
+    isValid = false;
+  } else {
+    bookNameInput.style.border = "";
+  }
+
+  if (authorInput.value.trim().length < 3 ) {
+    authorInput.style.border = "2px solid red";
+    isValid = false;
+  } else {
+    authorInput.style.border = "";
+  }
+
+  if (!isbnInput.value.match(/^\d{13}$/) ) {
+    isbnInput.style.border = "2px solid red";
+    isValid = false;
+  } else {
+    isbnInput.style.border = "";
+  }
+
+  if (!priceInput.value.match(/^\$\d+(\.\d{2})?$/) ) {
+    priceInput.style.border = "2px solid red";
+    isValid = false;
+  } else {
+    priceInput.style.border = "";
+  }
+
+  const year = parseInt(yearInput.value, 10);
+  if ( isNaN(year) || year < 1000 || year > 2024 ) {
+    yearInput.style.border = "2px solid red";
+    isValid = false;
+  } else {
+    yearInput.style.border = "";
+  }
+
+  return isValid;
+};
+
 
 const getLocalStorage = () => {
   const allData = {};

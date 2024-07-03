@@ -1,5 +1,5 @@
 const submitBtn = document.getElementById("submit-btn");
-const resultsDiv = document.getElementById("results-div");
+const resultsDiv = document.getElementById("results-div"); 
 
 const books = [
   {
@@ -39,8 +39,6 @@ const addLibraryBooksToLocalStorage = () => {
 window.onload = () => {
   addLibraryBooksToLocalStorage();
 }
-
-localStorage.removeItem("libraryBooks");
 
 submitBtn.addEventListener("click", () => {
   const bookToSearch = document.getElementById("input").value.trim();
@@ -226,6 +224,9 @@ const collectBookDetails = () => {
 
     //Get the last stock number
     let lastStockNumber = parseInt(books[books.length - 1]["stock number"], 10);
+    if (isNaN(lastStockNumber)) {
+      lastStockNumber = 0;
+    }
 
     //Create a new book object
     const newBook = {
@@ -244,6 +245,8 @@ const collectBookDetails = () => {
       bookAddedToLibraryAlertShown = true;
     }
 
+    console.log(books);
+
     addToBooksObjectBtn.innerText = "Add to Inventory";
 
     addToBooksObjectBtn.addEventListener("click", () => {
@@ -254,7 +257,6 @@ const collectBookDetails = () => {
       //Clear form inputs
       const inputs = bookForm.querySelectorAll('input[type="text"]');
       inputs.forEach((input) => (input.value = ""));
-      bookForm.getElementById("ISBN").value = "";
     });
   });
 };
@@ -383,7 +385,7 @@ const displayLocalStorage = (dataObject) => {
       if (confirm("Are you sure you want to delete this book?")) {
         const bookISBN = button.id.replace("delete-book-", "");
         deleteBookFromLocalStorage(bookISBN);
-        alert("Book has been deleted from localStorage");
+        alert("Book has been deleted");
         button.parentElement.parentElement.remove();
       }
     });
@@ -414,4 +416,11 @@ const deleteBookFromLocalStorage = (ISBN) => {
       break;
     }
   }
+
+  //delete book from books array
+  const bookIndex = books.findIndex((book) => book.ISBN === ISBN);
+  if (bookIndex !== -1) {
+    books.splice(bookIndex, 1);
+  }
 };
+

@@ -214,3 +214,11 @@
 **Thoughts**: console.log() comes in handy when debugging
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/book_inventory_management
+
+## Day 28 : July 5, 2024
+
+**Today's progress**: I went back to my previous project, MyShoppingPage, to implement more functionality. I started working on a new (), removeItem(), that allows a customer to remove an individual item from the cart. This is done through a button that is added when a customer add an item to the cart.
+
+**Thoughts**: The OO aspect of JS is effective and makes code reusable.
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyShoppingPage

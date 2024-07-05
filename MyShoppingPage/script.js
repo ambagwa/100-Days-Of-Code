@@ -134,10 +134,10 @@ preloadImages(imageUrls)
     });
   })
   .catch((error) => {
-    console.error("Error preloading messages: ", error);
+    console.error("Error preloading images: ", error);
   });
 
-//create an object that will be used to store prperties and methods of the shopping cart
+//create an class that will be used to store prperties and methods of the shopping cart
 class ShoppingCart {
   //creat a constructor to instantiate properties of the object
   constructor() {
@@ -181,8 +181,19 @@ class ShoppingCart {
                         </span>${name}
                     </p>
                     <p>${price}</p>
+                    <button class="clear-item-from-cart" id="clear-item-from-cart">
+                      Remove Item
+                    </button>
                 </div>
             `);
+
+    //Remove button click listener
+    const removeItemBtn = document.getElementById("clear-item-from-cart");
+    removeItemBtn.addEventListener("click", () => {
+      this.removeItem(id);
+      //remove html element from DOM
+      removeItemBtn.parentNode.remove();
+    });
   }
 
   //Method to access the total number of products in the cart
@@ -228,26 +239,20 @@ class ShoppingCart {
     total.textContent = `${this.total.toFixed(2)}`;
     return this.total;
   }
+
+  //Allow customers to remove items from the cart individually
+  removeItem(id) {
+    const itemIndex = this.items.find((item) => item.id === id);
+    if (itemIndex !== -1) {
+      this.items.splice(itemIndex, 1);
+      totalItems.textContent = this.getCounts();
+      this.calculateTotal();
+    }
+  }
 }
 
 //create a new ShoppingCart object
 const cart1 = new ShoppingCart();
-
-/*
-//Get all the add-to-cart-btn buttons that I added when I was creating each product
-//on the page
-const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
-//Iterate through each button after converting the buttons into an array
-[...addToCartBtns].forEach(
-    btn => {
-        btn.addEventListener("click", event => {
-            cart1.addItem(Number(event.target.id), products);
-            totalItems.textContent = cart1.getCounts();
-            cart1.calculateTotal();
-        });
-    }
-);
-*/
 
 //Make the cart visible
 cartButton.addEventListener("click", () => {
@@ -257,17 +262,7 @@ cartButton.addEventListener("click", () => {
   cartContainer.style.display = isCartShowing ? "block" : "none";
 });
 
-clearCartButton.addEventListener("click", cart1.clearCart.bind(cart1));
-
-const pay = () => {
-  var url = "https://tinypesa.com/api/v1/express/initialize";
-
-  fetch(url, {
-    body: "amount=1&msisdn=0713518279&account_no=200",
-    headers: {
-      Apikey: "Me3s8tLM8vW",
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    method: "POST",
-  });
-};
+clearCartButton.addEventListener("click", () => {
+  cart1.clearCart.bind(cart1);
+  console.log(products);
+});

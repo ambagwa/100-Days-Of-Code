@@ -222,3 +222,11 @@
 **Thoughts**: The OO aspect of JS is effective and makes code reusable.
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyShoppingPage
+
+## Day 29 : July 6, 2024
+
+**Today's progress**: Based on the last modification, only the first item on the cart would be removed. I am working on how to remove all the items individually.
+
+**Thoughts**: Code's functionality is fragile
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyShoppingPage

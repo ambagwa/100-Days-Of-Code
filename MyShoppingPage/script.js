@@ -174,26 +174,32 @@ class ShoppingCart {
     currentProductCount > 1
       ? (currentProductCountSpan.textContent = `${currentProductCount}x`)
       : //Add new html to the products container
-        (productsContainer.innerHTML += `
-                <div class="product" id="shoe${id}">
-                    <p>
-                        <span class="product-count" id="product-count-for-id${id}">
-                        </span>${name}
-                    </p>
-                    <p>${price}</p>
-                    <button class="clear-item-from-cart" id="clear-item-from-cart">
-                      Remove Item
-                    </button>
-                </div>
-            `);
+        (productsContainer.innerHTML += name);
 
-    //Remove button click listener
-    const removeItemBtn = document.getElementById("clear-item-from-cart");
-    removeItemBtn.addEventListener("click", () => {
+    //Remove any existing event listener on the remove button
+    const removeItemBtn = document.getElementById(`clear-item-from-cart-${id}`);
+    if (removeItemBtn) {
+      removeItemBtn.removeEventListener("click", () => {});
+    }
+
+    //Create a new remove button with a unique ID and event listener
+    const newRemoveItemBtn = document.createElement("button");
+    newRemoveItemBtn.classList.add("clear-item-from-cart");
+    //Add a unique id for each button
+    newRemoveItemBtn.id = `clear-item-from-cart-${id}`;
+    newRemoveItemBtn.textContent = "Remove Item";
+    newRemoveItemBtn.addEventListener("click", () => {
       this.removeItem(id);
-      //remove html element from DOM
-      removeItemBtn.parentNode.remove();
+      newRemoveItemBtn.parentNode.remove();
     });
+
+    //Add the new remove button to the product container
+    const productContainer = document.getElementById(`product-${id}`); // Assuming you have an element with ID "product-${id}" for each product
+    if (productContainer) {
+      productContainer.appendChild(newRemoveItemBtn);
+    } else {
+      console.warn(`Couldn't find container for product with ID: ${id}`);
+    }
   }
 
   //Method to access the total number of products in the cart

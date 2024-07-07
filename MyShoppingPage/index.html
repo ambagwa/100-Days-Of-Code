@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>My Shopping Page</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header>
-        <h1 class="title">Shoes Page</h1>
+      <h1 class="title">ENGA Shoes</h1>
+      <h4 class="title-description">Your one-stop online shop for shoes</h4>
     </header>
 
     <main>
-        <button id="cart-btn" type="button" class="btn">
-            <span id="show-hide-cart">Show </span>Cart
-        </button>
-        <div id="cart-container">
-            <button class="btn" id="clear-cart-btn">Clear Cart</button>
-            <div id="products-container"></div><!--productsContainer-->
-            <p>Total number of items: <span id="total-items">0</span></p>
-            <p>Subtotal: <span id="subtotal">$0</span></p>
-            <p>VAT: <span id="vat">$0</span></p>
-            <p>Total: <span id="total">$0</span></p>
-            <button id="buy-cart-btn">Buy</button>
-        </div>
-        <div id="shoes-card-container"></div>
+      <div class="search-div">
+        <input type="text" id="search-input" placeholder="Search for your need">
+        <button id="search-button">Search</button>
+      </div>
+
+      <button id="cart-btn" type="button" class="btn">
+        <span id="show-hide-cart">Show </span>Cart
+      </button>
+      <div id="cart-container">
+        <button class="btn" id="clear-cart-btn">Clear Cart</button>
+        <div id="products-container"></div>
+        <!--productsContainer-->
+        <p>Total number of items: <span id="total-items">0</span></p>
+        <p>Subtotal: <span id="subtotal">$0</span></p>
+        <p>VAT: <span id="vat">$0</span></p>
+        <p>Total: <span id="total">$0</span></p>
+        <button id="buy-cart-btn">Buy</button>
+      </div>
+      <div id="shoes-card-container"></div>
     </main>
 
     <script src="script.js"></script>
-    
-</body>
+  </body>
 </html>

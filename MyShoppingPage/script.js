@@ -236,27 +236,16 @@ class ShoppingCart {
       delete this.items[id];
       this.updateCartDisplay();
     }
-  }
 
-  /*
-  updateRemoveButtons() {
-    const removeButtons = document.getElementsByClassName(
-      "clear-item-from-cart"
-    );
-    [...removeButtons].forEach((button) => {
-      button.removeEventListener("click", this.removeItemEventListener);
-      button.addEventListener("click", this.removeItemEventListener);
-    });
-  }
-
-  removeItemEventListener(event) {
-    const id = parseInt(event.target.id.split("-").pop());
-    this.removeItem(id);
-    const shoeElement = document.getElementById(`shoe-${id}`);
-    if (shoeElement) {
-      shoeElement.remove();
+    // Update the display when the cart becomes empty
+    if (Object.keys(this.items).length === 0) {
+      productsContainer.innerHTML = "";
+      totalItems.textContent = 0;
+      subTotal.textContent = 0;
+      vat.textContent = 0;
+      total.textContent = 0;
     }
-  }*/
+  }
 
   //Method to access the total number of products in the cart
   getCounts() {
@@ -307,16 +296,16 @@ class ShoppingCart {
     if (this.items[id]) {
       delete this.items[id];
       this.updateCartDisplay();
-      this.calculateTotal();
     }
-    /*
-    const itemIndex = this.items.findIndex((item) => item.id === id);
-    if (itemIndex !== -1) {
-      this.items.splice(itemIndex, 1);
-      totalItems.textContent = this.getCounts();
-      this.calculateTotal();
+
+    // Update totals when the last item is removed
+    if (Object.keys(this.items).length === 0) {
+      productsContainer.innerHTML = "";
+      totalItems.textContent = 0;
+      subTotal.textContent = "$0";
+      vat.textContent = "$0";
+      total.textContent = "$0";
     }
-    */
   }
 }
 

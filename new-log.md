@@ -230,3 +230,11 @@
 **Thoughts**: Code's functionality is fragile
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyShoppingPage
+
+## Day 30 : July 7, 2024
+
+**Today's progress"": i successfully removed items from the cart individually. I impemented extra methods, removeItemEventListener() and updateRemoveButtons(), to enable this. I also learnt of more JS methods while at it: bind() which creates a new function with a this predefined value, and split() method which splits a string into an array of substrings based on a specified operator. I also learnt about event bundling, which is like a chain of events, from the child triggering an event, till the document object.
+
+**Thoughts**: Working on mini projects really helps at rasping and understanding concepts.
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyShoppingPage

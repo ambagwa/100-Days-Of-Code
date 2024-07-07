@@ -139,87 +139,133 @@ preloadImages(imageUrls)
 
 //create an class that will be used to store prperties and methods of the shopping cart
 class ShoppingCart {
-  //creat a constructor to instantiate properties of the object
+  //create a constructor to instantiate properties of the object
   constructor() {
-    this.items = []; //Store the products objects
+    this.items = {}; //Store the products objects
     this.total = 0;
     this.vatRate = 16;
-    this.removeItemEventListener = this.removeItemEventListener.bind(this);
+    //this.removeItemEventListener = this.removeItemEventListener.bind(this);
   }
 
   //Method for adding items to the cart
   addItem(id, products) {
     //Find the product the user is adding to the cart
     const product = products.find((item) => item.id === id);
-    //get the name and price keys from the returned product thru destructuring
-    const { name, price } = product;
-    //push the product to the items array with name and price properties
-    this.items.push(product);
 
-    //Keeps track of how many times a product appears in the cart
-    const totalCountPerProduct = {};
-    //Iterate over each item in the array and update the totalCountPerProduct
-    //to keep track of the no of times an object has been added to the cart
-    //Each item represents a product that has been added to the cart
-    this.items.forEach((shoe) => {
-      totalCountPerProduct[shoe.id] = (totalCountPerProduct[shoe.id] || 0) + 1;
-    });
-    //update the display with the newly addded product
-    const currentProductCount = totalCountPerProduct[product.id];
-    //Query this new product into HTML
-    const currentProductCountSpan = document.getElementById(
-      `product-count-for-id${id}`
-    );
-    //This method needs to change regardless of whether the product is in the
-    //cart or not
-    if (currentProductCountSpan) {
-      currentProductCountSpan.textContent = `${currentProductCount}x`;
+    if (!this.items[id]) {
+      this.items[id] = { ...product, quantity: 1 };
     } else {
-      productsContainer.innerHTML += `
-        <div class="product" id="shoe-${id}">
-            <p>
-                <span class="product-count" id="product-count-for-id${id}">
-                  ${currentProductCount}x
-                </span>
-                
-                ${name}
-            </p>
-            <p>${price}</p>
-            <button class="clear-item-from-cart" id="clear-item-from-cart-${id}">
-              Remove
-            </button>
-        </div>
-      `;
+      this.items[id].quantity += 1;
     }
-    
-    this.updateRemoveButtons();
+
+    this.updateCartDisplay();
   }
 
+  //Method to update the cart's display
+  updateCartDisplay() {
+    productsContainer.innerHTML = "";
+
+    for (const id in this.items) {
+      const item = this.items[id];
+      productsContainer.innerHTML += `
+        <div class="product" id="shoe-${id}">
+          <p>
+            <span class="product-count" id="product-count-for-id${id}">
+              ${item.quantity}x
+            </span>
+            ${item.name}
+          </p>
+          <p>${item.price}</p>
+          <button class="increase-quantity" data-id="${id}">+</button>
+          <span class="quantity" id="quantity-${id}">${item.quantity}</span>
+          <button class="decrease-quantity" data-id="${id}">-</button><br>
+          <button class="clear-item-from-cart" id="clear-item-from-cart-${id}">
+            Remove
+          </button>
+        </div>
+      `;
+
+      totalItems.textContent = this.getCounts();
+      this.calculateTotal();
+      this.updateEventListeners();
+    }
+  }
+
+  //Method for updating event listeners fo rquantity and remove buttons
+  updateEventListeners() {
+    const increaseButtons = document.querySelectorAll(".increase-quantity");
+    const decreaseButtons = document.querySelectorAll(".decrease-quantity");
+    const removeButtons = document.querySelectorAll(".clear-item-from-cart");
+
+    increaseButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const id = parseInt(event.target.dataset.id);
+        this.increaseQuantity(id);
+      });
+    });
+
+    decreaseButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const id = parseInt(event.target.dataset.id);
+        this.decreaseQuantity(id);
+      });
+    });
+
+    removeButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const id = parseInt(event.target.id.split("-").pop());
+        this.removeItem(id);
+      });
+    });
+  }
+
+  //Method to increase the quantity of an item inside the cart
+  increaseQuantity(id) {
+    if (this.items[id]) {
+      this.items[id].quantity += 1;
+      this.updateCartDisplay();
+    }
+  }
+
+  //Decrease quantity functionality through this method
+  decreaseQuantity(id) {
+    if (this.items[id] && this.items[id].quantity > 1) {
+      this.items[id].quantity -= 1;
+      this.updateCartDisplay();
+    } else if (this.items[id] && this.items[id].quantity === 1) {
+      delete this.items[id];
+      this.updateCartDisplay();
+    }
+  }
+
+  /*
   updateRemoveButtons() {
-    const removeButtons = document.getElementsByClassName("clear-item-from-cart");
-    [...removeButtons].forEach(button => {
+    const removeButtons = document.getElementsByClassName(
+      "clear-item-from-cart"
+    );
+    [...removeButtons].forEach((button) => {
       button.removeEventListener("click", this.removeItemEventListener);
       button.addEventListener("click", this.removeItemEventListener);
     });
   }
 
   removeItemEventListener(event) {
-    const id = parseInt(event.target.id.split('-').pop());
+    const id = parseInt(event.target.id.split("-").pop());
     this.removeItem(id);
     const shoeElement = document.getElementById(`shoe-${id}`);
     if (shoeElement) {
       shoeElement.remove();
     }
-  }
+  }*/
 
   //Method to access the total number of products in the cart
   getCounts() {
-    return this.items.length;
+    return Object.keys(this.items).length;
   }
 
   //clear the cart
   clearCart() {
-    if (!this.items.length) {
+    if (Object.keys(this.items).length === 0) {
       alert("Your cart is already empty");
       return;
     }
@@ -227,7 +273,7 @@ class ShoppingCart {
     const isCartCleared = confirm("Are you sure you want to clear the cart?");
 
     if (isCartCleared) {
-      this.items = [];
+      this.items = {};
       this.total = 0;
       productsContainer.innerHTML = "";
       totalItems.textContent = 0;
@@ -244,26 +290,33 @@ class ShoppingCart {
 
   //calculate the total amount
   calculateTotal() {
-    const subTotalAmount = this.items.reduce(
-      (total, item) => total + item.price,
+    const subtotal = Object.values(this.items).reduce(
+      (total, item) => total + item.price * item.quantity,
       0
     );
-    const tax = this.calculateVat(subTotalAmount);
-    this.total = subTotalAmount + tax;
-    subTotal.textContent = `${subTotalAmount.toFixed(2)}`;
+
+    const tax = this.calculateVat(subtotal);
+    this.total = subtotal + tax;
+    subTotal.textContent = `${subtotal.toFixed(2)}`;
     vat.textContent = `${tax.toFixed(2)}`;
     total.textContent = `${this.total.toFixed(2)}`;
-    return this.total;
   }
 
   //Allow customers to remove items from the cart individually
   removeItem(id) {
+    if (this.items[id]) {
+      delete this.items[id];
+      this.updateCartDisplay();
+      this.calculateTotal();
+    }
+    /*
     const itemIndex = this.items.findIndex((item) => item.id === id);
     if (itemIndex !== -1) {
       this.items.splice(itemIndex, 1);
       totalItems.textContent = this.getCounts();
       this.calculateTotal();
     }
+    */
   }
 }
 

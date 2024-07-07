@@ -41,7 +41,10 @@ body {
   background-image: linear-gradient(var(--hover-one), var(--hover-two));
   color: #fff;
 }
-#buy-cart-btn, .clear-item-from-cart {
+#buy-cart-btn,
+.clear-item-from-cart,
+.increase-quantity,
+.decrease-quantity {
   margin: 1rem auto 0.5rem;
   cursor: pointer;
   width: 100px;
@@ -51,7 +54,15 @@ body {
   border-color: var(--button-background);
   border-width: 3px;
 }
-#buy-cart-btn:hover, .clear-item-from-cart:hover {
+.increase-quantity,
+.decrease-quantity {
+  width: 40px;
+  font-weight: bold;
+}
+#buy-cart-btn:hover,
+.clear-item-from-cart:hover,
+.increase-quantity:hover,
+.decrease-quantity:hover {
   background-image: linear-gradient(var(--hover-one), var(--hover-two));
   color: #fff;
 }
@@ -84,18 +95,13 @@ body {
   flex: 1;
 }
 #shoes-card-container {
-  /*
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 10px;
   padding: 10px;
 }
-.shoe-price, .clear-item-from-cart {
+.shoe-price,
+.clear-item-from-cart {
   font-size: 1rem;
   margin-top: auto;
 }

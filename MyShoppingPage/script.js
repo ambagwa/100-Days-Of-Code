@@ -144,6 +144,7 @@ class ShoppingCart {
     this.items = []; //Store the products objects
     this.total = 0;
     this.vatRate = 16;
+    this.removeItemEventListener = this.removeItemEventListener.bind(this);
   }
 
   //Method for adding items to the cart
@@ -171,34 +172,43 @@ class ShoppingCart {
     );
     //This method needs to change regardless of whether the product is in the
     //cart or not
-    currentProductCount > 1
-      ? (currentProductCountSpan.textContent = `${currentProductCount}x`)
-      : //Add new html to the products container
-        (productsContainer.innerHTML += name);
-
-    //Remove any existing event listener on the remove button
-    const removeItemBtn = document.getElementById(`clear-item-from-cart-${id}`);
-    if (removeItemBtn) {
-      removeItemBtn.removeEventListener("click", () => {});
-    }
-
-    //Create a new remove button with a unique ID and event listener
-    const newRemoveItemBtn = document.createElement("button");
-    newRemoveItemBtn.classList.add("clear-item-from-cart");
-    //Add a unique id for each button
-    newRemoveItemBtn.id = `clear-item-from-cart-${id}`;
-    newRemoveItemBtn.textContent = "Remove Item";
-    newRemoveItemBtn.addEventListener("click", () => {
-      this.removeItem(id);
-      newRemoveItemBtn.parentNode.remove();
-    });
-
-    //Add the new remove button to the product container
-    const productContainer = document.getElementById(`product-${id}`); // Assuming you have an element with ID "product-${id}" for each product
-    if (productContainer) {
-      productContainer.appendChild(newRemoveItemBtn);
+    if (currentProductCountSpan) {
+      currentProductCountSpan.textContent = `${currentProductCount}x`;
     } else {
-      console.warn(`Couldn't find container for product with ID: ${id}`);
+      productsContainer.innerHTML += `
+        <div class="product" id="shoe-${id}">
+            <p>
+                <span class="product-count" id="product-count-for-id${id}">
+                  ${currentProductCount}x
+                </span>
+                
+                ${name}
+            </p>
+            <p>${price}</p>
+            <button class="clear-item-from-cart" id="clear-item-from-cart-${id}">
+              Remove
+            </button>
+        </div>
+      `;
+    }
+    
+    this.updateRemoveButtons();
+  }
+
+  updateRemoveButtons() {
+    const removeButtons = document.getElementsByClassName("clear-item-from-cart");
+    [...removeButtons].forEach(button => {
+      button.removeEventListener("click", this.removeItemEventListener);
+      button.addEventListener("click", this.removeItemEventListener);
+    });
+  }
+
+  removeItemEventListener(event) {
+    const id = parseInt(event.target.id.split('-').pop());
+    this.removeItem(id);
+    const shoeElement = document.getElementById(`shoe-${id}`);
+    if (shoeElement) {
+      shoeElement.remove();
     }
   }
 
@@ -248,7 +258,7 @@ class ShoppingCart {
 
   //Allow customers to remove items from the cart individually
   removeItem(id) {
-    const itemIndex = this.items.find((item) => item.id === id);
+    const itemIndex = this.items.findIndex((item) => item.id === id);
     if (itemIndex !== -1) {
       this.items.splice(itemIndex, 1);
       totalItems.textContent = this.getCounts();
@@ -269,6 +279,5 @@ cartButton.addEventListener("click", () => {
 });
 
 clearCartButton.addEventListener("click", () => {
-  cart1.clearCart.bind(cart1);
-  console.log(products);
+  cart1.clearCart();
 });

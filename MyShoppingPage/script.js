@@ -9,6 +9,34 @@ const subTotal = document.getElementById("subtotal");
 const vat = document.getElementById("vat");
 const total = document.getElementById("total");
 let isCartShowing = false;
+const searchBtn = document.getElementById("search-button");
+
+searchBtn.addEventListener("click", () => {
+  const inputValue = document
+    .getElementById("search-input")
+    .value.trim()
+    .toLowerCase();
+  const foundProduct = products.find(
+    (product) => product.name.toLowerCase() === inputValue
+  );
+
+  if (foundProduct) {
+    shoesCards.innerHTML = "";
+    ({ name, id, price, category, image }) => {
+      shoesCards.innerHTML = `
+        <div class="shoe-card">
+          <img src="${image}" alt={name} class="shoe-image">
+          <h2>${name}</h2>
+          <p class="shoe-price">$${price}</p>
+          <p class="shoe-category">Category: ${category}</p>
+          <button id="${id}" class="btn add-to-cart-btn">
+            Add to cart
+          </button>
+        </div>
+      `;
+    };
+  }
+});
 
 const products = [
   {
@@ -104,38 +132,42 @@ const imageUrls = products.map((product) => product.image);
 preloadImages(imageUrls)
   .then(() => {
     //All images preloaded, add them to the HTML
-    products.forEach(
-      //Destructure the properties of an object to be the parameter of the
-      //callback function
-      ({ name, id, price, category, image }) => {
-        //Display each product onto the html page
-        shoesCards.innerHTML += `
-                <div class="shoe-card">
-                    <img src="${image}" alt={name} class="shoe-image">
-                    <h2>${name}</h2>
-                    <p class="shoe-price">$${price}</p>
-                    <p class="shoe-category">Category: ${category}</p>
-                    <button id="${id}" class="btn add-to-cart-btn">
-                        Add to cart
-                    </button>
-                </div>
-            `;
-      }
-    );
-
-    //Add event listeners to the newly added buttons
-    const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
-    [...addToCartBtns].forEach((btn) => {
-      btn.addEventListener("click", (event) => {
-        cart1.addItem(Number(event.target.id), products);
-        totalItems.textContent = cart1.getCounts();
-        cart1.calculateTotal();
-      });
-    });
+    renderProductsToDom();
   })
   .catch((error) => {
     console.error("Error preloading images: ", error);
   });
+
+const renderProductsToDom = () => {
+  products.forEach(
+    //Destructure the properties of an object to be the parameter of the
+    //callback function
+    ({ name, id, price, category, image }) => {
+      //Display each product onto the html page
+      shoesCards.innerHTML += `
+              <div class="shoe-card">
+                  <img src="${image}" alt={name} class="shoe-image">
+                  <h2>${name}</h2>
+                  <p class="shoe-price">$${price}</p>
+                  <p class="shoe-category">Category: ${category}</p>
+                  <button id="${id}" class="btn add-to-cart-btn">
+                      Add to cart
+                  </button>
+              </div>
+          `;
+    }
+  );
+
+  //Add event listeners to the newly added buttons
+  const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
+  [...addToCartBtns].forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      cart1.addItem(Number(event.target.id), products);
+      totalItems.textContent = cart1.getCounts();
+      cart1.calculateTotal();
+    });
+  });
+};
 
 //create an class that will be used to store prperties and methods of the shopping cart
 class ShoppingCart {

@@ -233,8 +233,24 @@
 
 ## Day 30 : July 7, 2024
 
-**Today's progress"": i successfully removed items from the cart individually. I impemented extra methods, removeItemEventListener() and updateRemoveButtons(), to enable this. I also learnt of more JS methods while at it: bind() which creates a new function with a this predefined value, and split() method which splits a string into an array of substrings based on a specified operator. I also learnt about event bundling, which is like a chain of events, from the child triggering an event, till the document object. I reminded myself of  the filter() method which returns an array. I also implemented a functionality where a user can search for a particular shoe based on its name.
+**Today's progress"": i successfully removed items from the cart individually. I impemented extra methods, removeItemEventListener() and updateRemoveButtons(), to enable this. I also learnt of more JS methods while at it: bind() which creates a new function with a this predefined value, and split() method which splits a string into an array of substrings based on a specified operator. I also learnt about event bundling, which is like a chain of events, from the child triggering an event, till the document object. 
 
 **Thoughts**: Working on mini projects really helps at rasping and understanding concepts.
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyShoppingPage
+
+## Day 31: July 8, 2024
+
+**Today's progress**: I reminded myself of  the filter() method which returns an array. I also implemented a functionality where a user can search for a particular shoe based on its name.
+
+**Thoughts**: Haba na haba hujaza kibaba
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyShoppingPage
+
+## Day 32 : July 9, 2024
+
+**Today's progress**: I searched by shoe category on the searchBtn functionality.
+
+**Thoughts**: functions are great
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyShoppingPage

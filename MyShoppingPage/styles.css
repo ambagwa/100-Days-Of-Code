@@ -166,6 +166,10 @@ header {
 .product-category {
   margin: 10px 0;
 }
+#category-select {
+  padding: 5px;
+  border-radius: 5px;
+}
 @media (min-width: 768px) {
   #shoes-card-container {
     flex-direction: row;

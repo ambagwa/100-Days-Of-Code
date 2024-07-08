@@ -16,9 +16,13 @@ searchBtn.addEventListener("click", () => {
     .getElementById("search-input")
     .value.trim()
     .toLowerCase();
-  const foundProducts = products.filter(
-    (product) => product.name.toLowerCase().indexOf(inputValue) !== -1
-  );
+  const selectedCategory = document.getElementById("category-select").value;
+
+  const foundProducts = products.filter((product) => {
+    const matchesName = product.name.toLowerCase().indexOf(inputValue) !== -1;
+    const matchesCategory = selectedCategory === "" || product.category === selectedCategory;
+    return matchesName && matchesCategory;
+  });
 
   if (foundProducts.length > 0) {
     shoesCards.innerHTML = "";
@@ -36,8 +40,22 @@ searchBtn.addEventListener("click", () => {
         </div>
       `;
     });
+
+    const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
+    [...addToCartBtns].forEach((btn) => {
+      btn.addEventListener("click", (event) => {
+        cart1.addItem(Number(event.target.id), products);
+        totalItems.textContent = cart1.getCounts();
+        cart1.calculateTotal();
+      });
+    });
+
   } else {
-    shoesCards.innerHTML = `<p>No products found.</p>`;
+    shoesCards.innerHTML = `
+      <p style="color: red; font-size: 18px; text-align: center;">
+        No products found.
+      </p>
+    `;
   }
 });
 

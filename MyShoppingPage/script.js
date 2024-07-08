@@ -16,14 +16,15 @@ searchBtn.addEventListener("click", () => {
     .getElementById("search-input")
     .value.trim()
     .toLowerCase();
-  const foundProduct = products.find(
-    (product) => product.name.toLowerCase() === inputValue
+  const foundProducts = products.filter(
+    (product) => product.name.toLowerCase().indexOf(inputValue) !== -1
   );
 
-  if (foundProduct) {
+  if (foundProducts.length > 0) {
     shoesCards.innerHTML = "";
-    ({ name, id, price, category, image }) => {
-      shoesCards.innerHTML = `
+
+    foundProducts.forEach(({ name, id, price, category, image }) => {
+      shoesCards.innerHTML += `
         <div class="shoe-card">
           <img src="${image}" alt={name} class="shoe-image">
           <h2>${name}</h2>
@@ -34,7 +35,9 @@ searchBtn.addEventListener("click", () => {
           </button>
         </div>
       `;
-    };
+    });
+  } else {
+    shoesCards.innerHTML = `<p>No products found.</p>`;
   }
 });
 

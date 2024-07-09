@@ -249,7 +249,7 @@
 
 ## Day 32 : July 9, 2024
 
-**Today's progress**: I searched by shoe category on the searchBtn functionality.
+**Today's progress**: I searched by shoe category on the searchBtn functionality. I started to learn Bootstrap which takes a mobile-first approach whiledeveloping websites. Bootstrap is used to enhance the responsiveness of a webpage. I learnt that Bootstrap has pre-defined classes for styling elements. 
 
 **Thoughts**: functions are great
 

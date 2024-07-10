@@ -254,3 +254,11 @@
 **Thoughts**: functions are great
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyShoppingPage
+
+## Day 33 : July 10, 2024
+
+**Today's progress**: I went through Bootstrap docs and learnt od the different ways to create responsive columns during different classes. I also learnt of the different grid tiers: extra small, small, medium, large, extra large, and extra extra large.
+
+**Thoughts**: Responsiveness is easily implemented with Bootstrap.
+
+**Link to work**: ___

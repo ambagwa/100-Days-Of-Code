@@ -261,4 +261,20 @@
 
 **Thoughts**: Responsiveness is easily implemented with Bootstrap.
 
-**Link to work**: ___
+**Link to work**: __
+
+## Day 34  : July 11, 2024
+
+**Today's progress**: I looked into Bootstraps form controls and how the classes form-control is used for input elements. I also learnt how the class form-text is used to create bock-level and inline-level form text. I also learnt that  the disabled attribute can be used on input element too as well as the read ony attribute.
+
+**Thoughts**: Bootstrap makes it so easy to style html.
+
+**Link to work: ___
+
+
+
+
+
+
+
+

@@ -271,6 +271,13 @@
 
 **Link to work: ___
 
+## Day 35 : July 12, 2024
+
+**Today's progress**: I learned more about file input's in Bootstrap and also the color input. I aso learnt how to incorporate datalists into inputs. I also started learning about jQuery and how it makes HTML document manipulation easier. This is enabled throgh a browser running functions while oading your page. Some of these functions include addClass(), removeClass(), css(), appendTo(), html(), remove(), clone(), and parent().
+
+**Thoughts**: Who knew how life was before Bootstrap and jQuery?
+
+**Link to work**: ___
 
 
 

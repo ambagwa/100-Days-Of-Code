@@ -277,7 +277,15 @@
 
 **Thoughts**: Who knew how life was before Bootstrap and jQuery?
 
-**Link to work**: ___
+**Link to work**: __
+
+## Day 36 : July 13, 2024
+
+**Link to work**: I learnt about the containers in Bootstrap and how they are categorized into 3 classes: .container, .container-{breakpoint}, and .container-fluid. I also started learning about navigation bars. I learnt about some of the supported content i.e .navbar-brand for company or project name, .navbar-nav, .navbar-toggler for toggling behavior, .navbar-text, and .collapse .navar-collapse fo rhiding navbar among others.
+
+**Thoughts**: How did I not know the exploration of documentation?
+
+**Link to work**: Not yet
 
 
 

@@ -281,12 +281,19 @@
 
 ## Day 36 : July 13, 2024
 
-**Link to work**: I learnt about the containers in Bootstrap and how they are categorized into 3 classes: .container, .container-{breakpoint}, and .container-fluid. I also started learning about navigation bars. I learnt about some of the supported content i.e .navbar-brand for company or project name, .navbar-nav, .navbar-toggler for toggling behavior, .navbar-text, and .collapse .navar-collapse fo rhiding navbar among others.
+**Today's progres I learnt about the containers in Bootstrap and how they are categorized into 3 classes: .container, .container-{breakpoint}, and .container-fluid. I also started learning about navigation bars. I learnt about some of the supported content i.e .navbar-brand for company or project name, .navbar-nav, .navbar-toggler for toggling behavior, .navbar-text, and .collapse .navar-collapse fo rhiding navbar among others.
 
 **Thoughts**: How did I not know the exploration of documentation?
 
 **Link to work**: Not yet
 
+## Day 37 : July 14, 2024
+
+**Today's progress**: I learnt more about how to add brands, texts, and images inside navigation bars. I also learnt about how to include forms inside navigation bars. 
+
+**Thoughts**: Day 38 is something
+
+**Link to work**: Still reading the docs
 
 
 

@@ -295,6 +295,14 @@
 
 **Link to work**: Still reading the docs
 
+## Day 38 : July 15, 2024
+
+**Today's progress**: I learnt of the different color schemes that can be associated with the navigation bars. I also learnt of the different placement schemes for the nav element i.e. fixed-(top and bottom) and sticky-(top and bottom). I also learnt how to enable vertical scrolling on the navbar together with the offcanvas navbars.
+
+**Thoughts**: I thibk offcanvas navbars look great
+
+**Link to work**: Still on the documentation
+
 
 
 

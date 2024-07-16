@@ -303,6 +303,14 @@
 
 **Link to work**: Still on the documentation
 
+## Day 39 : July 16, 2024
+
+**Today's progress**: I learnt of how Sass in incoroporated with Bootstrap. I learnt variable declaration in Sass, Sass functions and their arguments, colors and color modes, and components.
+
+**Thoughts**: Sass makes it easier for reusing code.
+
+**Link to work**: Documentation things
+
 
 
 

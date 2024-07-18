@@ -311,6 +311,14 @@
 
 **Link to work**: Documentation things
 
+## Day 40 : July 18, 2024
+
+**Today's progress**: I looked into gutters. Their function is to add a padding between columns and are used to responsively space and align itemsby adding a padding-left and a padding-right on each column. They also use a negative offset to remove the padding at the start and the end of each columns of a row. I also learnt that horizintal gutters are effected using .gx-* class while the .gy-* class is used for vertical guttering. 
+
+**Thoughts**: Gutters might consume more space
+
+**Link to work**: Still on documentatio.
+
 
 
 

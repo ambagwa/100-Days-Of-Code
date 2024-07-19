@@ -317,7 +317,15 @@
 
 **Thoughts**: Gutters might consume more space
 
-**Link to work**: Still on documentatio.
+**Link to work**: Still on documentation.
+
+## Day 41 : July 19, 2024
+
+**Today's progress**: I also learnt of the class .g-* which combines both the horizontal and vertical gutters. Gutters can also cause overflows hence the need to use .overflow-hidden class in case it occurs. The class .g-0 is used to remove all gutters. I also learnt of the display property, of the naming convantions i.e. .d-{value} for extra small screens and .d-{breakpoint}-{value} for sm - xxl screen sizes. I also learnt of hiding elements using the .d-none 0r .d-{breakpoint}-none classes on an eleent. You can also show an element on a given interval of screen sizes by combining one -f .d-*none with a .d-*-*classes. Bootstrap also provide printing displays that is either relevant for screen viewing or printing or both via the classes .d-none or .d-print-{value} or both. I also looked into flexbox options. Most of the options provided responsive variations across different screen sizes. The utilities include justify-content, align-items, align-self, flex-fill, flex-grow, flex-shrink, order, wrap, align-content, and centering content vertially on its container (media object".
+
+**Thoughts**: CSS makes a lot of sense now
+
+**Link to work**: Still on documentation
 
 
 

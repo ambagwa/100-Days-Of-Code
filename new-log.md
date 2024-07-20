@@ -327,7 +327,11 @@
 
 **Link to work**: Still on documentation
 
+## Day 42 : July 20, 2024
 
+**Today' progress**: Still under CSS Grid, grid items lacking grid classes are resized automatically. The number of columns and gaps can however be adjusted using --bs-rows and --bs-gaps respectively. --bs-rows style is used to add rows to a grid item and is placed on the grid container while grid-row is used to determine the row that accommodates a specific grid item. row-gap style allows one to modify the vertical gap. One can also use the --bs-gap style in 2 ways: 1 value for all sides or two values for vertical and horizontal respectively.
+
+**Thoughts**: 
 
 
 

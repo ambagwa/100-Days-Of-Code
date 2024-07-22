@@ -348,3 +348,11 @@
 **Thoughts**: Typography makes it easier to arrange your page to your liking>
 
 **Link to work**: Still on the docummentation.
+
+## Day 44 : July 23, 2024
+
+**Today's progress**: I started learning about input groups which are initiated using .input-group with .input-group-text as its child element. Form sizing classes are enabled by adding .input-group-{sm/lg} on .input-group. For radios and checkboxes, place them withing an input group's addon and give the .form-check-input for appropriate styling. Multiple <input>s are supported visually but validation is only done to the iput groups with only 1 <input>. Other addons that are supported include: buttons, buttons with dropdowns, and segmented buttons. 
+
+**Thoughts**: Input groups make it easier to bundle up forms.
+
+**Link to work**: Still working on documentation. 

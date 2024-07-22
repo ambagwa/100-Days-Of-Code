@@ -335,6 +335,16 @@
 
 **Link to work**: Still on documentation
 
+## Day 43 : July 22, 2024
 
+**Today's progress**: I started learning Botstrap's typography. .display-* makes your heading standout when added to you rheading element. .lead makes paragraphs stand out from the normal ones. .mark represents highlighted text, .small for side-comments and small print, .text-decoration-underline, and .text-decoration-line-through. .initialism adds a smaller font size to <abbr>. .blockquote is wrapped around <blockquote> to quote block of content from another source within your element. .blockquote-footer works in conjunction with the <cite> element the same way a figcaption element does with the figure element. .list-unstyled removed the default list styling and left margin for the immediate child list items. .list-inline and .list-inline-item removes a list's bullets and adds a slight margin. The grid system is used to align text and description horizontally on dl.
 
+**Thoughts**: Tn
 
+## Day 43 : July 22, 2024
+
+**Today's progress**: I started learning Botstrap's typography. .display-* makes your heading standout when added to you rheading element. .lead makes paragraphs stand out from the normal ones. .mark represents highlighted text, .small for side-comments and small print, .text-decoration-underline, and .text-decoration-line-through. .initialism adds a smaller font size to <abbr>. .blockquote is wrapped around <blockquote> to quote block of content from another source within your element. .blockquote-footer works in conjunction with the <cite> element the same way a figcaption element does with the figure element. .list-unstyled removed the default list styling and left margin for the immediate child list items. .list-inline and .list-inline-item removes a list's bullets and adds a slight margin. The grid system is used to align text and description horizontally on dl.
+
+**Thoughts**: Typography makes it easier to arrange your page to your liking>
+
+**Link to work**: Still on the docummentation.

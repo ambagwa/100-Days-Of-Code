@@ -364,3 +364,11 @@
 **Thoughts**: Accordions have smooth animations
 
 **Link to work**: Still working on documentation.
+
+## Day 46 : July 25 , 2024
+
+**Today's progress**: I learnt about breadcrumbs which which shows a user's location within a website's hierarchy. .breadcrumb applies Bootstrap's styling for breadcrumbs while .breadcrumb-item applies styling for breadcrumb's items. A local CSS inline style, --bs-breadcrumb-divider is used to add a divider to the breadcrumb. I also delved into buttons which are declared using .btn class which adds basic styling to buttons. The class is used with other button variants, or to serve as a basis for your own custom styles. .text-nowrap disables text wrapping inside a button. .btn classes can also be used on <a> elements but only for inpage functionaity. Replace .btn-* class with .btn-outline-* for a button with no background color. Create a smaller or larger button using .btn-{sm/lg}. disabled attribute is used to make a button inactive and for the case of a link, the href attribute is done away with and .disabled class added. Create block buttons for easier control over responsiveness using .d-grid class. I also looked into button groups where you can stack your buttons vertically or align them together horizontally. Wrap a series of buttons with .btn in .btn-group. Combine sets of button groups into button toolbars using .btn-toolbar for more complex components. Add .btn-group-{sm/lg} to a button group to apply a size to each button inside the button group. One can also nest button groups. .btn-vertical-group makes buttons appear vertically stacked rather than horizontally. I also leart about cards and how .card provides a class for styling cards. .card-body sets the building block of a card. Titles, links and subtitles are supported through .card-title, .card-link, and .card-subtitle respectively. Content supported on the cards include: body, titles, subtitles, text, links, images, list groups, headers, and footers. Cards can be wrapped in columns and rows using grid. Replace .card-body with .card-img-overlay to use an image as the card's background. 
+
+**Thoughts**: Bootstrap makes things eaasier to work with.
+
+**Link to work**: Still on documentation.

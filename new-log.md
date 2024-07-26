@@ -372,3 +372,12 @@
 **Thoughts**: Bootstrap makes things eaasier to work with.
 
 **Link to work**: Still on documentation.
+
+## Day 47 : July 26, 2024
+
+**Today's progress**: Contiued delving into cards. .text-bg-{color} sets a background color to the card with a contrasting foreground color. Use .text-{color} to customize the color of the text and use .border-{color} to set the border color of the card. .card-body is used to render a group of cards as single, attached element, with equal width and height elements. Use the grid system and .row-cols-* classes to control how many grid columns you want in a row. Add .h-100 to each card for a consistent height for all the cards. 
+
+**Thoughts**: Mansory makes grids interesting
+
+**Link to owrk**: Documentation things
+

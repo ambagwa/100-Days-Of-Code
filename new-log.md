@@ -379,5 +379,12 @@
 
 **Thoughts**: Mansory makes grids interesting
 
-**Link to owrk**: Documentation things
+**Link to work**: Documentation things
 
+## Day 48 : July 27, 2024
+
+**Today's progress**: I started looking into Bootstrap Carousel. .carousel initiates a container for the carousel items. .carousel-inner holds carousel items and .carousel-item contains a single slide. .carousel-control-{prev/next} are added to buttons to navigate to the previous or next buttons respectively. .carousel-control-{prev/next}-icon are  added to the buttons to show the navigation icons. .visually-hidden is addded fr accessibility purposes. .carousel indicator, alongside controls allow users to jump directly to the slides they want. .carousel-fade allows for smoother transitions and data-bs-ride="true" autoplays the carousel on page transition. If the ride option is set to true, the autoplay will only start after the first user interaction. The attribute data-bs-touch="false" si used to disable touch swipping on touchscreen devices. 
+
+**Thoughts**: Animaations are made better with Bootstrap
+
+**Link to work**: Still on documentation

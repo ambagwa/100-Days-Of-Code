@@ -20,7 +20,8 @@ searchBtn.addEventListener("click", () => {
 
   const foundProducts = products.filter((product) => {
     const matchesName = product.name.toLowerCase().indexOf(inputValue) !== -1;
-    const matchesCategory = selectedCategory === "" || product.category === selectedCategory;
+    const matchesCategory =
+      selectedCategory === "" || product.category === selectedCategory;
     return matchesName && matchesCategory;
   });
 
@@ -29,14 +30,18 @@ searchBtn.addEventListener("click", () => {
 
     foundProducts.forEach(({ name, id, price, category, image }) => {
       shoesCards.innerHTML += `
-        <div class="shoe-card">
-          <img src="${image}" alt={name} class="shoe-image">
-          <h2>${name}</h2>
-          <p class="shoe-price">$${price}</p>
-          <p class="shoe-category">Category: ${category}</p>
-          <button id="${id}" class="btn add-to-cart-btn">
-            Add to cart
-          </button>
+        <div class="col">
+          <div class="card text-center">
+            <img src="${image}" alt=${name} class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">${name}</h5>
+              <p class="card-text">${category}</p>
+              <p class="card-text">$${price}</p>
+              <button id="${id}" class="btn btn-success">
+                Add to cart
+              </button>
+            </div>
+          </div>
         </div>
       `;
     });
@@ -49,7 +54,6 @@ searchBtn.addEventListener("click", () => {
         cart1.calculateTotal();
       });
     });
-
   } else {
     shoesCards.innerHTML = `
       <p style="color: red; font-size: 18px; text-align: center;">
@@ -63,8 +67,8 @@ const products = [
   {
     id: 1,
     name: "AF 1",
-    price: 15.99,
     category: "Nike",
+    price: 15.99,
     image: "images/image1.jpg",
   },
   {
@@ -166,15 +170,19 @@ const renderProductsToDom = () => {
     ({ name, id, price, category, image }) => {
       //Display each product onto the html page
       shoesCards.innerHTML += `
-              <div class="shoe-card">
-                  <img src="${image}" alt={name} class="shoe-image">
-                  <h2>${name}</h2>
-                  <p class="shoe-price">$${price}</p>
-                  <p class="shoe-category">Category: ${category}</p>
-                  <button id="${id}" class="btn add-to-cart-btn">
-                      Add to cart
-                  </button>
-              </div>
+        <div class="col">
+          <div class="card text-center border-success">
+            <img src="${image}" alt=${name} class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">${name}</h5>
+              <p class="card-text">${category}</p>
+              <p class="card-text">$${price}</p>
+              <button id="${id}" class="btn add-to-cart-btn">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
           `;
     }
   );

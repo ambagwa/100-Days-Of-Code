@@ -16,10 +16,6 @@
   --hover-two: #0077b6;
   --div-background: #aec3b0;
 }
-body {
-  background-color: var(--background-color);
-  font-size: 16px;
-}
 header {
   text-align: center;
 }
@@ -31,7 +27,7 @@ header {
 }
 .title-description {
   font-size: 2rem;
-  color: var(--title-color);
+  color: var(--text-color);
   margin-bottom: 15px;
 }
 .search-div{
@@ -49,84 +45,12 @@ header {
   outline: none;
   border: none;
 }
-.btn {
-  display: block;
-  cursor: pointer;
-  width: 100px;
-  color: var(--text-color);
-  background-color: var(--button-background);
-  background-image: linear-gradient(var(--gradient-one), var(--gradient-two));
-  border-color: var(--button-background);
-  border-width: 3px;
-}
-.btn:hover {
-  background-image: linear-gradient(var(--hover-one), var(--hover-two));
-  color: #fff;
-}
-#buy-cart-btn,
-.clear-item-from-cart,
-.increase-quantity,
-.decrease-quantity,
-#search-button {
-  margin: 1rem auto 0.5rem;
-  cursor: pointer;
-  width: 100px;
-  color: var(--text-color);
-  background-color: var(--button-background);
-  background-image: linear-gradient(var(--gradient-one), var(--gradient-two));
-  border-color: var(--button-background);
-  border-width: 3px;
-}
-.increase-quantity,
-.decrease-quantity {
-  width: 40px;
-  font-weight: bold;
-}
-#buy-cart-btn:hover,
-.clear-item-from-cart:hover,
-.increase-quantity:hover,
-.decrease-quantity:hover,
-#search-button:hover {
-  background-image: linear-gradient(var(--hover-one), var(--hover-two));
-  color: #fff;
-}
-#search-button {
-  padding: 3px 0;
-  border-radius: 5px;
-}
 #cart-btn {
   position: absolute;
   top: 0;
   right: 0;
 }
-.shoe-card {
-  background-color: var(--div-background);
-  padding: 15px;
-  text-align: center;
-  border-radius: 15px;
-  margin: 10px;
-  /*New features to make sure the images fit well*/
-  display: flex;
-  flex-direction: column;
-  max-width: 200px;
-  overflow: hidden;
-}
-.shoe-card img {
-  width: 100%;
-  display: block;
-  height: auto; /*MAintains aspect ratio*/
-  object-fit: cover; /*maintains aspect ratio while filling container*/
-  margin-bottom: 10px;
-  border-radius: 15px;
-}
-.shoe-card h2 {
-  flex: 1;
-}
 #shoes-card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10px;
-  padding: 10px;
   margin-top: 10px;
 }
 .shoe-price,
@@ -140,6 +64,7 @@ header {
 #cart-container {
   display: none;
   position: absolute;
+  z-index: 1000;
   top: 60px;
   right: 0;
   background-color: var(--div-background);
@@ -150,9 +75,6 @@ header {
   text-align: center;
   font-size: 1rem;
   overflow-y: scroll;
-}
-.shoe-category {
-  margin: 10px 0;
 }
 .product {
   margin: 25px 0;
@@ -166,10 +88,6 @@ header {
 }
 .product-category {
   margin: 10px 0;
-}
-#category-select {
-  padding: 5px;
-  border-radius: 5px;
 }
 @media (min-width: 768px) {
   #shoes-card-container {

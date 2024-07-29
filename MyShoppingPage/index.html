@@ -32,7 +32,11 @@
           <option value="Umoje">Umoja</option>
           <option value="Rubbers">Rubbers</option>
         </select>
-        <input type="text" id="search-input" placeholder="Search for your need">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search for your need"
+        />
         <button id="search-button">Search</button>
       </div>
 
@@ -49,10 +53,11 @@
         <p>Total: <span id="total">$0</span></p>
         <button id="buy-cart-btn">Buy</button>
       </div>
-      <div class="row row-cols-1 row-cols-md-3 g-4" 
-        data-masonry='{"percentPosition": true}'>
-      </div>
-      <div id="shoes-card-container"></div>
+      <div
+        class="row row-cols-3 row-cols-md-5 g-4"
+        data-masonry='{"percentPosition": true }'
+        id="shoes-card-container"
+      ></div>
     </main>
 
     <script src="script.js"></script>
@@ -60,6 +65,12 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+      integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
+      crossorigin="anonymous"
+      async
     ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"

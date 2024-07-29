@@ -391,8 +391,12 @@
 
 ## Day 49 : July 29, 2024
 
-**Today's progress**: Implemented Bootstrap's card layout on a project I had previosly started.
+**Today's progress**: Implemented Bootstrap's card layout on a project I had previosly started. I also looked into Bootstrap's close button which is initialized using .close-button and an aria-label for accessibility. I also looked into Bootstrap's collapse which hides/shows content via a button or a <a> link that acts as a button. Both require the data-bs-target="collapse> attribute. Horizontal collapsing is also supported via adding .collapse-horizontal to the .collapse element. Multiple button and link elements can also toggle the same element if they each reference it with the data-bs-target and href attribute. Referencing can also be done using the class selector for several elements. I started looking into dropdown which are toggleable , contextual overlays for displaying lists of links. The dropdown's toggle and ropdown menu are wrapped within .dropdown. For proper spacing around the dropdown caret, add .dropdown-toggle-split to .dropdown-toggle. Button dropdowns work will buttons of all sizes, .btn-lg and .btn-sm. .dropdown-menu-dark is added to .dropdown-menu for a darker menu. However, there is no need for this as the whole page can be set to dark mode via data-bs-theme="dark" that us added to the html tag. 
 
 **Thoughts**: Mansory is kinda technical with vanill JS
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyShoppingPage
+
+## Day 50 : July 30, 2024
+
+

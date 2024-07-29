@@ -388,3 +388,11 @@
 **Thoughts**: Animaations are made better with Bootstrap
 
 **Link to work**: Still on documentation
+
+## Day 49 : July 29, 2024
+
+**Today's progress**: Implemented Bootstrap's card layout on a project I had previosly started.
+
+**Thoughts**: Mansory is kinda technical with vanill JS
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyShoppingPage

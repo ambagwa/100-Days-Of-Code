@@ -390,7 +390,6 @@
 **Link to work**: Still on documentation
 
 ## Day 49 : July 29, 2024
-
 **Today's progress**: Implemented Bootstrap's card layout on a project I had previosly started. I also looked into Bootstrap's close button which is initialized using .close-button and an aria-label for accessibility. I also looked into Bootstrap's collapse which hides/shows content via a button or a <a> link that acts as a button. Both require the data-bs-target="collapse> attribute. Horizontal collapsing is also supported via adding .collapse-horizontal to the .collapse element. Multiple button and link elements can also toggle the same element if they each reference it with the data-bs-target and href attribute. Referencing can also be done using the class selector for several elements. I started looking into dropdown which are toggleable , contextual overlays for displaying lists of links. The dropdown's toggle and ropdown menu are wrapped within .dropdown. For proper spacing around the dropdown caret, add .dropdown-toggle-split to .dropdown-toggle. Button dropdowns work will buttons of all sizes, .btn-lg and .btn-sm. .dropdown-menu-dark is added to .dropdown-menu for a darker menu. However, there is no need for this as the whole page can be set to dark mode via data-bs-theme="dark" that us added to the html tag. 
 
 **Thoughts**: Mansory is kinda technical with vanill JS
@@ -399,4 +398,8 @@
 
 ## Day 50 : July 30, 2024
 
+**Today's progress**: Still on dropdowns, I learnt that the menus maybe be positioned differently using the classes, .dropdown-center, .dropup, .dropup-center, .dropend, and .dropstart. The menu items may also use <a> or <button> elements. .dropdown-item-text is used to create non-interactive menu items. If you want to use responsive alih=gnment, you disable dynamic positioning by using data-bs-display="static" on the dropdown element and then use .dropdown-menu-{breakpoint}-end/start for either right or left alignment. Use .dropdown-header together with any heading to create a header for the list items. Use .dropdown-divider + <hr> t separate groups of related menu items. data-bs-offset and data-bs-reference are used to change the location of the dropdown. data-bs-auto-close attribute is added to the dropdown element to dictate how to close the menu. I also started looking into list groups which are used to display a series of content. The most commo is an ul which is classed .list-group and its contents, .list-group-item. Add .list-group-item-action to .list-group-item to create actionable items with hover, disabled, and active states fr links and buttons. .list-group-flush is used to remove some borders and rounded corners to render the list group items edge-to-edge in a parent container. <ol> together with .list-group-numbered are used to create numbered list items. .list-group-horizontal is used to make the list group's layout span from left to right. .list-group-horizontal-{breakpoint} is the responsive variant for the latter and the horizontal effect takes place from the breakpoints minimum width. Add badges to any list group item with the help of spacing utilities. Any html content can be added to a list group. 
 
+**Thoughts**: Dropdown or navbar for section linkage?
+
+**Link to work**: Still on Bootstrap's documentation

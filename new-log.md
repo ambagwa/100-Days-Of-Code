@@ -402,4 +402,8 @@
 
 **Thoughts**: Dropdown or navbar for section linkage?
 
-**Link to work**: Still on Bootstrap's documentation
+**Link to work**: Still on Bootstrap's documentation. 
+
+## Day 51 : July 31, 2024
+
+**Today's progress**: Still on madals, data-bs-whatever attribute is used to pss additional info to the modal when it opens. I also looked into navbars. .navbar is a base class for creating a navbar. .navbar-expand-{breakpoint} expands the navbar from the breakpoint upwards. .navbar-brand styles the logo or brand inside the navigation bar. .navbar-toggler creates a button that toggles the collapse of a navbar'c content. .navbar-toggler-icon is added inside a button to to create a visual icon for the button. .collapse creates a collapsible section within a navbar while .navbar-collapse provides specific styling for the collapsible content. .navbar-nav creates a list of navigation items inside a navbar. .nav-item creates individual list items inside a navbar. .nav-link provides styling for navigation links while .active might be added for selected links. If your navbar is a form, use the <form> element as the container fuid and use input groups as they are supported too. Various buttons are also supported where you can use vertical alignment utilities to align different sizeed elements. .navbar-text is used to display text within a navbar. 

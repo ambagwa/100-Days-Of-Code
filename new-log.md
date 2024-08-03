@@ -425,3 +425,7 @@
 **Thoughts**: Accessibiity caters for everyoune on the web
 
 **Link to work** Still on documentation
+
+## Day 54 : August 3, 2024
+
+**Progress**: I also looked into toasts which act as an alert message to users and can be used to welcome them. .toast creates a toast wrapper container which encloses a .toast-header and .toast-body. .toast-cantainer is used to stack up several toasts. Color and background utilities create different color schemes on the toast. Use custom CSS to place toasts where you need them. 

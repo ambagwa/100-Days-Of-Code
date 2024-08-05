@@ -428,12 +428,14 @@
 
 ## Day 54 : August 3, 2024
 
-**Progress**: I also looked into toasts which act as an alert message to users and can be used to welcome them. .toast creates a toast wrapper container which encloses a .toast-header and .toast-body. .toast-cantainer is used to stack up several toasts. Color and background utilities create different color schemes on the toast. Use custom CSS to place toasts where you need them
+**Progress**: I also looked into toasts which act as an alert message to users and can be used to welcome them. .toast creates a toast wrapper container which encloses a .toast-header and .toast-body. .toast-cantainer is used to stack up several toasts. Color and background utilities create different color schemes on the toast. Use custom CSS to place toasts where you need them. 
 
-**Thoughts**: Learning Bootstrap is interesting
+**Thought**: --
 
-**Lik to work**: Still on documentation
+**Link to work**: Still on documentation.
 
-**Thoughts**: Learning Bootstrap is interesting
+## Day 55 : August 5, 2024
 
-**Lik to work**: Still on documentation
+**Progress**: I looked into positioning which determine the positioning of an element and its options include: sticky-{top/bottom} and fixed-{top/bottom}. Responisiveness is also supported in the format .fixed-{breakpoint}-top for all the classes. I also looked into ratios which make elements maintain their aspect ratios of your choosing. Initialized using .ratio and .ratio-16x9. I also looked into stacks which is used to determine the layout of components. .vstack is used for vertical layouts while .hstack is used for horizontal layouts. I also looked into stretched links which make anelement clickableby adding a "stretching" nested link via .stratched-link. Text truncation is enabled by .text-truncate on .d-block and d-inline-block elements. Use .vr class to create a vertical rule. I also looked into background utilities which are useed to set a background color to an element using .bg-{color} and .bg-{color}-subtle for a lighter color. .bg-gradient is added to .bg-info for a linear background gradient.  Opacity is also supported via .bg-opacity-{values}. Use .border to add borders to an element or target a specific side using .border-{top,end,bottom,start}. Add .border-0 to .border to remove all borders or .border-{side}-0 to remove a border on a specific side. Border colors are set by adding .border-{color} or .border-{color}-subtle to .border. .border-opacity-{value} is used to determine the opacity of the border color. .border-{value} sets aa border's width. .rounded creates a border radius to all corners while .rounded-* sets a border color to targeted areas. You can also scale down with .rounded-* with sizes from 0-5. .float-* toggles float on any element. This however affects the layout of the page therefore use clearfix helper to eliminate this. Responsiveness is also supported in the following format .float-{breakpoint}-start/end/none. .user-select-{none/all/auto} determines the way in which content is selected when the user interacts with it. 
+
+

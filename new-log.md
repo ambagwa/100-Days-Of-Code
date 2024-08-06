@@ -441,4 +441,12 @@
 
 **Thoughts**: __
 
-**Link to work**: Still on documentation
+**Link to work**: Still on documentation.
+
+## Day 56 : August 6, 2024
+ 
+**Progress**: I also studied link utilities. .link-opacity-* is used to change the alpha opacity of the link while .link-opacity-*-hover changes the opacity when hovering over the link. .link-underline-* changes the color of the underline of a link. .link-offset-* is used to set the distance between the text and link underline. .link-underline-opacity-*  is added to .link-underline to change the underline's opacity. I also looked into object-fit which is used to scale elements such as <img> and <video> into their containers via .object-fit-*. Responsiveness is also supported in the format .object-fit-{breakpoint}.*. Control the opacity which is the transparency of an element using .opacity-{value} class. I also looked into how overflow content should be treated using .overflow-*. I also looked into element positioning which is initiated using the class .position-*. .translate-middle centers elements. I also looked into shadows which is enabled using .shadow or .shaadow-{sm/lg} and remove shadows using .shadow-none. I also looked into sizing and how the .w-* and .h-* classes are used to set the widths and heights of elements respectively. I also looked into spacing. Use gap utilities on the parent element while using display: {flex/grid}. .row-gap and .column-gap are used to set the vertical and horizontal spaces between children items in a container. Text alignment is done through .text-* and .text-{breakpoint}-* for responsiveness. .text-wrap is used to wrap text. Use .fs-{value} to change the foont size of text. .fst-* and .fw-* change the font style and font weight of text respectively. .lh-* changes the line height of text.  
+
+**Thoughts**: Cant wait to implement Bootstrap in my projects
+
+**Link to work**: Coming soon.

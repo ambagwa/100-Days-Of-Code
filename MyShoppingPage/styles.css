@@ -58,9 +58,6 @@ header {
   font-size: 1rem;
   margin-top: auto;
 }
-.add-to-cart-btn {
-  margin: 30px auto 10px;
-}
 #cart-container {
   display: none;
   position: absolute;
@@ -88,16 +85,4 @@ header {
 }
 .product-category {
   margin: 10px 0;
-}
-@media (min-width: 768px) {
-  #shoes-card-container {
-    flex-direction: row;
-  }
-  .shoe-card {
-    flex: 1 0 21%;
-  }
-  #cart-container {
-    width: 300px;
-    height: auto;
-  }
 }

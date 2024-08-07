@@ -453,8 +453,8 @@
 
 ## Day 57 : August 7, 2024
 
-**Progress**: I looked into vertical alignment utilities which are initialied with the class .align-*. The utilities only work on inline, inline-block, inline-table, and table elements. I also looked into z-index utilities which are used to change the stack level of elements . They require a position value other than static and are initialized using .z-* class which is added to .position-* class. 
+**Progress**: I looked into vertical alignment utilities which are initialied with the class .align-*. The utilities only work on inline, inline-block, inline-table, and table elements. I also looked into z-index utilities which are used to change the stack level of elements . They require a position value other than static and are initialized using .z-* class which is added to .position-* class. I also started iplementing Bootstrap into a project of mine
 
-**Thoughts**: 
+**Thoughts**: Implementation makes understanding way better.
 
-**Link to work**:
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyShoppingPage

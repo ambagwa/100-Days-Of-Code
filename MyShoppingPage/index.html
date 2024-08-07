@@ -21,24 +21,33 @@
     </header>
 
     <main>
-      <div class="search-div">
-        <select id="category-select">
-          <option value="">All categories</option>
-          <option value="Nike">Nike</option>
-          <option value="Adidas">Adidas</option>
-          <option value="Vans">Vans</option>
-          <option value="Puma">Puma</option>
-          <option value="Bata">Bata</option>
-          <option value="New Balance">New Balance</option>
-          <option value="Umoje">Umoja</option>
-          <option value="Rubbers">Rubbers</option>
-        </select>
-        <input
-          type="text"
-          id="search-input"
-          placeholder="Search for your need"
-        />
-        <button id="search-button">Search</button>
+      <div class="container">
+        <div class="row justify-content-center p-2">
+          <div class="col-md-5">
+            <div class="input-group">
+              <input
+                list="datalistOptions"
+                class="form-control"
+                id="category-select"
+                placeholder="All categories..."
+                style="width: 10%"
+              />
+              <datalist id="datalistOptions">
+                <option value="Nike">Nike</option>
+                <option value="Adidas">Adidas</option>
+                <option value="Vans">Vans</option>
+                <option value="Puma">Puma</option>
+                <option value="Bata">Bata</option>
+                <option value="New Balance">New Balance</option>
+                <option value="Umoja">Umoja</option>
+                <option value="Rubbers">Rubbers</option>
+              </datalist>
+              <button id="search-button" class="btn btn-secondary">
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
       <button id="cart-btn" type="button" class="btn">
@@ -55,7 +64,7 @@
         <button id="buy-cart-btn">Buy</button>
       </div>
       <div
-        class="row row-cols-3 row-cols-md-5 g-2"
+        class="row row-cols-3 row-cols-md-5 g-2 mx-2"
         data-masonry='{"percentPosition": true }'
         id="shoes-card-container"
       ></div>

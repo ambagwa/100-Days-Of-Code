@@ -13,17 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchBtn = document.getElementById("search-button");
 
   searchBtn.addEventListener("click", () => {
-    const inputValue = document
-      .getElementById("search-input")
-      .value.trim()
-      .toLowerCase();
-    const selectedCategory = document.getElementById("category-select").value;
+    const selectedValue = document.getElementById("category-select");
+    const selectedCategory = selectedValue.value;
 
     const foundProducts = products.filter((product) => {
-      const matchesName = product.name.toLowerCase().indexOf(inputValue) !== -1;
       const matchesCategory =
         selectedCategory === "" || product.category === selectedCategory;
-      return matchesName && matchesCategory;
+      return matchesCategory;
     });
 
     if (foundProducts.length > 0) {

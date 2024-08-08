@@ -122,17 +122,24 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       id: 9,
       name: "Flip flops",
-      price: 2.79,
+      price: 322,
       category: "Umoja",
       image: "images/image9.jpg",
     },
     {
       id: 10,
       name: "Okala",
-      price: 4.99,
+      price: 521,
       category: "Rubbers",
       image: "images/image10.jpg",
     },
+    {
+      id: 11,
+      name: "Bata",
+      price: 1299,
+      Category: "School",
+      image: "images/image11.jpg",
+    }
   ];
 
   //Function to preload images

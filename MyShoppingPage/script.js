@@ -27,14 +27,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
       foundProducts.forEach(({ name, id, price, category, image }) => {
         shoesCards.innerHTML += `
-        <div class="col">
-          <div class="card text-center">
-            <img src="${image}" alt=${name} class="card-img-top">
+        <div class="col rounded">
+          <div class="card card-col">
+            <img src="${image}" alt=${name} class="object-fit-cover">
             <div class="card-body">
               <h5 class="card-title">${name}</h5>
               <p class="card-text">${category}</p>
               <p class="card-text">$${price}</p>
-              <button id="${id}" class="btn btn-success">
+            </div>
+            <div class="card-footer text-align">
+              <button id="${id}" class="btn btn-outline-secondary add-to-cart-btn">
                 Add to cart
               </button>
             </div>
@@ -167,15 +169,15 @@ document.addEventListener("DOMContentLoaded", () => {
       ({ name, id, price, category, image }) => {
         //Display each product onto the html page
         shoesCards.innerHTML += `
-        <div class="col">
-          <div class="card">
+        <div class="col rounded">
+          <div class="card card-col">
             <img src="${image}" alt=${name} class="object-fit-cover">
             <div class="card-body">
               <h5 class="card-title">${name}</h5>
               <p class="card-text">${category}</p>
               <p class="card-text">$${price}</p>
             </div>
-            <div class="card-footer">
+            <div class="card-footer text-align">
               <button id="${id}" class="btn btn-outline-secondary add-to-cart-btn">
                 Add to cart
               </button>
@@ -234,18 +236,18 @@ document.addEventListener("DOMContentLoaded", () => {
       for (const id in this.items) {
         const item = this.items[id];
         productsContainer.innerHTML += `
-        <div class="product" id="shoe-${id}">
-          <p>
+        <div class="bg-success-subtle mb-2 pb-1" id="shoe-${id}">
+          <p class="card-text">
             <span class="product-count" id="product-count-for-id${id}">
               ${item.quantity}x
             </span>
             ${item.name}
           </p>
-          <p>${item.price}</p>
-          <button class="increase-quantity" data-id="${id}">+</button>
+          <p>Unit price: ${item.price}</p>
+          <button class="btn btn-outline-secondary" data-id="${id}"><b>+</b></button>
           <span class="quantity" id="quantity-${id}">${item.quantity}</span>
-          <button class="decrease-quantity" data-id="${id}">-</button><br>
-          <button class="clear-item-from-cart" id="clear-item-from-cart-${id}">
+          <button class="btn btn-outline-secondary" data-id="${id}"><b>-</b></button><br>
+          <button class="btn btn-outline-secondary mt-1" id="clear-item-from-cart-${id}">
             Remove
           </button>
         </div>

@@ -14,14 +14,14 @@
       crossorigin="anonymous"
     />
   </head>
-  <body class="bg-light-subtle">
+  <body class="bg-info-subtle">
     <header>
       <h1 class="title">ENGA Shoes</h1>
       <h4 class="title-description">Your one-stop online shop for shoes</h4>
     </header>
 
     <main>
-      <div class="container">
+      <div class="container sticky-top">
         <div class="row justify-content-center p-2">
           <div class="col-md-5">
             <div class="input-group">
@@ -45,23 +45,32 @@
               <button id="search-button" class="btn btn-secondary">
                 Search
               </button>
+
+              <button
+                id="cart-btn"
+                type="button"
+                class="btn btn-secondary sticky-top top-0 end-0 ms-1"
+              >
+                <span id="show-hide-cart">Show </span>Cart
+              </button>
             </div>
           </div>
         </div>
       </div>
 
-      <button id="cart-btn" type="button" class="btn">
-        <span id="show-hide-cart">Show </span>Cart
-      </button>
       <div id="cart-container">
-        <button class="btn" id="clear-cart-btn">Clear Cart</button>
+        <button class="btn btn-secondary mb-1" id="clear-cart-btn">
+          Clear Cart
+        </button>
         <div id="products-container"></div>
         <!--productsContainer-->
         <p>Total number of items: <span id="total-items">0</span></p>
         <p>Subtotal: <span id="subtotal">$0</span></p>
         <p>VAT: <span id="vat">$0</span></p>
         <p>Total: <span id="total">$0</span></p>
-        <button id="buy-cart-btn">Buy</button>
+        <button class="btn btn-outline-secondary" id="buy-cart-btn">
+          Buy
+        </button>
       </div>
       <div
         class="row row-cols-3 row-cols-md-5 g-2 mx-2"

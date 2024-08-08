@@ -457,4 +457,12 @@
 
 **Thoughts**: Implementation makes understanding way better.
 
-**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyShoppingPage
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyShoppingPage.
+
+## Day 58 : August 8, 2024
+
+**Progress**: I went back to a project I had done earlier and implemented Bootstrap and mansory in it.
+
+**Thoughts**: Bootstrap cuts on a lot of css code
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyShoppingPage.

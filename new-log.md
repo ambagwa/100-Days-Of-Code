@@ -466,3 +466,11 @@
 **Thoughts**: Bootstrap cuts on a lot of css code
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/MyShoppingPage.
+
+## Day 59 : August 9, 2024
+
+**Progress**: I continued implementing Bootstrap on my other projects. Also got to learn a mistake I wasn't getting right with Bootstrap initialization in JS.
+
+**Thoughts**: Focus muhimu
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/simple_news_aggregator

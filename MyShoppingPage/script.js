@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       foundProducts.forEach(({ name, id, price, category, image }) => {
         shoesCards.innerHTML += `
-        <div class="col rounded">
+        <div class="col">
           <div class="card card-col">
             <img src="${image}" alt=${name} class="object-fit-cover">
             <div class="card-body">
@@ -67,55 +67,55 @@ document.addEventListener("DOMContentLoaded", () => {
       id: 1,
       name: "AF 1",
       category: "Nike",
-      price: 15.99,
+      price: 1764,
       image: "images/image1.jpg",
     },
     {
       id: 2,
       name: "SB dunks",
-      price: 25.99,
+      price: 3011,
       category: "Nike",
       image: "images/image2.jpg",
     },
     {
       id: 3,
       name: "Yeezy",
-      price: 35.99,
+      price: 4100,
       category: "Adidas",
       image: "images/image3.jpg",
     },
     {
       id: 4,
       name: "Converse",
-      price: 7.99,
+      price: 900,
       category: "Vans",
       image: "images/image4.jpg",
     },
     {
       id: 5,
       name: "Low riders",
-      price: 37.99,
+      price: 4400,
       category: "Puma",
       image: "images/image5.jpg",
     },
     {
       id: 6,
       name: "Ngoma",
-      price: 9.29,
+      price: 1039,
       category: "Bata",
       image: "images/image6.jpg",
     },
     {
       id: 7,
       name: "Tops",
-      price: 19.91,
+      price: 2750,
       category: "New Balance",
       image: "images/image7.jpg",
     },
     {
       id: 8,
       name: "J1s",
-      price: 44.98,
+      price: 5700,
       category: "Nike",
       image: "images/image8.jpg",
     },
@@ -137,9 +137,44 @@ document.addEventListener("DOMContentLoaded", () => {
       id: 11,
       name: "Bata",
       price: 1299,
-      Category: "School",
-      image: "images/image11.jpg",
-    }
+      category: "School",
+      image: "images/11.jpg",
+    },
+    {
+      id: 12,
+      name: "Bata",
+      price: 1299,
+      category: "School",
+      image: "images/12.jpg",
+    },
+    {
+      id: 13,
+      name: "Bata",
+      price: 1299,
+      category: "School",
+      image: "images/13.jpg",
+    },
+    {
+      id: 14,
+      name: "Bata",
+      price: 1299,
+      category: "School",
+      image: "images/14.jpg",
+    },
+    {
+      id: 15,
+      name: "Bata",
+      price: 1299,
+      category: "School",
+      image: "images/15.jpg",
+    },
+    {
+      id: 16,
+      name: "Bata",
+      price: 1299,
+      category: "School",
+      image: "images/16.jpg",
+    },
   ];
 
   //Function to preload images
@@ -182,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="card-body">
               <h5 class="card-title">${name}</h5>
               <p class="card-text">${category}</p>
-              <p class="card-text">$${price}</p>
+              <p class="card-text">Sh. ${price}</p>
             </div>
             <div class="card-footer text-align">
               <button id="${id}" class="btn btn-outline-secondary add-to-cart-btn">
@@ -251,10 +286,10 @@ document.addEventListener("DOMContentLoaded", () => {
             ${item.name}
           </p>
           <p>Unit price: ${item.price}</p>
-          <button class="btn btn-outline-secondary" data-id="${id}"><b>+</b></button>
+          <button class="btn btn-outline-secondary increase-quantity" data-id="${id}"><b>+</b></button>
           <span class="quantity" id="quantity-${id}">${item.quantity}</span>
-          <button class="btn btn-outline-secondary" data-id="${id}"><b>-</b></button><br>
-          <button class="btn btn-outline-secondary mt-1" id="clear-item-from-cart-${id}">
+          <button class="btn btn-outline-secondary decrease-quantity" data-id="${id}"><b>-</b></button><br>
+          <button class="btn btn-outline-secondary mt-1 clear-item-from-cart" id="clear-item-from-cart-${id}">
             Remove
           </button>
         </div>

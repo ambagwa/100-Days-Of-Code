@@ -473,4 +473,12 @@
 
 **Thoughts**: Focus muhimu
 
-**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/simple_news_aggregator
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/simple_news_aggregator.
+
+## Day 60 : August 11, 2024
+
+**Progress**: I worked out on the flow logic on my project. With the introduction of Bootstrap, some aspects had changed introducing bugs. 
+
+**Thoughts**: Understanding how code runs helps in debugging a lot.
+
+**Link to work**:  https://github.com/ambagwa/100-Days-Of-Code/tree/main/simple_news_aggregator

@@ -7,11 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
   //const newsContainer = document.getElementById("newsContainer");
 
   moreBtn.style.display = "none";
-
-  const masonry1 = new Masonry(newsContainer, {
-    itemSelector: ".col",
-    percentPosition: true
-  });
+  
+  const hideSearchHistory = () => {
+    searchHistoryDiv.innerHTML = "";
+  };
 
   searchButton.addEventListener("click", () => {
     const apiKey = "ea302295a96940d99b4602a8c480c5da";
@@ -23,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const apiUrl = `https://newsapi.org/v2/everything?q=${searchInput}&apiKey=${apiKey}`;
 
     newsContainer.innerHTML = "";
+
+    hideSearchHistory();
 
     if (!searchInput) {
       alert("Please enter a search term.");
@@ -94,14 +95,12 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .join("");
 
-      masonry1.layout();
-
       startingIndex += endingIndex;
 
       if (startingIndex > endingIndex) {
         moreBtn.style.display = "none";
         let newButton = document.createElement("button");
-        newButton.className = "clear-btn";
+        newButton.className = "btn btn-info position-absolute start-50";
         newButton.id = "clear-btn";
         newButton.textContent = "Clear Results";
 
@@ -115,8 +114,9 @@ document.addEventListener("DOMContentLoaded", () => {
           newButton.style.display = "none";
 
           let displayHistoryBtn = document.createElement("button");
-          displayHistoryBtn.className = "displayHistoryBtn";
-          displayHistoryBtn.textContent = "SearchHistory";
+          displayHistoryBtn.className =
+            "btn btn-info position-absolute start-50";
+          displayHistoryBtn.textContent = "Display search history";
 
           document.body.appendChild(displayHistoryBtn);
 
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
             searchHistory.push(searchInput);
             displayHistoryBtn.addEventListener("click", () => {
               updateSearchHistory();
-              displayHistoryBtn.textContent = "Hide Search History";
+              displayHistoryBtn.style.display = "none";
             });
 
             //Append searchHistoryDiv if not already appended
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const updateSearchHistory = () => {
       searchHistoryDiv.innerHTML = `
-      <h3>Search History</h3>
+      <h3 class="h4 mt-4">Search History</h3>
       <ul>
         ${searchHistory.map((term) => `<li>${term}</li>`).join("")}
       </ul>

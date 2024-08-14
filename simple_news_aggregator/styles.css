@@ -23,3 +23,15 @@ body {
   transform: scale(1.005);
   box-shadow: 0 0 5px #0dcaf0;
 }
+.news-card img{
+  height: 200px;
+  object-fit: cover;
+}
+#news-container{
+  display: flex;
+  flex-direction: column;
+}
+#more-btn{
+  align-self: center;
+  margin-top: 20px;
+}

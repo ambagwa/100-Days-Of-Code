@@ -4,10 +4,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const loadingIndicator = document.getElementById("loading");
   let searchHistory = [];
   let searchHistoryDiv = document.createElement("div");
-  //const newsContainer = document.getElementById("newsContainer");
+  const newsContainer = document.getElementById("newsContainer");
 
   moreBtn.style.display = "none";
-  
+
+  const masonryInstance = new Masonry(newsContainer, {
+    itemSelector: ".col",
+    percentPosition: true,
+  });
+
   const hideSearchHistory = () => {
     searchHistoryDiv.innerHTML = "";
   };
@@ -32,19 +37,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const fetchData = async () => {
       try {
-        //Show loading indicator
         loadingIndicator.style.display = "block";
         const resolve = await fetch(apiUrl);
         const data = await resolve.json();
-        //hide loading indicator
         loadingIndicator.style.display = "none";
 
         dataArr = data.articles;
         //Display the data
-        //newsContainer.innerHTML = JSON.stringify(data, null, 2);
         displayResults();
 
-        moreBtn.style.display = "block";
+        if (dataArr.length > endingIndex) {
+          moreBtn.style.display = "block";
+        }
       } catch (error) {
         newsContainer.innerHTML = error;
       }
@@ -62,19 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
       //source(name0), title, urltoImage, url
       newsContainer.innerHTML += slicedData
         .map((item) => {
-          const {
-            author,
-            content,
-            description,
-            publishedAt,
-            source: { id, name },
-            title,
-            url,
-            urlToImage,
-          } = item;
+          const { author, content, publishedAt, title, url, urlToImage } = item;
 
           return `
-          <div class="col">
+          <div class="col mb-2">
             <div class="card news-card">
               <img src="${urlToImage}" alt="news=image" class="card-img-top">
               <div class="card-body">
@@ -95,9 +90,12 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .join("");
 
+      masonryInstance.reloadItems();
+      masonryInstance.layout();
+
       startingIndex += endingIndex;
 
-      if (startingIndex > endingIndex) {
+      if (startingIndex >= dataArr.length) {
         moreBtn.style.display = "none";
         let newButton = document.createElement("button");
         newButton.className = "btn btn-info position-absolute start-50";

@@ -482,3 +482,11 @@
 **Thoughts**: Understanding how code runs helps in debugging a lot.
 
 **Link to work**:  https://github.com/ambagwa/100-Days-Of-Code/tree/main/simple_news_aggregator
+
+## Day 61 : August 14, 2021
+
+**Progress**: I finally figured out why masonry wasnt working in my layout. 
+
+**Thoughts**: Solving bugs must be one of the most exciting things ever.
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/simple_news_aggregator

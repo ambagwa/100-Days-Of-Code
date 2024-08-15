@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const newsContainer = document.getElementById("newsContainer");
     let dataArr = [];
     let startingIndex = 0;
-    let endingIndex = 6;
+    let endingIndex = 9;
     const apiUrl = `https://newsapi.org/v2/everything?q=${searchInput}&apiKey=${apiKey}`;
 
     newsContainer.innerHTML = "";
@@ -46,9 +46,13 @@ document.addEventListener("DOMContentLoaded", () => {
         //Display the data
         displayResults();
 
+        /*
         if (dataArr.length > endingIndex) {
           moreBtn.style.display = "block";
+          console.log("dataArr length = ", dataArr.length);
+          console.log("moreBtn has been displayed");
         }
+          */
       } catch (error) {
         newsContainer.innerHTML = error;
       }
@@ -90,15 +94,23 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .join("");
 
+      moreBtn.style.display = "block";
+
       masonryInstance.reloadItems();
       masonryInstance.layout();
 
       startingIndex += endingIndex;
 
+      if (dataArr.length > endingIndex) {
+        moreBtn.style.display = "block";
+        console.log("dataArr length = ", dataArr.length);
+        console.log("moreBtn has been displayed");
+      }
+
       if (startingIndex >= dataArr.length) {
         moreBtn.style.display = "none";
         let newButton = document.createElement("button");
-        newButton.className = "btn btn-info position-absolute start-50";
+        newButton.className = "btn btn-info position-relative start-50";
         newButton.id = "clear-btn";
         newButton.textContent = "Clear Results";
 
@@ -113,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           let displayHistoryBtn = document.createElement("button");
           displayHistoryBtn.className =
-            "btn btn-info position-absolute start-50";
+            "btn btn-info position-relative start-50";
           displayHistoryBtn.textContent = "Display search history";
 
           document.body.appendChild(displayHistoryBtn);

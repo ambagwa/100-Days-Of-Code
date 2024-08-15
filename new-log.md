@@ -490,3 +490,11 @@
 **Thoughts**: Solving bugs must be one of the most exciting things ever.
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/simple_news_aggregator
+
+## Day 62 : August 15, 2021
+
+**Progress**: I checked to solve why my buttons were not being displayed when I rendered articles on the page. I havent figured it out yet 😅
+
+**Thoughts**: console.log() must be the most important debug code
+
+**Link to work**:  https://github.com/ambagwa/100-Days-Of-Code/tree/main/simple_news_aggregator

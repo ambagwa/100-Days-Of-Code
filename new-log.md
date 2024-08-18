@@ -498,3 +498,11 @@
 **Thoughts**: console.log() must be the most important debug code
 
 **Link to work**:  https://github.com/ambagwa/100-Days-Of-Code/tree/main/simple_news_aggregator
+
+## Day 63 : August 18, 2024
+
+**Progress**: I finally figured out why the buttons were not being displayed as they needed to. I also eliminated some buttons by merging two functionaalities into a single button. 
+
+**Thoughta**: console.log() has helped a lot
+
+**Link to work**:  https://github.com/ambagwa/100-Days-Of-Code/tree/main/simple_news_aggregator

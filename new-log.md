@@ -505,4 +505,12 @@
 
 **Thoughta**: console.log() has helped a lot
 
-**Link to work**:  https://github.com/ambagwa/100-Days-Of-Code/tree/main/simple_news_aggregator
+**Link to work**:  https://github.com/ambagwa/100-Days-Of-Code/tree/main/simple_news_aggregator.
+
+## Day 64 : August 19, 2024
+
+**Progress**: I started learning how to customize Bootstrap and this led me to learn how to implement Sass into my project. I had a pretty rough time doing this but i learnt a lot doing so. I also learnt about npm so that I could manaage aand customize Bootstrap easily. 
+
+**Thoughts**: Bugs are a blessing in disguise
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/simple_news_aggregator.

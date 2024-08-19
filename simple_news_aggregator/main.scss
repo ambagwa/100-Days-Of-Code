@@ -1,0 +1,7 @@
+//Custom variable
+$primary: #34ab5e;
+
+//import bootstrap
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+//    This import combines all the original bootstrap properties with this sass file while compiling it
+//  You can also override/update the original variables using this sass file

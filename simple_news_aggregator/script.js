@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         dataArr = data.articles;
         displayResults();
-        
+
         if (!searchHistory.includes(searchInput)) {
           searchHistory.push(searchInput);
         }

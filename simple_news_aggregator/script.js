@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         return `
           <div class="col mb-2">
-            <div class="card news-card">
+            <div class="card news-card bg-altdarksubtle">
               <img src="${urlToImage}" alt="news=image" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">${title}</h5>
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
       moreBtn.style.display = "none";
 
       let newButton = document.createElement("button");
-      newButton.className = "btn btn-info position-relative start-50";
+      newButton.className = "btn btn-info position-relative";
       newButton.id = "clear-btn";
       newButton.textContent = "Clear Results";
 
@@ -90,6 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
         newButton.textContent = "Display Search history";
 
         newButton.addEventListener("click", () => {
+          searchHistoryDiv.className = "bg-historydiv p-1 mt-2";
           updateSearchHistory();
           newButton.style.display = "none";
         });
@@ -105,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const updateSearchHistory = () => {
     searchHistoryDiv.innerHTML = `
       <h3 class="h4 mt-4">Search History</h3>
-      <ul>
+      <ul style="list-style-type: none;">
         ${searchHistory.map((term) => `<li>${term}</li>`).join("")}
       </ul>
     `;

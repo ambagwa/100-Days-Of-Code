@@ -21,7 +21,7 @@ body {
 }
 .news-card:hover{
   transform: scale(1.005);
-  box-shadow: 0 0 5px #0dcaf0;
+  box-shadow: 0 0 5px #6a4c93;
 }
 .news-card img{
   height: 200px;

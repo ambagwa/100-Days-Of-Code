@@ -1,7 +1,21 @@
 //Custom variable
-$primary: #34ab5e;
+$info: #6a4c93;
+
+// Import the following 2 files for the added themes to work
+@import 'node_modules/bootstrap/scss/_functions.scss';
+@import 'node_modules/bootstrap/scss/_variables.scss';
+
+// Add a custome theme color to the pre-existing ones
+$custom-theme-colors: (
+    "altprimary": #f2ebfa,
+    "altdarksubtle": #eceaed,
+    "historydiv": rgb(225, 248, 248)
+);
+
+// merge the two theme maps
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
 
 //import bootstrap
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
-//    This import combines all the original bootstrap properties with this sass file while compiling it
+//  This import combines all the original bootstrap properties with this sass file while compiling it
 //  You can also override/update the original variables using this sass file

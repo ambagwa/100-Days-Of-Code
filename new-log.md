@@ -514,3 +514,7 @@
 **Thoughts**: Bugs are a blessing in disguise
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/simple_news_aggregator.
+
+## Daay 65 : August 20, 2024
+
+**Progress**: I also learnt how to add new theme colours to the pre-existing ones. I learnt how map-merge() joins two variables and reassigns them to another variable and how the placement of the variables during merging does not matter. 

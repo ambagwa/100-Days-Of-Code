@@ -1,0 +1,12 @@
+// Add a custome theme color
+@import 'node_modules/bootstrap/scss/_functions.scss';
+@import 'node_modules/bootstrap/scss/_variables.scss';
+
+$custom-theme-colors: (
+    "navbarbackground": #d0f4de
+);
+
+//merge thet two theme maps
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+@import 'node_modules/bootstrap/scss/bootstrap.scss';

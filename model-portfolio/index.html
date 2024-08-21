@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scame=1.0" />
+    <title>anne-portfolio</title>
+    <link rel="stylesheet" href="compiledcss/main.min.css" />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg text-bg-navbarbackground sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+          <i class="bi bi-card-checklist"></i>
+          Anne's portfolio
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarPortfolio"
+          aria-controls="navbarPortfolio"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarPortfolio">
+          <div class="navbar-nav ms-lg-auto justify-content-end">
+            <button class="btn btn-outline-success mx-1">
+              <a class="nav-link active" aria-current="page" href="#home"
+                >Home</a
+              >
+            </button>
+            <button class="btn btn-outline-success mx-1">
+              <a class="nav-link" href="#about">About</a>
+            </button>
+            <button class="btn btn-outline-success mx-1">
+              <a class="nav-link" href="#work">Work</a>
+            </button>
+            <button class="btn btn-outline-success mx-1">
+              <a class="nav-link" href="#services">Services</a>
+            </button>
+            <button class="btn btn-outline-success mx-1">
+              <a class="nav-link" href="#contacts">Contacts</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section id="home">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <img
+                src="https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="model Image"
+                class="img-fluid object-cover mb-3"
+                style="height: 100%;"
+              />
+            </div>
+            <div
+              class="col-md-6 d-flex flex-column justify-content-center"
+            >
+              <h4 class="display-5 fw-medium">
+                HI THERE
+                <i class="bi bi-emoji-smile-fill"></i>
+              </h4>
+              <h1 class="display-2 fw-bold">
+                I'm Anne
+                <span
+                  class="text-info text-uppercase font-monospace text-decoration-underline"
+                  >Nyaboke</span
+                >
+              </h1>
+              <p class="d-inline-block display-6 text-bg-secondary">
+                <i class="bi bi-stars"></i>
+                PROFESSIONAL MODEL
+              </p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Assumenda, quas! Aut ut excepturi dolore pariatur reprehenderit
+                delectus quibusdam! Quae labore nam voluptate dolores neque.
+                Totam quod quo commodi esse repellat.
+              </p>
+              <figure>
+                <blockquote class="blockquote">
+                  <p>
+                    “If you believe in yourself and feel confident in yourself,
+                    you can do anything. I really believe that.”
+                  </p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                  <cite title="Source Title">
+                    Tobias Sorenson, a Danish model</cite
+                  >
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="about"
+        style="height: 2300px; background-color: antiquewhite"
+      ></section>
+      <section
+        id="work"
+        style="height: 2300px; background-color: aqua"
+      ></section>
+      <section
+        id="services"
+        style="height: 2300px; background-color: aquamarine"
+      ></section>
+      <section
+        id="contacts"
+        style="height: 2300px; background-color: azure"
+      ></section>
+    </main>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

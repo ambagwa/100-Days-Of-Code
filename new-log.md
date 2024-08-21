@@ -522,3 +522,11 @@
 **Thoughts**: Feels great to solve bugs
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/simple_news_aggregator.
+
+## Day 66 : August 21, 2024
+
+**Progress**: I started working on a model portfolio project. The project will enhance my skill and understanding in Bootstrap and Sass and will take a mobile-first responsive approach. I worked on the landing page which consists of a navbar and a landing page. The landing page consists of two columns og large screens and above and on mobile phones, the second column stacks up on the first one. 
+
+**Thoughts**: Smooth sailing, at least for now :)
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/model-portfolio https://github.com/ambagwa/100-Days-Of-Code/tree/main/model-portfolio

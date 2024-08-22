@@ -529,4 +529,12 @@
 
 **Thoughts**: Smooth sailing, at least for now :)
 
-**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/model-portfolio https://github.com/ambagwa/100-Days-Of-Code/tree/main/model-portfolio
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/model-portfolio
+
+## Day 67 : August 22, 2024
+
+**Progress**: Did I say I minimize on using JS in this project? Anyway, I worked on the contact section where there is a subsection for contact details and another subsection for social media pages. on medium screens and above, each contact details covers four sebsections of the full width row while on smaller screens, each contact covers the full width. Each social media page covers three subsections of the full width on screens larger than the medium breakpoint but on smaller screens, each contact covers a full width.
+
+**Thoughts**: small wins
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/model-portfolio

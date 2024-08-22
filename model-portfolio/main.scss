@@ -3,10 +3,42 @@
 @import 'node_modules/bootstrap/scss/_variables.scss';
 
 $custom-theme-colors: (
-    "navbarbackground": #d0f4de
+    "navbarbackground": #d0f4de,
+    "twitter": #1DA1F2,
+    "facebook": #1877F2,
+    "instagram": #fccc63,
+    "aboutbgcolor": #d8e2dc
 );
 
 //merge thet two theme maps
 $theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+body {
+  position: relative;
+  width: 100%;
+  background-color: #f0f0f0;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  z-index: 1;
+  background: url("https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=600");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+body > * {
+  position: relative;
+  z-index: 2;
+  columns: #fff;
+}
+.bi-emoji-smile-fill:hover{
+    color: #0dcaf0;
+}
 
 @import 'node_modules/bootstrap/scss/bootstrap.scss';

@@ -40,5 +40,21 @@ body > * {
 .bi-emoji-smile-fill:hover{
     color: #0dcaf0;
 }
+.title{
+    padding-top: 6rem;
+}
+.bg-title{
+    top: 50%;
+    left: 50%;
+    font-size: 4rem;
+    font-weight: 800;
+    opacity: .2;
+    line-height: 7rem;
+    padding-top: 4rem;
+    margin: 10px auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    color: #0dcaf0;
+}
 
 @import 'node_modules/bootstrap/scss/bootstrap.scss';

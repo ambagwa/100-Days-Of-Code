@@ -538,3 +538,11 @@
 **Thoughts**: small wins are the motivation.
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/model-portfolio
+
+##  Day 67 : August 23, 2024.
+
+**Progress**: I started working on the porfolio section. I had the idea of pinterest layout where the images have a masonry layout. However, halfway through my implementation, I realized there might be issues with Bootstrap Grid and masonry implementation while ensuring mobile phones responsiveness. I might as well as change it.
+
+**Thoughts**: tururu!!
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/model-portfolio

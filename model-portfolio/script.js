@@ -22,7 +22,7 @@ const imageUrls = [
 
 imageUrls.forEach(({ image }) => {
     imageContainer.innerHTML += `
-        <div class="col">
+        <div class="col image">
             <img src="${image}" class="object-fit-cover img-fluid">
         </div>
     `;

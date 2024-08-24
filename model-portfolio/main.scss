@@ -1,13 +1,13 @@
 // Add a custome theme color
-@import 'node_modules/bootstrap/scss/_functions.scss';
-@import 'node_modules/bootstrap/scss/_variables.scss';
+@import "node_modules/bootstrap/scss/_functions.scss";
+@import "node_modules/bootstrap/scss/_variables.scss";
 
 $custom-theme-colors: (
-    "navbarbackground": #d0f4de,
-    "twitter": #1DA1F2,
-    "facebook": #1877F2,
-    "instagram": #fccc63,
-    "aboutbgcolor": #d8e2dc
+  "navbarbackground": #d0f4de,
+  "twitter": #1da1f2,
+  "facebook": #1877f2,
+  "instagram": #fccc63,
+  "aboutbgcolor": #d8e2dc,
 );
 
 //merge thet two theme maps
@@ -37,34 +37,40 @@ body > * {
   z-index: 2;
   columns: #fff;
 }
-.bi-emoji-smile-fill:hover{
-    color: #0dcaf0;
+.bi-emoji-smile-fill:hover {
+  color: #0dcaf0;
 }
-.title{
-    padding-top: 6rem;
+.title {
+  padding-top: 6rem;
 }
-.bg-title{
-    top: 50%;
-    left: 50%;
-    font-size: 4rem;
-    font-weight: 800;
-    opacity: .2;
-    line-height: 7rem;
-    padding-top: 4rem;
-    margin: 10px auto;
-    z-index: -1;
-    transform: translate(-50%, -50%);
-    color: #0dcaf0;
+.bg-title {
+  top: 50%;
+  left: 50%;
+  font-size: 4rem;
+  font-weight: 800;
+  opacity: 0.2;
+  line-height: 7rem;
+  padding-top: 4rem;
+  margin: 10px auto;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  color: #0dcaf0;
+}
+.image{
+  filter: grayscale(100%);
+}
+.image:hover{
+  filter: grayscale(0%);
 }
 
 @media (max-width: 405px) {
-  #about{
+  #about {
     margin-bottom: 30px;
   }
-    .image-container img {
-      display: none;
-    }
+  .image-container img {
+    display: none;
   }
-  
+}
 
-@import 'node_modules/bootstrap/scss/bootstrap.scss';
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";

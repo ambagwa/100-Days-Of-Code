@@ -546,3 +546,11 @@
 **Thoughts**: tururu!!
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/model-portfolio
+
+## Day 68 : August 24, 2024
+
+**Progress**: I decided to ditch the masonry layout and went nack to a basic grid system that shows two images on each row level and shows six images on larger screens. The images are also all in black and white but turn to colored when a mouse is hvered over them. 
+
+**Thoughts**: more practise will get me there
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/model-portfolio

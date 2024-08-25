@@ -63,12 +63,38 @@ body > * {
   filter: grayscale(0%);
 }
 
+.carousel-item{
+  display: inline-block;
+  position: relative;
+}
+.service-offered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  background-color: rgba(0, 0, 0, .3);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 4;
+}
+.service-offered ul li {
+  line-height: 35px;
+}
+.carousel-item-image{
+  opacity: 0.5;
+  height: 500px;
+}
+
 @media (max-width: 405px) {
   #about {
     margin-bottom: 30px;
   }
   .image-container img {
     display: none;
+  }
+  .service-offered ul li {
+    line-height: 20px;
   }
 }
 

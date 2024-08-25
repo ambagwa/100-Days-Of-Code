@@ -554,3 +554,11 @@
 **Thoughts**: more practise will get me there
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/model-portfolio
+
+## Day 69 : August 25 , 2024
+
+**Progress**: I started working on the services section. I decided to use the slider carousel, where each slide would contain info on what the model offers. 
+
+**Thoughts**: Carousels are better for showcasing.
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/model-portfolio

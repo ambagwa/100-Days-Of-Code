@@ -562,3 +562,11 @@
 **Thoughts**: Carousels are better for showcasing.
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/model-portfolio
+
+## Day 70 : August 26, 2024
+
+**Progress**: I finished up on the services section and made a little tweeks.
+
+**Thoughts**: streaks are it
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/model-portfolio

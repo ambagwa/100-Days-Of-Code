@@ -569,4 +569,20 @@
 
 **Thoughts**: streaks are it
 
-**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/model-portfolio
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/model-portfoli
+
+## Day 71 : August 27, 2024
+
+**Progress**: I started learning jQuery> I learnt of its basic syntax and some events that typically work on any html element, e.g. click, doubleclick, mouseenter, mouseleave, mousedown, and hover. I learnt that hover is a combination of mouseenter and mouseleave hence takes two functions. I also learnt of the focus events: focus, blur, and change. I also learnt of the on() method which takes in two parameters, i.e, an event and a function to execute. Event-chaining is also allowed in the on(). The on() also initializes objects in event-function pairs. The off() removes the event listeners. 
+
+**Thoughts**: Learning is progressive just as the languages.
+
+**Link to work**: still learning. 
+
+## Day 71 : August 27, 2024
+
+**Progress**: I started learning jQuery> I learnt of its basic syntax and some events that typically work on any html element, e.g. click, doubleclick, mouseenter, mouseleave, mousedown, and hover. I learnt that hover is a combination of mouseenter and mouseleave hence takes two functions. I also learnt of the focus events: focus, blur, and change. I also learnt of the on() method which takes in two parameters, i.e, an event and a function to execute. Event-chaining is also allowed in the on(). The on() also initializes objects in event-function pairs. The off() removes the event listeners. 
+
+**Thoughts**: Learning is progressive just as the languages.
+
+**Link to work**: still learning. 

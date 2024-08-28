@@ -586,3 +586,13 @@
 **Thoughts**: Learning is progressive just as the languages.
 
 **Link to work**: still learning. 
+
+## Day 72 : August 28, 2024
+
+**Progress**: Still on jQuery. hide() makes an element disappear while .show() reverses .hide(). slideUp() and fadeOut() can be used as substitutes for .hide as is slideDown() and fadeIn() for .show(). .toggle()switches the visibility of an element. speeds in ms can be passed as arguments in the methods above. I also learnt of the 'this' event that directly references the selected element. I also learn of the animate method whose basic syntax is .animate(properties, options). I also learnt about adding elements to DOM using the prepend() and append(). You can also remove elements form the DOM using remove() and empty() methods. .css() method is used to access the css properties of an element. multiple properties can be accessed is they are passed as arguments in an object in the method. The parent() is used to access the parent element of the selected element. .parents() targets the elements from the parent element all the way to the root. .children targets the child elements of the selected element. You can target a specific child as a paramter inside the method. .find searches for the argumented children elements of the selected element. If you pass an '*' as an argument of the find(), then you target all the children elements from the selected element. .siblings() targets all the siblings of the selected element that are children of the same parent element. To target specific siblings, pass them as arguments. .nextAll() targets all the siblings that come after the targeted sibling. .nextUntil() selects the elements that come after the targeted one until they reach the specified one. All the methods that work for the next also work for the prev(previous), just in a reversed direction. 
+
+**Thoughts**: JS is it
+
+**Link to work**: Still learning.
+
+

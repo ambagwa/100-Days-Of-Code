@@ -595,4 +595,11 @@
 
 **Link to work**: Still learning.
 
+## Day 73 : August 28, 2024
 
+**Progress**: Still on jQuery. I looked into AJAX, Asyncronous JS and XML which is used to exchange data with a server without reloading the entire page. load() is used to loads data from the specified URL that is passed as an argument. A callback function can also be passed as the second argument after the loading is complete. get() retrieves data but does nota ssign it to a DOM element. .post() is used to send data to a  server and has the same syntax as the get(). 
+I was going through some JS code and realized I had not grasped the OOP bit of it well. So i went back and mastered it. 
+
+**Thoughts**: OOP made it easier to reuse and restructure code.
+
+**Link to work**: Still learning. 

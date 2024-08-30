@@ -602,4 +602,12 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 
 **Thoughts**: OOP made it easier to reuse and restructure code.
 
-**Link to work**: Still learning. 
+**Link to work**: Still learning.
+
+## Day 74 : August 30, 2024
+
+**Progress**: I started looking into React, which is a front-end framework for building single page applications. 
+
+## Day 74 : August 30, 2024
+
+**Progress**: I started looking into React, which is a front-end framework for building single page applications. 

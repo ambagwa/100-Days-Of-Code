@@ -611,3 +611,11 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 **Thoughts**: love the journey.
 
 **Link to work**: Still on learning
+
+## Day 75 : September 1, 2023
+
+**Progress**: Having skipped a day of learning, I went through everything i had learnt on React basis. I also decided to while building a tic-tac-toe project. export keyword makes the function accessible outside the selected file. The default keyword tells other files that is using my code that thats the main function in the file. Fragments (<>...</> are used to wrap multiple aadjacent JSX elements. 
+
+**Thoughts**: Coding needs a lot of concentration.
+
+**Link to work**: Still learning. 

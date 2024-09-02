@@ -612,10 +612,18 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 
 **Link to work**: Still on learning
 
-## Day 75 : September 1, 2023
+## Day 75 : September 1, 2024
 
 **Progress**: Having skipped a day of learning, I went through everything i had learnt on React basis. I also decided to while building a tic-tac-toe project. export keyword makes the function accessible outside the selected file. The default keyword tells other files that is using my code that thats the main function in the file. Fragments (<>...</> are used to wrap multiple aadjacent JSX elements. 
 
 **Thoughts**: Coding needs a lot of concentration.
 
 **Link to work**: Still learning. 
+
+## Day 76 : September 2, 2024
+
+**Progree**: I continued building the tic-tac-toe game. I learnt that props enable passing data between components. State sharing is enabled by props. Default values for props can also be set, these values act as a set back velue if not provided by the parent. You can also use PropTypes to enforce the type of props a component should recieve, hence useful in catching bugs and ensuring your components are used correctly. Also found out props is a shorthand for 'properties'. 
+
+**Thoughts**: Consistency
+
+**Link to work**: Still learning.

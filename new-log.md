@@ -627,3 +627,15 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 **Thoughts**: Consistency
 
 **Link to work**: Still learning.
+
+## Day 77 : September 3, 2024
+
+**Progress**: While storing data as values, strings are enclosed in "" while values != strings are enclosed in {}. Booleans do not directly display to the DOM.  PropTypes ensures the passed value is of the correct datatype. JS supports 'closures' in that an inner function has access to variables and functions defined in an outer function. In react, the naming convention for props that represets events is in the form 'onSomething' and 'handleSomething' for the function definitions which handle those events. 
+
+**Thoughts**: The props naming convention makes sense
+
+**Link to work**: Still learning JS supports 'closures' in that an inner function has access to variables and functions defined in an outer function. In react, the naming convention for props that represets events is in the form 'onSomething' and 'handleSomething' for the function definitions which handle those events. 
+
+**Thoughts**: The props naming convention makes sense
+
+**Link to work**: Still learning

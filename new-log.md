@@ -639,3 +639,11 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 **Thoughts**: The props naming convention makes sense
 
 **Link to work**: Still learning
+
+## Day 78 : September 4, 2024
+
+**Progress**: 'Lifting the state up' from children to parent gives the parent control over the child's data. A change of state inside an application re-renders that sectio of the application. States are handled and updated inside a compoent unlike props which are handled outside a component, the child component uses props as inputs and can use them to render content. States are useful updatig and re-rendering your application based on a user's interaction while states are useful for displaying information inside a component without hardcoding it. Props are somewhat static while states are dynamic. While on React documentation, I learnt of the following thought procedure: Break the UI into a component hierarchy, Build a static version in React, Find the minimal but complete representation of UI state, Identify where your state should live, and Add inverse data flow. 
+
+**Thoughts**: One needs to really understand the basics
+
+**Link to work**: Still learning

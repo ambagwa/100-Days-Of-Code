@@ -647,3 +647,12 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 **Thoughts**: One needs to really understand the basics
 
 **Link to work**: Still learning
+
+## Day 79 : September 5, 2024
+
+**Progress**: I continued learning React basics. How do I determine state? If it changes over time, If it is not passed as props from parent, and if it cannot be computed from anything. A parent component can keep some information in state(so that it can change it), ad pass it down to child components as their props. For each piece of state in your application: Identify every component that renders based on that state, Set the states in the first parent component the components share, and define where the state lives, probably in the same parent component or some component above their common parent or if you cant find where preferable to own the state, create a new component solely for holding the state.I learnt of the default and named exports and how a file caan only have one default export but several nmed exports. 
+
+**Thoughts**: Practice gets you there
+
+**Link to work**: Still learning
+~                                                                           

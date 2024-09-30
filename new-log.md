@@ -666,8 +666,16 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 
 ## Day 81 : September 30, 2024
 
-**Progress**: Having being aways for a few days, I went through React basics again to remind myself what I had learnt earlier. I also learnt something React calls "Keeping components pure". In the same way mathematical equations always yield the same output for the same input, so does React components. The components are designed in a way that the output is always the same for the same input. A component should only think fo risellf and not be dependent o others.
+**Progress**: Having being aways for a few days, I went through React basics again to remind myself what I had learnt earlier. I also learnt something React calls "Keeping components pure". In the same way mathematical equations always yield the same output for the same input, so does React components. The components are designed in a way that the output is always the same for the same input. A component should only think for itsellf and not be dependent on others.
 
 **Thoughts**: Things are boiling nicely
 
 **Link to work**: Still on documentation
+
+## Day 82 : October 1, 2024
+
+**Progress**: StrictMode detects impure detects impure calculations which calls each components functions twice and help find components that break these rules. Pure functions do not mutate/change variables outside the function scope or objects that were created before the call. However, local mutation allows you to change variables and objects that you just created while rendering. However much React is heavily reliiant on pure functions, there are ususally side changes, called side effects, that normally occur on the side, not during rendering (animations, screen updating).
+
+**Thoughts**: StrictMode must be a savior
+
+**Link to work**: Still learning

@@ -660,8 +660,14 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 
 **Progress**: I continued learning React from its official website. I learnt of the children prop, which is a special prop that allows you to pass components, elements, or content between the opening and closing tags of a component. It is used to wrap other components inside a component. The children prop is passed from Higher order component. Use if statemebt, logical AD operator, and ternary operator for conditional rendering. Curly braces are used to 'escape' from JSX back to JS, allowing you to have access to JS code inside JSX. I also learnt about rendering lists. The array map() and filter() methods are used to achieve this. While rendering lists, eaach list item needs a unique key which identifies it uniquely from other items in that array. 
 
-**Pracctice**: Slwoly getting it
+**Thoughts**: Slowly getting it.
 
 **Link to work**: Still learning
 
-~                                                                           
+## Day 81 : September 30, 2024
+
+**Progress**: Having being aways for a few days, I went through React basics again to remind myself what I had learnt earlier. I also learnt something React calls "Keeping components pure". In the same way mathematical equations always yield the same output for the same input, so does React components. The components are designed in a way that the output is always the same for the same input. A component should only think fo risellf and not be dependent o others.
+
+**Thoughts**: Things are boiling nicely
+
+**Link to work**: Still on documentation

@@ -679,3 +679,13 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 **Thoughts**: StrictMode must be a savior
 
 **Link to work**: Still learning
+
+## Day 83 : October 2, 2024
+
+**Progress**: i learnt of how the UI is described in react and how it is modelled as a tree. Render trees also help determine the type of component, top-level or leaf, which helps in understanding and debugging rendering perfomances. I also learnt about how to respond to events.
+
+**Thoughts**: Understanding the basics saves a lot of trouble.
+
+**Link to work**: Still on documentation
+
+

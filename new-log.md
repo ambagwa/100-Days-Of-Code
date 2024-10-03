@@ -688,4 +688,10 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 
 **Link to work**: Still on documentation
 
+## Day 84 : October 3, 2024
 
+**Progress**: Event propagation has two phases: capturing and bubbling phases. To prevent the effects that the bubbling phase mught have on the parent component, you can pass the event handlers down explicitly or define the handler in the parent component and pass it to the specific child component. I also went back to hooks and learnt of how useEffect works. 
+
+**Thoughts**: Placing the handler in the parent component and passing it down to the child component offers better control
+
+**Link to work** Still on documentation

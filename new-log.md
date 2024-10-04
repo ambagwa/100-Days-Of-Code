@@ -695,3 +695,11 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 **Thoughts**: Placing the handler in the parent component and passing it down to the child component offers better control
 
 **Link to work** Still on documentation
+
+## Day 85 : October 4, 2024
+
+**Progress**: After learning a bit of REACT< I decided to use React on an app I had already created, myWeatherApp
+
+**Thoughts**: Not as hard as I had thought
+
+**Link to work**: Still on documentation

@@ -703,3 +703,11 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 **Thoughts**: Not as hard as I had thought
 
 **Link to work**: Still on documentation
+
+## Day 86 : October 5, 2024
+
+**Progress**: Added bootstrap to the reconfigured project. Tried out different ways but found the easiest one finally.
+
+**Thoughts**: Research is good
+
+**Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/myWeatherApp

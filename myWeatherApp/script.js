@@ -1,3 +1,5 @@
+/*
+
 const cityContainer = document.getElementById("city-container");
 
 let cityWeatherArr = [];
@@ -69,3 +71,4 @@ const displayWeatherDetails = (citiesWeatherList, cityName, countryCode) => {
         `;
   }
 };
+*/

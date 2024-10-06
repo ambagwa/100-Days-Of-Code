@@ -711,3 +711,12 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 **Thoughts**: Research is good
 
 **Link to work**: https://github.com/ambagwa/100-Days-Of-Code/tree/main/myWeatherApp
+
+## Day 87 : October 6, 2024
+
+**Progress**: I learnt of React's render and commit. The UI is served in 3 ways: triggering a render, rendering a component, and committing to he DOM> A component renders based o its first render or when its state changes. Rect calls the root element on initial render, and for the sbsequent renders, React calls the functio component whose state update triggered the render. If this updated component returns some other component, React will also render that component next, and so on. This process is recursive. A state variable's value never changes within the render, even if its event handler's code is asynchrnous. BAtching makes your React app run much faster by updating multiple state variables without triggering too many re-renders. Objects held in state should not be changes directly. However, create a new one or make a copy of an existing one, and then set the state to use that copy. 
+
+**Thoughts**: State management gives one 'power'
+
+**Link to work**: Still on documentation
+

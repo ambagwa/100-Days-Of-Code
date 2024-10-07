@@ -720,3 +720,10 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 
 **Link to work**: Still on documentation
 
+## Day 88 : October 7, 2024
+
+*Progress**: I continued learning about updating object in state. Mutation would not update a nested object because state is treated as immutable. In order to update a nested object, you first need to create a copy of the nested object using the spread syntax and change the property you want inside the newly created object You would then create a new objectthat is on a higher level than the nested object using the same spread syntax that will point to the newly updated nested object. Immer is a JS library that allows you to mutate immutable state, but under the hood, it figures out which part of the state have changed and produces an updated object based on the new changes. Arrays should also be treated as immutable. .filter() is used to create a new array whose elements have fulfilled a tester function, .map() creates a new array with increased elements.
+
+**Thoughts**: Updating states makes more sense now
+
+**Link to work**: Still on documentation

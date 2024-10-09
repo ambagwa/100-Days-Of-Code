@@ -730,8 +730,20 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 
 ## Day 89: October 8, 2024
 
-**Progress**: I looked into replacing items in ab=n array using the map() method. I also looked into inserting into an array using the splice() method. To reverse an array, first create a copy of the original array, then mutate this copy array using reverse() and set the state to this reversed array. This is however not encouraged as its mutation. in as much as the spread operator creates a new array, it only creates a shallow version of it. Both arrays reference the same oject in memory. Therefore changing an element in the new array still affects the original array. This is solved by copying individual items the same way we delt with nested objects.
+**Progress**: I looked into replacing items in ab=n array using the map() method. I also looked into inserting into an array using the splice() method. To reverse an array, first create a copy of the original array, then mutate this copy array using reverse() and set the state to this reversed array. This is however not encouraged as its mutation. in as much as the spread operator creates a new array, it only creates a shallow version of it. Both arrays reference the same oject in memory. Therefore changing an element in the new array still affects the original array. This is solved by copying individual items the same way we dealt with nesting arrays.
 
 **Thoughts**: Mutation makes it difficult to work with a larger codebase that constantly changes state.
 
 **Link to work**: Still on documentation
+
+## Day 90 : October 9, 2024
+
+**Progress**: In general. only mutate objects that you have just created. I also learnt how one can use Immer to write concide update logic without changing your state structure.
+
+**Thoughts**: WHo created immer?
+
+**Link to work**: Still on docs I also learnt how one can use Immer to write concide update logic without changing your state structure.
+
+**Thoughts**: WHo created immer?
+
+**Link to work**: Still on docs

@@ -742,8 +742,12 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 
 **Thoughts**: WHo created immer?
 
-**Link to work**: Still on docs I also learnt how one can use Immer to write concide update logic without changing your state structure.
-
-**Thoughts**: WHo created immer?
-
 **Link to work**: Still on docs
+
+## Day 91 : October 11, 2024
+
+**Progress**: Worked on several tests involving arrays and objects as state. I also simplified this using immer.
+
+**Thoughts**: Slowly getting a hold of immer
+
+**Link to work**: Still on doc

@@ -751,3 +751,15 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 **Thoughts**: Slowly getting a hold of immer
 
 **Link to work**: Still on doc
+
+## Day 92 : October 12, 2024
+
+**Progress**: I started learning on how to manage state. In a large application, the common source of bugs is redundant or duplicate state. I also learnt of imperative functions where instructions are written exactly on how to manipulate the UI. This causes a lot of bugs in a large application. However, React solves this by following the following steps: identify your component's different visual states, determine what triggers those state change, represent the state in memory using 'useState', remove any non-essential state variables, and connect the event handlers to the state.
+
+**Thoughts**: Understanding state is key
+
+**Link to work**: Still on docs
+
+**Thoughts**: Understanding state is key
+
+**Link to work**: Still on docs

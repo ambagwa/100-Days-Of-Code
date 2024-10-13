@@ -760,6 +760,14 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 
 **Link to work**: Still on docs
 
-**Thoughts**: Understanding state is key
+## Day 93 : October 13, 2024
 
-**Link to work**: Still on docs
+**Progress**: I learnt that while identifying different visual states, if a component has a lot of them, it is convenient to show them all in one page. These pages are called storybooks or living  styleguides.
+
+**Thoughts**: Redundant states are unconvenient.
+
+**Link to work**: Still on docs.
+
+**Thoughts**: Redundant states are unconvenient.
+
+**Link to work**: Still on docs.

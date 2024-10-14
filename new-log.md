@@ -768,6 +768,10 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 
 **Link to work**: Still on docs.
 
-**Thoughts**: Redundant states are unconvenient.
+## Day 94 : October 14, 2024
 
-**Link to work**: Still on docs.
+**Progress**: I looked into how to determine what triggers the state changes. There are two kinds of inputs that lead to this : human inputs and computer inputs. While figuring how to represent state in memory, start with the state that absolutely must be there. Add other state that are possible visual states. Purpose to have as less states as possible to avoid bugs, Remove any non-essential state variables with the goal of ensuring that a state in memory does not represent any valid UI that you'd want a user to see. States shouldnt be paradoxical. Ask yourself if the same information is found in another state variable already or if you can get the same information from the inverse of another state variable already. Create event handlers that update the state and connect them to the state. 
+
+**Thoughts**: One needs to describe what you want to see rather than manipulate the UI elements. 
+
+**Link to work**: Still on docs

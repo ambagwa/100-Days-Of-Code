@@ -778,8 +778,16 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 
 ## Day 95 : October 15, 2024
 
-**Progress**: I looked into 'Choosing state structure' which determines if a component would be easier to debug and modify or a constant source of bugs. Here are some principles for structuring state: group related state, avoid contradictions in state, avoid redundant state, avoid duplication in state, and avoid deeply nested state. Removind redundant and duplicate state ensures all pieces stay in sync. If you do not know how many pieces of state you need, group the data into an object or an array. Dont mirror props in state. 
+**Progress**: I looked into 'Choosing state structure' which determines if a component would be easier to debug and modify or a constant source of bugs. Here are some principles for structuring state: group related state, avoid contradictions in state, avoid redundant state, avoid duplication in state, and avoid deeply nested state. Removing redundant and duplicate state ensures all pieces stay in sync. If you do not know how many pieces of state you need, group the data into an object or an array. Dont mirror props in state. 
 
 **Thoughts**: Structuring state leads to predictable React applications
+
+**Link to work**: Still on docs
+
+## Day 96 : October 16, 2024
+
+**Progress**: Event handlers are functions that get triggered by user interactios and are frequently used to call functions that update state. Flattening deeply nested state helps in state updating. Worked on some quizes too to further my understanding.
+
+**Thoughts**: State it
 
 **Link to work**: Still on docs

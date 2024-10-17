@@ -791,3 +791,11 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 **Thoughts**: State it
 
 **Link to work**: Still on docs
+
+## Day 97 : October 17, 2024
+
+**Progress**: I got to learn of onFocus and onPointer event handlers. The former is triggered when an element gains focus while the latter is a family of events that captures various pointer interactions. I also learnt that JS objects are compared by reference and not by value. When an event handler is passed down from a parent component to a child component as prop, its the child component tht actually calls the event handler function. I also looked into how state is shared between components. The parent holds the shared state and passes it down as props, together with the setter function, to the child components. The child components use the state as props and call the setter function to update the state in parent. This helps applications maintain unidirectional data floe, making it easier to debug multiple components. When you have multiple child components that need to update independently but are controlled by the parent state, use a shared state in the parent component that keeps track of the current active child component.
+
+**Thoughts**: State efficiently controls child component's behaviour.
+
+**Link to work**: Still on documentation

@@ -799,3 +799,11 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 **Thoughts**: State efficiently controls child component's behaviour.
 
 **Link to work**: Still on documentation
+
+## Day 98  : October 18, 2024
+
+**Progress**: The shared state is passed as a prop from the parent component into the child component for conditional renderig, to determine which child component will be rendered or how they will behave. I learnt of a React principle known as 'single source of truth' where a particular piece of state is stored in a central component. This does not imply that all state lives in one place but rather, for each piece of that state, there is a specific component that holds that piece of information. This helps in not duplicating state. In order for a child to modify state, they do so by communicating with the parent via callback functions which are passed down as props to trigger a state changein the parent, as they are the ones managing the state. This ensures that any state updates in the parent affect both the parent and the child components. In React, all the components that rely on an updated state, whether directly or indirectly, get re-rendered.
+
+**Thoughts**: This is interesting
+
+**Link to work**: Still on docs

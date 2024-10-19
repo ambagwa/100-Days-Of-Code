@@ -807,3 +807,11 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 **Thoughts**: This is interesting
 
 **Link to work**: Still on docs
+
+## Day 99 : October 19, 2024
+
+**Progress**: I looked into how state is preserved and resetted. And while on that, I reminded myselft on the UI tree and render trees. State is held inside of React and not the component where it is initialized. React in turn associates each piece of state it holds with the correct component by where the component sits in the render tree. Each component on the screen has fully isolated state.
+
+**Thoughts**: UI tree helps you visualize your app.
+
+**Link to work**: Still on docs

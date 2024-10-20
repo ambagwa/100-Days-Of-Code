@@ -815,3 +815,11 @@ I was going through some JS code and realized I had not grasped the OOP bit of i
 **Thoughts**: UI tree helps you visualize your app.
 
 **Link to work**: Still on docs
+
+## Day 100 : October 20, 2024
+
+**Progress**: React keeps a component's state around for as long as you render the same component at the same position in the UI tree. When React removes a component, it destroys the states inside that component. Note that its the component's position in the UI tree that matters to React, and not the component's position in the JSX markup. I also looked into how different components at the same position reset state. When you render a different componet in the same position, it resets the state of the entire subtree. If you want to preserve the state between re-renders, the structure of your tree needs to "match up" from one render to another. 
+
+**Thoughts**: More learning ahead
+
+**Link to work**: Still learning (with projects to be updated soon)

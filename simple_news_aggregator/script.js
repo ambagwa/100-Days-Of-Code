@@ -2,19 +2,61 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchButton = document.getElementById("searchButton");
   const moreBtn = document.getElementById("more-btn");
   const loadingIndicator = document.getElementById("loading");
-  let searchHistory = [];
   let searchHistoryDiv = document.createElement("div");
   const newsContainer = document.getElementById("newsContainer");
+  let searchHistory = [];
   let dataArr = [];
   let startingIndex = 0;
   let endingIndex = 9;
 
+  searchButton.addEventListener("click", () => {
+    const searchInput = document.getElementById("searchInput").value.trim();
+    if (!searchInput) {
+      alert("Please enter a search term.");
+      return;
+    }
+
+    const apiKey = "ea302295a96940d99b4602a8c480c5da";
+    const apiUrl = `https://newsapi.org/v2/everything?q=${searchInput}&apiKey=${apiKey}`;
+
+    newsContainer.innerHTML = "";
+    hideSearchHistory();
+
+    const fetchData = async () => {
+      try {
+        loadingIndicator.style.display = "block";
+        const resolve = await fetch(apiUrl);
+        const data = await resolve.json();
+        loadingIndicator.style.display = "none";
+
+        if (data.articles) {
+          dataArr = data.articles;
+          displayResults();
+        } else {
+          newsContainer.innerHTML = `<p>No results found for "${searchInput}".</p>`;
+        }
+
+        if (!searchHistory.includes(searchInput)) {
+          searchHistory.push(searchInput);
+        }
+      } catch (error) {
+        loadingIndicator.style.display = "none";
+        newsContainer.innerHTML =
+          "<p>Error loading news. Please try again later.</p>";
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  });
+
   moreBtn.style.display = "none";
 
-  const masonryInstance = new Masonry(newsContainer, {
-    itemSelector: ".col",
-    percentPosition: true,
+  var masonryInstance = new Masonry(newsContainer, {
+    itemSelector: ".news-card",
   });
+
+  masonryInstance.on("layoutComplete", () => console.log("Layout Complete"));
 
   const hideSearchHistory = () => {
     searchHistoryDiv.innerHTML = "";
@@ -37,8 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const { author, content, publishedAt, title, url, urlToImage } = item;
 
         return `
-          <div class="col mb-2">
-            <div class="card news-card bg-altdarksubtle">
+          <div class="col mb-2 news-card">
+            <div class="card bg-altdarksubtle">
               <img src="${urlToImage}" alt="news=image" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">${title}</h5>
@@ -58,9 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .join("");
 
-    masonryInstance.reloadItems();
-    masonryInstance.layout();
-
     startingIndex += endingIndex;
 
     if (startingIndex < dataArr.length) {
@@ -68,33 +107,22 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       moreBtn.style.display = "none";
 
-      let newButton = document.createElement("button");
-      newButton.className = "btn btn-info position-relative";
-      newButton.id = "clear-btn";
-      newButton.textContent = "Clear Results";
-
-      //Append the button to the newsContainer
-      document.body.appendChild(newButton);
-
-      newButton.addEventListener("click", () => {
-        newsContainer.innerHTML = "";
-
-        //Reset the masonry layout to remove the gaps
-        masonryInstance.reloadItems();
-        masonryInstance.layout();
-
-        dataArr.length = 0;
-        startingIndex = 0;
-
-        //newButton.style.display = "none";
-        newButton.textContent = "Display Search history";
+      let newButton;
+      if (!newButton) {
+        newButton = document.createElement("button");
+        newButton.className = "btn btn-info position-relative";
+        newButton.id = "clear-btn";
+        newButton.textContent = "Clear results";
 
         newButton.addEventListener("click", () => {
-          searchHistoryDiv.className = "bg-historydiv p-1 mt-2";
+          newsContainer.innerHTML = "";
+          dataArr = [];
+          startingIndex = 0;
           updateSearchHistory();
-          newButton.style.display = "none";
         });
-      });
+
+        document.body.appendChild(newButton);
+      }
 
       //Append searchHistoryDiv if not already appended
       if (!document.body.contains(searchHistoryDiv)) {
@@ -111,44 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
       </ul>
     `;
   };
-
-  searchButton.addEventListener("click", () => {
-    const apiKey = "ea302295a96940d99b4602a8c480c5da";
-    const searchInput = document.getElementById("searchInput").value.trim();
-    const newsContainer = document.getElementById("newsContainer");
-    const apiUrl = `https://newsapi.org/v2/everything?q=${searchInput}&apiKey=${apiKey}`;
-
-    newsContainer.innerHTML = "";
-
-    hideSearchHistory();
-
-    if (!searchInput) {
-      alert("Please enter a search term.");
-      return;
-    }
-
-    const fetchData = async () => {
-      try {
-        loadingIndicator.style.display = "block";
-        const resolve = await fetch(apiUrl);
-        const data = await resolve.json();
-        loadingIndicator.style.display = "none";
-
-        dataArr = data.articles;
-        displayResults();
-
-        if (!searchHistory.includes(searchInput)) {
-          searchHistory.push(searchInput);
-        }
-
-        console.log("Total data items is " + dataArr.length);
-      } catch (error) {
-        newsContainer.innerHTML = error;
-      }
-    };
-
-    fetchData();
-  });
 
   moreBtn.addEventListener("click", () => {
     displayResults();

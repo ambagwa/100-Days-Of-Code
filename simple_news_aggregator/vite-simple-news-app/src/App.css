@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #fefae0;
+  padding: 5px;
+  text-align: center;
+}
+.bottom-div {
+  width: 40%;
+  margin: 0 auto;
+  height: 3px;
+  border-radius: 30%;
+  background-color: #283618;
+  margin-bottom: 10px;
+}
+.news-card {
+  transition: transform 0.3s ease-in-out, box-shandow 0.3s ease-in-out;
+}
+.news-card:hover {
+  transform: scale(1.005);
+  box-shadow: 0 0 5px #6a4c93;
+}
+.news-card img {
+  height: 200px;
+  object-fit: cover;
+}
+#news-container {
+  display: flex;
+  flex-direction: column;
+}
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  margin-bottom: 30px; 
+}
